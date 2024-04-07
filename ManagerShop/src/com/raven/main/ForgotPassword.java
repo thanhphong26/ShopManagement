@@ -62,8 +62,8 @@ public class ForgotPassword extends javax.swing.JPanel {
             Random rand = new Random();
             randomCode = rand.nextInt(999999);
             String host = "smtp.gmail.com";
-            String user = "codedaoit@gmail.com";
-            String pass = "ducnv2509";
+            String user = "sportshopadidis@gmail.com";
+            String pass = "wohfmpdkkvggjyqh";
             String to = txtEmail.getText();
             String subject = "Reseting Code";
             String message = "Your reset code is " + randomCode;
@@ -358,7 +358,7 @@ public class ForgotPassword extends javax.swing.JPanel {
         if (employees != null) {
             for (Empolyee employee : employees) {
                 String email = employee.getEmail();
-                if (email != null) {
+                if (email != null && email.equals(txtEmail.getText())) {
                     return true;
                 }
             }
