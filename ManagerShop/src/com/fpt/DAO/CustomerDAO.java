@@ -17,8 +17,9 @@ import java.util.List;
  * @author Administrator
  */
 public class CustomerDAO extends ShopDAO<Customer, Integer> {
+
     String INSERT_SQL = "INSERT INTO Customer (name, phoneNumber, gender, address) VALUES (?, ?, ?, ?)";
-    String SELECT_ALL_SQL = "SELECT * FROM Customer ORDER BY idCustomer DESC";
+    String SELECT_ALL_SQL = "SELECT * FROM Customer ORDER BY idCustomer Desc";
     String SELECT_BY_ID_SQL = "SELECT * FROM Customer WHERE idCustomer=?";
     String DELETE_SQL = "DELETE FROM Customer WHERE idCustomer=?";
     String UPDATE_SQL = "UPDATE Customer SET name=?, phoneNumber=?, gender=?, address=? WHERE idCustomer=?";
@@ -64,9 +65,9 @@ public class CustomerDAO extends ShopDAO<Customer, Integer> {
                 c.setAddress(rs.getString("address"));
                 c.setPhoneNumber(rs.getString("phoneNumber"));
                 c.setGender(rs.getBoolean("gender"));
+
                 list.add(c);
             }
-            rs.getStatement().getConnection().close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,9 +75,9 @@ public class CustomerDAO extends ShopDAO<Customer, Integer> {
     }
 
     public List<Customer> selectByKeyWord(String keyword) {
-        String sql = "SELECT * FROM Customer WHERE name LIKE ? ORDER BY idCustomer DESC";
+        String sql = "SELECT * from Customer where name LIKE ? ORDER BY idCustomer Desc";
         return selectBySql(sql, "%" + keyword + "%");
     }
-
+    
 
 }

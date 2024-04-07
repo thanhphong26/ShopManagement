@@ -20,30 +20,30 @@ public class MaterialDAO extends ShopDAO<Material, Integer> {
 
     @Override
     public void insert(Material e) {
-        String sql = "INSERT INTO material (valueMaterial) VALUES (?)";
+        String sql = "insert into material values(?)";
         jdbcHelper.update(sql, e.getValueMaterial());
     }
 
     @Override
     public void update(Material e) {
-        String sql = "UPDATE material SET valueMaterial = ? WHERE idMaterial = ?";
+        String sql = "update material set valueMaterial = ? where idMaterial = ?";
         jdbcHelper.update(sql, e.getValueMaterial(), e.getIdMaterial());
     }
 
     @Override
     public void delete(Integer k) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<Material> selectAll() {
-        String sql = "SELECT * FROM material";
+        String sql = "select * from material";
         return selectBySql(sql);
     }
 
     @Override
     public Material selectById(Integer k) {
-        String sql = "SELECT * FROM material WHERE idMaterial = ?";
+        String sql = "SELECT * FROM dbo.material where idMaterial = ?";
         List<Material> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
@@ -66,10 +66,11 @@ public class MaterialDAO extends ShopDAO<Material, Integer> {
             e.printStackTrace();
         }
         return list;
-    }
 
-    public Material selectByName(String name) {
-        String sql = "SELECT * FROM material WHERE valueMaterial = ?";
+    }
+    
+     public Material selectByName(String name) {
+        String sql = "select * from Material where valueMaterial= ?";
         List<Material> list = selectBySql(sql, name);
         if (list.isEmpty()) {
             return null;

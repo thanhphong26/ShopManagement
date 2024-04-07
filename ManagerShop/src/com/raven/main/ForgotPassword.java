@@ -10,6 +10,7 @@ import com.fpt.Validate.labelValidate;
 import com.fpt.entity.Empolyee;
 import com.fpt.utils.MsgBox;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 import javax.mail.Message;
@@ -18,19 +19,20 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author ducit
  */
-public class FogotPassword extends javax.swing.JPanel {
+public class ForgotPassword extends javax.swing.JPanel {
 
     int randomCode;
 
     /**
      * Creates new form FogotPassword
      */
-    public FogotPassword() {
+    public ForgotPassword() {
         initComponents();
         txtVerify.setEnabled(false);
         txtPassword.setEnabled(false);
@@ -53,14 +55,7 @@ public class FogotPassword extends javax.swing.JPanel {
         return false;
     }
 
-    public boolean checkEmail(String acc) {
-        for (int i = 0; i < emDao.selectAll().size(); i++) {
-            if (emDao.selectAll().get(i).getEmail().trim().equals(acc.trim())) {
-                return true;
-            }
-        }
-        return false;
-    }
+   
 
     public void sendCode() {
         try {
@@ -99,11 +94,15 @@ public class FogotPassword extends javax.swing.JPanel {
     }
 
     public void register() {
-        txtUsername.grabFocus();
+        lblUserName.grabFocus();
     }
 
     public void addEventBackLogin(ActionListener event) {
         btnBackLogin.addActionListener(event);
+    }
+    
+    public void addEventChangPassword(ActionListener event) {
+        btnSend.addActionListener(event);
     }
 
     Thread time;
@@ -126,6 +125,10 @@ public class FogotPassword extends javax.swing.JPanel {
         });
         time.start();
     }
+    
+     public void addEventVerify(ActionListener event) {
+        btnSend.addActionListener(event);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -136,8 +139,6 @@ public class FogotPassword extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        txtUsername = new com.raven.suportSwing.TextField();
         btnSend = new com.raven.suportSwing.MyButton();
         txtPassword = new com.raven.suportSwing.PasswordField();
         txtVerify = new com.raven.suportSwing.TextField();
@@ -148,30 +149,15 @@ public class FogotPassword extends javax.swing.JPanel {
         btnBackLogin = new com.raven.suportSwing.MyButton();
         lblBell = new javax.swing.JLabel();
         lblTime = new javax.swing.JLabel();
-        lblUserName = new javax.swing.JLabel();
+        lblUserNameError = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
         lblPass = new javax.swing.JLabel();
         lblVerify = new javax.swing.JLabel();
         lblVerifyPass = new javax.swing.JLabel();
+        lblUserName = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(69, 68, 68));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Fogot");
-
-        txtUsername.setLabelText("Usename");
-        txtUsername.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtUsernameFocusGained(evt);
-            }
-        });
-        txtUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameActionPerformed(evt);
-            }
-        });
+        setOpaque(false);
 
         btnSend.setText("Send");
         btnSend.setBorderColor(new java.awt.Color(51, 153, 255));
@@ -256,8 +242,8 @@ public class FogotPassword extends javax.swing.JPanel {
 
         lblTime.setText("jLabel1");
 
-        lblUserName.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
-        lblUserName.setForeground(new java.awt.Color(255, 0, 51));
+        lblUserNameError.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
+        lblUserNameError.setForeground(new java.awt.Color(255, 0, 51));
 
         lblEmail.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 0, 51));
@@ -271,44 +257,47 @@ public class FogotPassword extends javax.swing.JPanel {
         lblVerifyPass.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
         lblVerifyPass.setForeground(new java.awt.Color(255, 0, 51));
 
+        lblUserName.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblUserName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(txtVerify, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblBell, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTime))
-                    .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtVerifyPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSend, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnVerify, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBackLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblPass, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblVerifyPass, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblVerify, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(60, 60, 60))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUserNameError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(txtVerify, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblBell, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblTime))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtVerifyPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSend, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnVerify, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBackLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblPass, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblVerifyPass, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblVerify, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(60, 60, 60))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblUserNameError, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -337,13 +326,9 @@ public class FogotPassword extends javax.swing.JPanel {
                 .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBackLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                .addGap(109, 109, 109))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
@@ -356,33 +341,30 @@ public class FogotPassword extends javax.swing.JPanel {
     Empolyee getForm() {
         Empolyee em = new Empolyee();
         em.setPassword(new String(txtVerifyPassword.getPassword()));
-        em.setUsername(txtUsername.getText());
+        em.setUsername(lblUserName.getText());
         return em;
     }
     private void btnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendActionPerformed
-        // TODO add your handling code here:
-        if (labelValidate.checkEmpty(lblUserName, txtUsername, "Không bỏ trống Username") == false) {
-            return;
-        } else if (labelValidate.checkEmpty(lblEmail, txtEmail, "Không bỏ trống Email") == false) {
-            return;
-        } else if (checkUser(txtUsername.getText()) == false) {
-            MsgBox.labelAlert(lblUserName, txtUsername, "Không tồn tại User");
-        } else if (labelValidate.checkEmail(lblEmail, txtEmail, "Email không hợp lệ") == false) {
-            return;
-        } else if (checkEmail(txtEmail.getText()) == false) {
-            MsgBox.labelAlert(lblEmail, txtEmail, "Email không khớp với User");
-        } else {
-            sendCode();
-            btnSend.setEnabled(false);
+       
+            //sendCode();
+           /* btnSend.setEnabled(false);
             btnVerify.setEnabled(true);
             txtVerify.setEnabled(true);
             lblBell.setVisible(true);
-            countDown();
-        }
-
-
+            countDown();*/            
     }//GEN-LAST:event_btnSendActionPerformed
-
+    public boolean checkEmail() {
+        List<Empolyee> employees = emDao.selectAll();
+        if (employees != null) {
+            for (Empolyee employee : employees) {
+                String email = employee.getEmail();
+                if (email != null) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     private void btnVerifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerifyActionPerformed
         // TODO add your handling code here:
 //        new String(txtPassword.getPassword()).equals(new String(txtVerifyPassword.getPassword()))
@@ -419,11 +401,6 @@ public class FogotPassword extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnResetActionPerformed
 
-    private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
-        // TODO add your handling code here:
-        lblUserName.setText("");
-    }//GEN-LAST:event_txtUsernameFocusGained
-
     private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
         // TODO add your handling code here:
         lblEmail.setText("");
@@ -454,17 +431,16 @@ public class FogotPassword extends javax.swing.JPanel {
     private com.raven.suportSwing.MyButton btnReset;
     private com.raven.suportSwing.MyButton btnSend;
     private com.raven.suportSwing.MyButton btnVerify;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblBell;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblTime;
     private javax.swing.JLabel lblUserName;
+    private javax.swing.JLabel lblUserNameError;
     private javax.swing.JLabel lblVerify;
     private javax.swing.JLabel lblVerifyPass;
     private com.raven.suportSwing.TextField txtEmail;
     private com.raven.suportSwing.PasswordField txtPassword;
-    private com.raven.suportSwing.TextField txtUsername;
     private com.raven.suportSwing.TextField txtVerify;
     private com.raven.suportSwing.PasswordField txtVerifyPassword;
     // End of variables declaration//GEN-END:variables

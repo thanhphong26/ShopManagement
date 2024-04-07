@@ -25,8 +25,7 @@ public class ReturnProductDAO extends ShopDAO<InvoiceRetuns, Integer> {
 
     @Override
     public void insert(InvoiceRetuns e) {
-        String sql = "INSERT INTO InvoiceReturn (idInvoiceSell, idCustomer, description, totalReturn, idUser, dateCreateInvoice) "
-                + "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT Into dbo.InvoiceReturn(idInvoiceSell,idCustomer, description,totalReturn, idUser, dateCreateInvoice) VALUES(?,?,?,?,?,?)";
         jdbcHelper.update(sql, e.getIdInvoiceSell(), e.getIdCustomer(), e.getDescription(), e.getTotalReturn(), e.getIdUser(), e.getDateCreateInvoiceReturn());
     }
 
@@ -42,17 +41,14 @@ public class ReturnProductDAO extends ShopDAO<InvoiceRetuns, Integer> {
 
     @Override
     public List<InvoiceRetuns> selectAll() {
-        String sql = "SELECT * FROM InvoiceReturn "
-                + "JOIN Customer ON Customer.idCustomer = InvoiceReturn.idCustomer "
-                + "ORDER BY idInvoiceReturn DESC";
+        String sql = "SELECT * FROM dbo.InvoiceReturn JOIN dbo.Customer ON Customer.idCustomer = InvoiceReturn.idCustomer ORDER BY idInvoiceReturn Desc";
         return selectBySql(sql);
     }
 
     @Override
     public InvoiceRetuns selectById(Integer k) {
-        String sql = "SELECT * FROM InvoiceReturn "
-                + "JOIN Customer ON Customer.idCustomer = InvoiceReturn.idCustomer "
-                + "WHERE idInvoiceReturn = ?";
+        String sql = "SELECT * FROM dbo.InvoiceReturn JOIN dbo.Customer ON Customer.idCustomer = InvoiceReturn.idCustomer\n"
+                + "               where idInvoiceReturn = ?";
         List<InvoiceRetuns> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
@@ -92,7 +88,7 @@ public class ReturnProductDAO extends ShopDAO<InvoiceRetuns, Integer> {
                 p.setIdInvoiceSell(rs.getInt("idInvoiceSell"));
                 p.setId(rs.getInt("idPrDetails"));
                 p.setPrice(rs.getFloat("price"));
-                p.setQuantity(rs.getInt("quantity")); // Corrected column name
+                p.setQuantity(rs.getInt("quatity"));
                 p.setSize(rs.getString("valueSize"));
                 p.setColor(rs.getString("valueColor"));
                 p.setMaterial(rs.getString("valueMaterial"));
@@ -109,23 +105,21 @@ public class ReturnProductDAO extends ShopDAO<InvoiceRetuns, Integer> {
     }
 
     public List<ProductItem> selectByIdInvoiceReturn(int id) {
-        String sql = "SELECT InvoiceSell.idInvoiceSell, idPrDetails, nameProduct, detailsInvoiceSELL.quantity, valueSize, valueColor, valueMaterial, detailsInvoiceSELL.price, name, Customer.idCustomer, dateCreateInvoice "
-                + "FROM detailsInvoiceSELL "
-                + "JOIN InvoiceSell ON InvoiceSell.idInvoiceSell = detailsInvoiceSELL.idInvoiceSell "
-                + "JOIN Customer ON Customer.idCustomer = InvoiceSell.idCustomer "
-                + "JOIN detailsProduct ON detailsProduct.idPrDeltails = detailsInvoiceSELL.idPrDetails "
-                + "JOIN Products ON Products.idProduct = detailsProduct.idProduct "
-                + "JOIN Size ON Size.idSize = detailsProduct.idSize "
-                + "JOIN Color ON Color.idColor = detailsProduct.idColor "
-                + "JOIN Material ON Material.idMaterial = detailsProduct.idMaterial "
-                + "WHERE detailsInvoiceSELL.idInvoiceSell = ? AND detailsInvoiceSELL.quantity > 0"; // Corrected column name
+        String sql = "SELECT InvoiceSell.idInvoiceSell, idPrDetails, nameProduct, detailsInvoiceSELL.quatity, valueSize, valueColor, valueMaterial, detailsInvoiceSELL.price, name, Customer.idCustomer, dateCreateInvoice  FROM dbo.detailsInvoiceSELL\n"
+                + "                        JOIN dbo.InvoiceSell ON InvoiceSell.idInvoiceSell = detailsInvoiceSELL.idInvoiceSell\n"
+                + "                               JOIN dbo.Customer ON Customer.idCustomer = InvoiceSell.idCustomer\n"
+                + "                         JOIN dbo.detailsProduct ON detailsProduct.idPrDeltails = detailsInvoiceSELL.idPrDetails\n"
+                + "                           JOIN dbo.Products ON Products.idProduct = detailsProduct.idProduct JOIN dbo.Size ON Size.idSize = detailsProduct.idSize\n"
+                + "                              JOIN dbo.Color ON Color.idColor = detailsProduct.idColor JOIN dbo.Material ON Material.idMaterial = detailsProduct.idMaterial\n"
+                + "                               WHERE detailsInvoiceSELL.idInvoiceSell = ? AND detailsInvoiceSELL.quatity > 0";
+
         return selectBySql1(sql, id);
     }
 
     public void sellProductItem(Integer quantity, Integer id) {
-        String sql = "UPDATE detailsInvoiceSELL "
-                + "SET quantity = quantity - ? "
-                + "WHERE idInvoiceSell = ?";
+        String sql = "UPDATE dbo.detailsInvoiceSELL\n"
+                + "SET quatity -= ? \n"
+                + "WHERE idInvoiceSell = ?;";
         jdbcHelper.update(sql, quantity, id);
     }
 
@@ -133,8 +127,7 @@ public class ReturnProductDAO extends ShopDAO<InvoiceRetuns, Integer> {
         ResultSet rs;
         if (!Stringdate.isEmpty()) {
             java.util.Date date = XDate.toDate(Stringdate, "yyyy-MM-dd");
-            String sql = "SELECT COUNT(*) AS soLuong FROM InvoiceReturn "
-                    + "WHERE dateCreateInvoice BETWEEN '" + new java.sql.Date(date.getTime()) + " 00:00:00.000' AND '" + new java.sql.Date(date.getTime()) + " 23:59:59.000'";
+            String sql = " select count(*) as soLuong from InvoiceReturn WHERE  dateCreateInvoice BETWEEN '" + new java.sql.Date(date.getTime()) + " 00:00:00.000'" + "AND '" + new java.sql.Date(date.getTime()) + " 23:59:59.000' ";
             try {
                 rs = jdbcHelper.query(sql);
                 while (rs.next()) {
@@ -144,7 +137,7 @@ public class ReturnProductDAO extends ShopDAO<InvoiceRetuns, Integer> {
                 ex.printStackTrace();
             }
         }
-        String sql = "SELECT COUNT(*) AS soLuong FROM InvoiceReturn";
+        String sql = "select count(*) as soLuong from InvoiceReturn";
         try {
             rs = jdbcHelper.query(sql);
             while (rs.next()) {
@@ -159,17 +152,13 @@ public class ReturnProductDAO extends ShopDAO<InvoiceRetuns, Integer> {
     public List<InvoiceRetuns> pagingPage(int page, int pageSize, String Stringdate) {
         if (!Stringdate.isEmpty()) {
             java.util.Date date = XDate.toDate(Stringdate, "yyyy-MM-dd");
-            String sql = "SELECT * FROM InvoiceReturn "
-                    + "JOIN Customer ON Customer.idCustomer = InvoiceReturn.idCustomer "
-                    + "WHERE dateCreateInvoice BETWEEN '" + new java.sql.Date(date.getTime()) + " 00:00:00.000' AND '" + new java.sql.Date(date.getTime()) + " 23:59:59.000' "
-                    + "ORDER BY idInvoiceReturn DESC "
-                    + "LIMIT ?, ?";
+            String sql = "SELECT * FROM dbo.InvoiceReturn JOIN dbo.Customer ON Customer.idCustomer = InvoiceReturn.idCustomer \n"
+                    + "WHERE  dateCreateInvoice BETWEEN '" + new java.sql.Date(date.getTime()) + " 00:00:00.000'" + "AND '" + new java.sql.Date(date.getTime()) + " 23:59:59.000' \n"
+                    + "order by idInvoiceReturn desc OFFSET ? ROWS FETCH FIRST ? ROWS ONLY";
             return selectBySql(sql, (page - 1) * pageSize, pageSize);
         }
-        String sql = "SELECT * FROM InvoiceReturn "
-                + "JOIN Customer ON Customer.idCustomer = InvoiceReturn.idCustomer "
-                + "ORDER BY idInvoiceReturn DESC "
-                + "LIMIT ?, ?";
+        String sql = "SELECT * FROM dbo.InvoiceReturn JOIN dbo.Customer ON Customer.idCustomer = InvoiceReturn.idCustomer \n"
+                + "order by idInvoiceReturn desc OFFSET ? ROWS FETCH FIRST ? ROWS ONLY";
         return selectBySql(sql, (page - 1) * pageSize, pageSize);
     }
 }

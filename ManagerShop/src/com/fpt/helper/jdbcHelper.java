@@ -19,8 +19,8 @@ import java.sql.ResultSet;
 public class jdbcHelper {
 
     static String user = "root"; // Thay đổi thành tên người dùng của bạn
-    static String pass = "15242635"; // Thay đổi thành mật khẩu của bạn
-    static String url = "jdbc:mysql://localhost:3306/dbManagerShop"; // Thay đổi thành thông tin kết nối của bạn
+    static String pass = "minhduong123"; // Thay đổi thành mật khẩu của bạn
+    static String url = "jdbc:mysql://localhost:3306/shopmanagement"; // Thay đổi thành thông tin kết nối của bạn
     static String driver = "com.mysql.cj.jdbc.Driver";
 
     static {

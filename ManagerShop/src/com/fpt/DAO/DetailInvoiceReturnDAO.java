@@ -19,29 +19,31 @@ public class DetailInvoiceReturnDAO extends ShopDAO<DetailInvoiceReturn, Integer
 
     @Override
     public void insert(DetailInvoiceReturn e) {
-        String sql = "INSERT INTO DetailInvoiceReturn (idInvoiceReturn, idPrDetails, quatity, price) "
-                   + "VALUES ((SELECT idInvoiceReturn FROM InvoiceReturn ORDER BY idInvoiceReturn DESC LIMIT 1), ?, ?, ?)";
+        String sql = "INSERT INTO dbo.DetailInvoiceReturn\n"
+                + "(idInvoiceReturn,idPrDetails,quatity,price)\n"
+                + "VALUES\n"
+                + "((SELECT TOP 1 idInvoiceReturn FROM dbo.InvoiceReturn ORDER BY idInvoiceReturn DESC),?,?,?)";
         jdbcHelper.update(sql, e.getIdPrDetails(), e.getQuatity(), e.getPrice());
     }
 
     @Override
     public void update(DetailInvoiceReturn e) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void delete(Integer k) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<DetailInvoiceReturn> selectAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public DetailInvoiceReturn selectById(Integer k) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -52,6 +54,8 @@ public class DetailInvoiceReturnDAO extends ShopDAO<DetailInvoiceReturn, Integer
             while (rs.next()) {
                 DetailInvoiceReturn de = new DetailInvoiceReturn();
                 de.setIdDetailInvoiceReturn(rs.getInt("idDetailInvoiceReturn"));
+//                de.setIdProduct(rs.getInt("idProduct"));
+//                de.setIdInvoiceSell(rs.getInt("idInvoiceSell"));
                 de.setQuatity(rs.getInt("quatity"));
                 de.setPrice(rs.getInt("price"));
                 de.setValueColor(rs.getString("valueColor"));
@@ -59,9 +63,9 @@ public class DetailInvoiceReturnDAO extends ShopDAO<DetailInvoiceReturn, Integer
                 de.setValueSize(rs.getString("valueSize"));
                 de.setNameProduct(rs.getString("nameProduct"));
                 de.setNameCustomer(rs.getString("name"));
+//                de.setValueVoucher(rs.getInt("value"));
                 list.add(de);
             }
-            rs.getStatement().getConnection().close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,15 +73,15 @@ public class DetailInvoiceReturnDAO extends ShopDAO<DetailInvoiceReturn, Integer
     }
 
     public List<DetailInvoiceReturn> selectByIdInvoice(int id) {
-        String sql = "SELECT * FROM InvoiceReturn "
-                   + "JOIN DetailInvoiceReturn ON DetailInvoiceReturn.idInvoiceReturn = InvoiceReturn.idInvoiceReturn "
-                   + "JOIN Customer ON Customer.idCustomer = InvoiceReturn.idCustomer "
-                   + "JOIN detailsProduct ON detailsProduct.idPrDeltails = DetailInvoiceReturn.idPrDetails "
-                   + "JOIN Products ON Products.idProduct = detailsProduct.idProduct "
-                   + "JOIN Size ON Size.idSize = detailsProduct.idSize "
-                   + "JOIN Material ON Material.idMaterial = detailsProduct.idMaterial "
-                   + "JOIN Color ON Color.idColor = detailsProduct.idColor "
-                   + "WHERE DetailInvoiceReturn.idInvoiceReturn = ?";
+        String sql = "SELECT * FROM dbo.InvoiceReturn\n"
+                + "JOIN dbo.DetailInvoiceReturn ON DetailInvoiceReturn.idInvoiceReturn = InvoiceReturn.idInvoiceReturn\n"
+                + "JOIN dbo.Customer ON Customer.idCustomer = InvoiceReturn.idCustomer\n"
+                + "JOIN dbo.detailsProduct ON detailsProduct.idPrDeltails = DetailInvoiceReturn.idPrDetails\n"
+                + "JOIN dbo.Products ON Products.idProduct = detailsProduct.idProduct\n"
+                + "JOIN dbo.Size ON Size.idSize = detailsProduct.idSize\n"
+                + "JOIN dbo.Material ON Material.idMaterial = detailsProduct.idMaterial\n"
+                + "JOIN dbo.Color ON Color.idColor = detailsProduct.idColor\n"
+                + "WHERE DetailInvoiceReturn.idInvoiceReturn = ?";
         return selectBySql(sql, id);
     }
 

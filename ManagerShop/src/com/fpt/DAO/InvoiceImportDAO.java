@@ -24,7 +24,7 @@ public class InvoiceImportDAO extends ShopDAO<InvoiceImport, Integer> {
 
     @Override
     public void insert(InvoiceImport e) {
-        String sql = "INSERT INTO InvoiceImportPr (dateCreateInvoice, statusPay, idAdmin, idSupplier, description) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO dbo.InvoiceImportPr(dateCreateInvoice,statusPay,idAdmin,idSupplier,description)values(?,?,?,?,?)";
         jdbcHelper.update(sql, e.getDateCreate(), e.isStatusPay(), e.getIdUser(), e.getIdSupplier(), e.getDesc());
     }
 
@@ -40,13 +40,15 @@ public class InvoiceImportDAO extends ShopDAO<InvoiceImport, Integer> {
 
     @Override
     public List<InvoiceImport> selectAll() {
-        String sql = "SELECT I.*, name, S.nameMaterial FROM InvoiceImportPr I JOIN User U ON U.idUser = I.idAdmin JOIN Supplier S ON S.idSupplier = I.idSupplier ORDER BY idInvoice DESC";
+        String sql = "select I.*,name,S.nameMaterial from InvoiceImportPr I join [User] U on U.idUser = I.idAdmin \n"
+                + "join Supplier S on S.idSupplier = I.idSupplier ORDER BY idInvoice Desc";
         return selectBySql(sql);
     }
 
     @Override
     public InvoiceImport selectById(Integer k) {
-        String sql = "SELECT I.*, name, S.nameMaterial FROM InvoiceImportPr I JOIN User U ON U.idUser = I.idAdmin JOIN Supplier S ON S.idSupplier = I.idSupplier WHERE I.idInvoice = ?";
+        String sql = "select I.*,name,S.nameMaterial from InvoiceImportPr I join [User] U on U.idUser = I.idAdmin \n"
+                + "join Supplier S on S.idSupplier = I.idSupplier where I.idInvoice = ?";
         List<InvoiceImport> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
@@ -81,11 +83,9 @@ public class InvoiceImportDAO extends ShopDAO<InvoiceImport, Integer> {
         ResultSet rs;
         if (!Stringdate.isEmpty()) {
             Date date = XDate.toDate(Stringdate, "yyyy-MM-dd");
-            String sql = "SELECT COUNT(*) AS soLuong FROM InvoiceImportPr WHERE dateCreateInvoice BETWEEN ? AND ?";
+            String sql = " select count(*) as soLuong from InvoiceImportPr WHERE  dateCreateInvoice BETWEEN '" + new java.sql.Date(date.getTime()) + " 00:00:00.000'" + "AND '" + new java.sql.Date(date.getTime()) + " 23:59:59.000' ";
             try {
-                java.sql.Date startDate = new java.sql.Date(date.getTime());
-                java.sql.Date endDate = new java.sql.Date(date.getTime());
-                rs = jdbcHelper.query(sql, startDate, endDate);
+                rs = jdbcHelper.query(sql);
                 while (rs.next()) {
                     return rs.getInt("soLuong");
                 }
@@ -93,7 +93,7 @@ public class InvoiceImportDAO extends ShopDAO<InvoiceImport, Integer> {
                 ex.printStackTrace();
             }
         }
-        String sql = "SELECT COUNT(*) AS soLuong FROM InvoiceImportPr";
+        String sql = "select count(*) as soLuong from InvoiceImportPr";
         try {
             rs = jdbcHelper.query(sql);
             while (rs.next()) {
@@ -108,21 +108,20 @@ public class InvoiceImportDAO extends ShopDAO<InvoiceImport, Integer> {
     public List<InvoiceImport> pagingPage(int page, int pageSize, String Stringdate) {
         if (!Stringdate.isEmpty()) {
             Date date = XDate.toDate(Stringdate, "yyyy-MM-dd");
-            String sql = "SELECT I.*, name, S.nameMaterial FROM InvoiceImportPr I JOIN User U ON U.idUser = I.idAdmin JOIN Supplier S ON S.idSupplier = I.idSupplier WHERE dateCreateInvoice BETWEEN ? AND ? ORDER BY I.idInvoice DESC LIMIT ?, ?";
-            try {
-                java.sql.Date startDate = new java.sql.Date(date.getTime());
-                java.sql.Date endDate = new java.sql.Date(date.getTime());
-                return selectBySql(sql, startDate, endDate, (page - 1) * pageSize, pageSize);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            String sql = " select I.*,name,S.nameMaterial from InvoiceImportPr I  join [User] U on U.idUser = I.idAdmin \n"
+                    + "join Supplier S on S.idSupplier = I.idSupplier WHERE  dateCreateInvoice BETWEEN '" + new java.sql.Date(date.getTime()) + " 00:00:00.000'" + "AND '" + new java.sql.Date(date.getTime()) + " 23:59:59.000'\n"
+                    + "order by I.idInvoice desc OFFSET ? ROWS FETCH FIRST ? ROWS ONLY";
+            return selectBySql(sql, (page - 1) * pageSize, pageSize);
         }
-        String sql = "SELECT I.*, name, S.nameMaterial FROM InvoiceImportPr I JOIN User U ON U.idUser = I.idAdmin JOIN Supplier S ON S.idSupplier = I.idSupplier ORDER BY I.idInvoice DESC LIMIT ?, ?";
+        String sql = "select I.*,name,S.nameMaterial from InvoiceImportPr I join [User] U on U.idUser = I.idAdmin \n"
+                + "join Supplier S on S.idSupplier = I.idSupplier order by I.idInvoice desc OFFSET ? ROWS FETCH FIRST ? ROWS ONLY";
         return selectBySql(sql, (page - 1) * pageSize, pageSize);
     }
 
     public Float getTotalMoney(Integer idInvoice) {
-        String sql = "SELECT idInvoice, SUM(D.quatity * D.priceImport) AS totalCash FROM detailsInvoiceImportPr D GROUP BY idInvoice HAVING idInvoice = ?";
+        String sql = "select idInvoice,SUM(D.quatity * D.priceImport) as \"totalCash\" from detailsInvoiceImportPr D\n"
+                + "group by idInvoice\n"
+                + "having idInvoice = ?";
         try {
             ResultSet rs = jdbcHelper.query(sql, idInvoice);
             while (rs.next()) {

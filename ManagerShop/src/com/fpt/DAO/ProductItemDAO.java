@@ -19,40 +19,38 @@ public class ProductItemDAO extends ShopDAO<ProductItem, Integer> {
 
     @Override
     public void insert(ProductItem e) {
-        String sql = "INSERT INTO detailsProduct (idProduct, idSize, idColor, idMaterial, price, quantity, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO dbo.detailsProduct(idProduct,idSize,idColor,idMaterial,price,quatity,status)values(?,?,?,?,?,?,?)";
         jdbcHelper.update(sql, e.getIdProduct(), e.getIdSize(), e.getIdColor(), e.getIdMaterial(), e.getPrice(), e.getQuantity(), e.isStatus());
     }
 
     @Override
     public void update(ProductItem e) {
-        String sql = "UPDATE detailsProduct SET idSize = ?, idColor = ?, idMaterial = ?, price = ? WHERE idPrDeltails = ?";
+        String sql = "UPDATE dbo.[detailsProduct] SET idSize = ?, idColor = ?, idMaterial = ?, price = ? WHERE idPrDeltails = ?";
         jdbcHelper.update(sql, e.getIdSize(), e.getIdColor(), e.getIdMaterial(), e.getPrice(), e.getId());
     }
 
     @Override
     public void delete(Integer k) {
-        String sql = "DELETE FROM detailsProduct WHERE idPrDeltails = ?";
+        String sql = "{call PRDelete(?)}";
         jdbcHelper.update(sql, k);
     }
 
     @Override
     public List<ProductItem> selectAll() {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quantity FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList ORDER BY idPrDeltails DESC";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + " INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "                 INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "                 INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "                 INNER JOIN List L  on L.idList = P.idList ORDER BY idPrDeltails Desc";
         return selectBySql(sql);
     }
 
     public ProductItem selectImportProductID(int id) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quantity FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList WHERE D.idPrDeltails = ?";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "		INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "             INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "             INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "             INNER JOIN List L  on L.idList = P.idList where D.idPrDeltails = ?";
         List<ProductItem> list = selectBySql(sql, id);
         if (list.isEmpty()) {
             return null;
@@ -61,35 +59,32 @@ public class ProductItemDAO extends ShopDAO<ProductItem, Integer> {
     }
 
     public List<ProductItem> selectImportProductKey(String key) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quantity FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList WHERE P.nameProduct LIKE ?";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "				  INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "                               INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "                               INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "                               INNER JOIN List L  on L.idList = P.idList where P.nameProduct LIKE ?";
         return selectBySql(sql, "%" + key + "%");
     }
 
     public List<ProductItem> selectAllSell() {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quantity FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList "
-                + "WHERE D.status = 1 AND D.quantity > 0 ORDER BY idPrDeltails DESC";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + " INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "                 INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "                 INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "                 INNER JOIN List L  on L.idList = P.idList\n"
+                + "                 where D.status = 1 and D.quatity > 0 ORDER BY idPrDeltails Desc";
         return selectBySql(sql);
     }
 
     @Override
     public ProductItem selectById(Integer k) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quantity FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList "
-                + "WHERE D.idPrDeltails = ?";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "                INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "                INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "                INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "                INNER JOIN List L  on L.idList = P.idList\n"
+                + "                where D.idPrDeltails = ?";
         List<ProductItem> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
@@ -98,17 +93,15 @@ public class ProductItemDAO extends ShopDAO<ProductItem, Integer> {
     }
 
     public List<ProductItem> selectByKey(String k) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quantity FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList "
-                + "WHERE P.nameProduct LIKE ?";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "                INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "                INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "                INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "                INNER JOIN List L  on L.idList = P.idList\n"
+                + "                where P.nameProduct like ?";
         return selectBySql(sql, "%" + k + "%");
     }
 
-    /**/
     @Override
     protected List<ProductItem> selectBySql(String sql, Object... args) {
         List<ProductItem> list = new ArrayList<>();
@@ -138,100 +131,100 @@ public class ProductItemDAO extends ShopDAO<ProductItem, Integer> {
     }
 
     public void importProductItem(Integer quantity, Integer id) {
-        String sql = "UPDATE detailsProduct SET quatity = quatity + ? WHERE idPrDeltails = ?";
+        String sql = "UPDATE detailsProduct\n"
+                + "SET quatity= quatity + ? \n"
+                + "WHERE idPrDeltails = ?;";
         jdbcHelper.update(sql, quantity, id);
     }
 
     public void sellProductItem(Integer quantity, Integer id) {
-        String sql = "UPDATE detailsProduct SET quatity = quatity - ? WHERE idPrDeltails = ?";
+        String sql = "UPDATE detailsProduct\n"
+                + "SET quatity= quatity - ? \n"
+                + "WHERE idPrDeltails = ?;";
         jdbcHelper.update(sql, quantity, id);
     }
-
-    public void updateQuantity(Integer quantity, Integer id) {
-        String sql = "UPDATE detailsProduct SET quatity = ? WHERE idPrDeltails = ?";
+    
+      public void updateQuantity(Integer quantity, Integer id) {
+        String sql = "UPDATE detailsProduct\n"
+                + "SET quatity = ? \n"
+                + "WHERE idPrDeltails = ?;";
         jdbcHelper.update(sql, quantity, id);
     }
 
     public void returnProductItem(Integer quantity, Integer id) {
-        String sql = "UPDATE detailsProduct SET quatity = quatity + ? WHERE idPrDeltails = ?";
+        String sql = "UPDATE detailsProduct\n"
+                + "SET quatity= quatity + ? \n"
+                + "WHERE idPrDeltails = ?;";
         jdbcHelper.update(sql, quantity, id);
     }
 
     public List<ProductItem> selectByKeyWordSell(String keyword) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quatity "
-                + "FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList "
-                + "WHERE D.status = 1 AND D.quatity > 0 AND P.nameProduct LIKE ?";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "                 INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "                 INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "                 INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "                 INNER JOIN List L  on L.idList = P.idList\n"
+                + "                 where D.status = 1 and D.quatity > 0 AND P.nameProduct like ?";
         return selectBySql(sql, "%" + keyword + "%");
     }
 
-    public List<ProductItem> selectByPrice(float price, int idOld) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quatity "
-                + "FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList "
-                + "WHERE price <= ? AND D.idPrDeltails NOT IN (?) AND D.status = 1 AND D.quatity > 0";
-        return selectBySql(sql, price, idOld);
+    public List<ProductItem> selectByPrice(float price,int idOld) {
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial \n"
+                + "INNER JOIN Color C on C.idColor = D.idColor \n"
+                + "INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "INNER JOIN List L  on L.idList = P.idList \n"
+                + "where price <= ? and D.idPrDeltails not in (?) and D.status = 1 and D.quatity > 0 ";
+        return selectBySql(sql, price,idOld);
     }
 
     public List<ProductItem> selectByPropertieProductItem(int quantity, String keyword) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quatity "
-                + "FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList ";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial \n"
+                + "INNER JOIN Color C on C.idColor = D.idColor \n"
+                + "INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "INNER JOIN List L  on L.idList = P.idList ";
         StringBuilder sb = new StringBuilder();
         sb.append(sql);
         switch (keyword) {
             case "Above":
-                sb.append("WHERE D.quatity >= ?");
+                sb.append("where D.quatity >= ?");
                 break;
             case "Below":
-                sb.append("WHERE D.quatity <= ?");
-                break;
+                sb.append("where D.quatity <= ?");
+                break;    
             case "StillRemailProductItem":
-                sb.append("WHERE D.quatity > 0");
+                sb.append("where D.quatity > 0");
                 return selectBySql(sb.toString());
             case "OutOfStock":
-                sb.append("WHERE D.quatity = 0");
+                sb.append("where D.quatity = 0");
                 return selectBySql(sb.toString());
             case "OderByPriceDesc":
-                sb.append("ORDER BY D.price DESC");
+                sb.append("order by D.price desc");
                 return selectBySql(sb.toString());
             case "OderByPriceAsc":
-                sb.append("ORDER BY D.price ASC");
+                sb.append("order by D.price asc");
                 return selectBySql(sb.toString());
             case "StatusTrue":
-                sb.append("WHERE D.status = 1");
+                sb.append("where D.status = 1");
                 return selectBySql(sb.toString());
             case "StatusFalse":
-                sb.append("WHERE D.status = 0");
+                sb.append("where D.status = 0");
                 return selectBySql(sb.toString());
             case "ByProduct":
-                sb.append("WHERE D.idProduct = ?");
+                sb.append("where D.idProduct = ?");
                 break;
         }
         return selectBySql(sb.toString(), quantity);
     }
 
     public List<ProductItem> selectByRemainQuantity(int k) {
-        String sql = "SELECT D.*, P.nameProduct, S.valueSize, C.valueColor, M.valueMaterial, nameList, quatity "
-                + "FROM detailsProduct D "
-                + "INNER JOIN Size S ON D.idSize = S.idSize "
-                + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                + "INNER JOIN Color C ON C.idColor = D.idColor "
-                + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                + "INNER JOIN List L ON L.idList = P.idList "
-                + "WHERE D.quatity = 0";
+        String sql = "select D.*,P.nameProduct,S.valueSize,C.valueColor,M.valueMaterial,nameList,quatity from detailsProduct D\n"
+                + "INNER JOIN Size S on D.idSize = S.idSize INNER JOIN Material M on M.idMaterial = D.idMaterial \n"
+                + "INNER JOIN Color C on C.idColor = D.idColor \n"
+                + "INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "INNER JOIN List L  on L.idList = P.idList\n"
+                + "where D.quatity = 0";
         return selectBySql(sql, k);
     }
 
