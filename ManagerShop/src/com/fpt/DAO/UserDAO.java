@@ -16,24 +16,26 @@ import java.sql.ResultSet;
  * @author Đặng Đình Vũ
  */
 public class UserDAO extends ShopDAO<User, String> {
-    private String INSERT_SQL_USER = "INSERT INTO User(name, birthday, gender, phoneNumber, address, salary, email, role, status) VALUES(?,?,?,?,?,?,?,?,?)";
-    private String UPDATE_SQL = "UPDATE User SET name = ?, role = ?, gender = ?, birthday = ?, address = ?, phoneNumber = ?, email = ?, salary = ?, status = ? WHERE idUser = ?";
-    private String DELETE_SQL = "UPDATE User SET status = 0 WHERE idUser = ?";
-    private String SELECT_ALL_SQL = "SELECT * FROM User WHERE status = 1";
-    private String SELECT_ALL_OFF = "SELECT * FROM User WHERE status = 0";
-    private String SELECT_BY_ID = "SELECT * FROM User WHERE idUser = ?";
-    private String SELECT_BY_KEY = "SELECT * FROM User WHERE name LIKE ?";
+
+    private String INSERT_SQL_USER = "INSERT dbo.[User](name, birthday, gender, phoneNumber, address, salary, email, role, status) VALUES(?,?,?,?,?,?,?,?, ?)";
+    private String UPDATE_SQL = "UPDATE dbo.[User] SET name = ?, role = ?, gender = ?, birthday = ?, address = ?, phoneNumber = ?, email = ?, salary = ?, status = ? WHERE idUser = ?";
+    private String DELETE_SQL = "UPDATE dbo.[User] SET status = 0 WHERE idUser = ?";
+    private String SELECT_ALL_SQL = "SELECT * FROM dbo.[User] where status = 1";
+    private String SELECT_ALL_OFF = "SELECT * FROM dbo.[User] where status = 0";
+
+    private String SELECT_BY_ID = "";
+    private String SELECT_BY_KEY = "SELECT * FROM dbo.[USER] WHERE name LIKE ? ";
 
     @Override
     public void insert(User e) {
         jdbcHelper.update(INSERT_SQL_USER, e.getFullname(), e.getDateOfBirth(), e.isGender(), e.getPhoneNumber(), e.getAdress(),
-                          e.getSalary(), e.getEmail(), e.isRole(), e.isStatus());
+                e.getSalary(), e.getEmail(), e.isRole(), e.isStatus());
     }
 
     @Override
     public void update(User e) {
         jdbcHelper.update(UPDATE_SQL, e.getFullname(), e.isRole(), e.isGender(), e.getDateOfBirth(), e.getAdress(), e.getPhoneNumber(),
-                          e.getEmail(), e.getSalary(), e.isStatus(), e.getIdUser());
+                e.getEmail(), e.getSalary(), e.isStatus(), e.getIdUser());
     }
 
     @Override
@@ -56,11 +58,13 @@ public class UserDAO extends ShopDAO<User, String> {
 
     @Override
     public User selectById(String k) {
-        return this.selectById(Integer.parseInt(k));
+        String sql = "select * from User where idUser = ?";
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     public User selectById(int k) {
-        String sql = SELECT_BY_ID;
+        String sql = "SELECT * FROM dbo.[User] WHERE idUser = ?";
         List<User> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
@@ -97,6 +101,4 @@ public class UserDAO extends ShopDAO<User, String> {
     public List<User> selectByKey(String k) {
         return selectBySql(SELECT_BY_KEY, "%" + k + "%");
     }
-
-   
 }

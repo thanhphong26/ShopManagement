@@ -190,12 +190,12 @@ public class FormSell extends javax.swing.JPanel {
             MsgBox.alert(this, "bạn chưa thanh toán sản phẩm nào");
             // return;
         } else {
-            if (!Validate.checkEmpty(lblMoneyCustomer, txtMoneyCustomer, "Khổng bỏ trống tiền khách đưa")) {
+            if (!Validate.checkEmpty(lblMoneyCustomer, txtMoneyCustomer, "Không bỏ trống tiền khách đưa")) {
                 return;
             } else if (!Validate.checkNumber(lblMoneyCustomer, txtMoneyCustomer, "Tiền không hợp lệ")) {
                 return;
             } else if (Float.valueOf(txtMoneyCustomer.getText()) - Float.valueOf(TotalBuy()) < 0) {
-                MsgBox.alert(this, "Nhậm lại số tiền khách đưa ????");
+                MsgBox.alert(this, "Nhập lại số tiền khách đưa ????");
                 return;
             } else {
                 InvoiceSell in = getInvoiceSell();
@@ -415,6 +415,11 @@ public class FormSell extends javax.swing.JPanel {
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
 
         cbbCustomer.setLabeText("Khách hàng");
 
@@ -653,6 +658,10 @@ public class FormSell extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel4MouseClicked
+
     private void txtQuantityActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtQuantityActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_txtQuantityActionPerformed
@@ -771,6 +780,8 @@ public class FormSell extends javax.swing.JPanel {
 
     private void txtMoneyCustomerKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtMoneyCustomerKeyReleased
         // TODO add your handling code here:
+        
+        txtTotal.setText(nf.format(TotalBuy()) + " đ");
         if (txtMoneyCustomer.getText().isEmpty()) {
             txtReturn.setText("");
             return;

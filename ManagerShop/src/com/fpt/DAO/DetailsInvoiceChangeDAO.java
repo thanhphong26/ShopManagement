@@ -20,37 +20,37 @@ public class DetailsInvoiceChangeDAO extends ShopDAO<DetailsInvoiceChange, Integ
 
     @Override
     public void insert(DetailsInvoiceChange e) {
-        String sql = "INSERT INTO DetailsInvoiceChange "
-                   + "(idInvoiceChangeProducts, idDetailsPr, quantity) "
-                   + "VALUES ((SELECT idInvoiceChangeProducts FROM InvoiceChangeProducts ORDER BY idInvoiceChangeProducts DESC LIMIT 1), ?, ?)";
+        String sql = "INSERT INTO dbo.DetailsInvoiceChange\n"
+                + "(idInvoiceChangeProducts,idDetailsPr,quantity)\n"
+                + "VALUES((SELECT TOP 1 idInvoiceChangeProducts FROM dbo.InvoiceChangeProducts ORDER BY idInvoiceChangeProducts DESC), ?, ?)";
         jdbcHelper.update(sql, e.getIdProductItem(), e.getQuantity());
     }
 
     @Override
     public void update(DetailsInvoiceChange e) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void delete(Integer k) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<DetailsInvoiceChange> selectAll() {
-        String sql = "SELECT * FROM DetailsInvoiceChange De "
-                   + "JOIN InvoiceChangeProducts I ON I.idInvoiceChangeProducts = De.idInvoiceChangeProducts "
-                   + "INNER JOIN detailsProduct D ON De.idDetailsPr = D.idPrDeltails "
-                   + "INNER JOIN Size S ON D.idSize = S.idSize "
-                   + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                   + "INNER JOIN Color C ON C.idColor = D.idColor "
-                   + "INNER JOIN Products P ON P.idProduct = D.idProduct";
+        String sql = "select * from DetailsInvoiceChange De\n"
+                + "JOIN InvoiceChangeProducts I on I.idInvoiceChangeProducts = De.idInvoiceChangeProducts\n"
+                + "INNER JOIN detailsProduct D on De.idDetailsPr = D.idPrDeltails\n"
+                + "INNER JOIN Size S on D.idSize = S.idSize\n"
+                + "INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "INNER JOIN Products P on P.idProduct = D.idProduct\n";
         return selectBySql(sql);
     }
 
     @Override
     public DetailsInvoiceChange selectById(Integer k) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -71,7 +71,6 @@ public class DetailsInvoiceChangeDAO extends ShopDAO<DetailsInvoiceChange, Integ
                 de.setNameProduct(rs.getString("nameProduct"));
                 list.add(de);
             }
-            rs.getStatement().getConnection().close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,14 +78,14 @@ public class DetailsInvoiceChangeDAO extends ShopDAO<DetailsInvoiceChange, Integ
     }
 
     public List<DetailsInvoiceChange> selectByIdInvoiceChange(Integer k) {
-        String sql = "SELECT * FROM DetailsInvoiceChange De "
-                   + "JOIN InvoiceChangeProducts I ON I.idInvoiceChangeProducts = De.idInvoiceChangeProducts "
-                   + "INNER JOIN detailsProduct D ON De.idDetailsPr = D.idPrDeltails "
-                   + "INNER JOIN Size S ON D.idSize = S.idSize "
-                   + "INNER JOIN Material M ON M.idMaterial = D.idMaterial "
-                   + "INNER JOIN Color C ON C.idColor = D.idColor "
-                   + "INNER JOIN Products P ON P.idProduct = D.idProduct "
-                   + "WHERE De.idInvoiceChangeProducts = ?";
+        String sql = "select * from DetailsInvoiceChange De\n"
+                + "JOIN InvoiceChangeProducts I on I.idInvoiceChangeProducts = De.idInvoiceChangeProducts\n"
+                + "INNER JOIN detailsProduct D on De.idDetailsPr = D.idPrDeltails\n"
+                + "INNER JOIN Size S on D.idSize = S.idSize\n"
+                + "INNER JOIN Material M on M.idMaterial = D.idMaterial\n"
+                + "INNER JOIN Color C on C.idColor = D.idColor\n"
+                + "INNER JOIN Products P on P.idProduct = D.idProduct\n"
+                + "where De.idInvoiceChangeProducts = ?";
         return selectBySql(sql, k);
     }
 

@@ -14,7 +14,7 @@ GO
 CREATE TABLE Size
 (
 	idSize INT IDENTITY(1,1) PRIMARY KEY,
-	valueSize VARCHAR(5) NOT NULL,
+	valueSize NVARCHAR(30) NOT NULL,
 
 )
 GO
@@ -22,7 +22,7 @@ GO
 CREATE TABLE Color
 (
 	idColor INT IDENTITY(1,1) PRIMARY KEY,
-	valueColor VARCHAR(5) NOT NULL,
+	valueColor NVARCHAR(30) NOT NULL,
 
 )
 GO
@@ -30,7 +30,7 @@ GO
 CREATE TABLE Material
 (
 	idMaterial INT IDENTITY(1,1) PRIMARY KEY,
-	valueMaterial VARCHAR(5) NOT NULL,
+	valueMaterial NVARCHAR(30) NOT NULL,
 )
 GO
 drop table [User]
@@ -40,7 +40,7 @@ CREATE TABLE [User]
 	[name] NVARCHAR(255) NOT NULL,
 	birthday DATE,
 	gender BIT,
-	phoneNumber VARCHAR(15),
+	phoneNumber VARCHAR(10),
 	email varchar(255),
 	address NVARCHAR(255),
 	salary MONEY,
@@ -53,7 +53,7 @@ CREATE TABLE Customer
 (
 	idCustomer INT IDENTITY(1,1) PRIMARY KEY,
 	[name] NVARCHAR(255) NOT NULL,
-	phoneNumber VARCHAR(15) NOT NULL,
+	phoneNumber VARCHAR(10) NOT NULL,
 	gender BIT,
 	[address] NVARCHAR(255) NOT NULL,
 )
@@ -120,7 +120,7 @@ CREATE TABLE Supplier
 (
 	idSupplier INT IDENTITY(1,1) PRIMARY KEY,
 	nameMaterial NVARCHAR(255) NOT NULL,
-	phoneNumber VARCHAR(15) NOT NULL,
+	phoneNumber VARCHAR(10) NOT NULL,
 	address NVARCHAR(255)
 )
 GO
@@ -148,7 +148,7 @@ CREATE TABLE Products
 	idSupplier INT NOT NULL,
 	idList INT NOT NULL,
 	nameProduct NVARCHAR(255) NOT NULL,
-	description NVARCHAR(255),
+	description NVARCHAR(3000),
 	[status] bit,
 	FOREIGN KEY (idSupplier) REFERENCES dbo.Supplier(idSupplier),
 	FOREIGN KEY (idList) REFERENCES dbo.List(idList)

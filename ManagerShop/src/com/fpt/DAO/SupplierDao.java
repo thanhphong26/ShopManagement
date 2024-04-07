@@ -20,8 +20,8 @@ public class SupplierDao extends ShopDAO<Supplier, Integer> {
 
     @Override
     public void insert(Supplier e) {
-        String sql = "INSERT INTO Supplier\n"
-                + "(nameMaterial, phoneNumber, address)\n"
+        String sql = "INSERT INTO dbo.Supplier\n"
+                + "(nameMaterial,phoneNumber,address)\n"
                 + "VALUES\n"
                 + "(?,?,?)";
         jdbcHelper.update(sql, e.getNameMaterial(), e.getPhoneNumber(), e.getAddress());
@@ -29,7 +29,7 @@ public class SupplierDao extends ShopDAO<Supplier, Integer> {
 
     @Override
     public void update(Supplier e) {
-        String sql = "UPDATE Supplier SET nameMaterial = ?, phoneNumber = ?, address = ? WHERE idSupplier = ?";
+        String sql = "UPDATE dbo.Supplier SET nameMaterial = ?, phoneNumber = ?, address = ? WHERE idSupplier = ?";
         jdbcHelper.update(sql, e.getNameMaterial(), e.getPhoneNumber(), e.getAddress(), e.getIdSupplier());
     }
 
@@ -41,13 +41,13 @@ public class SupplierDao extends ShopDAO<Supplier, Integer> {
 
     @Override
     public List<Supplier> selectAll() {
-        String sql = "SELECT * FROM Supplier ORDER BY idSupplier DESC";
+        String sql = "select * from Supplier ORDER BY idSupplier Desc";
         return selectBySql(sql);
     }
 
     @Override
     public Supplier selectById(Integer k) {
-        String sql = "SELECT * FROM Supplier WHERE idSupplier = ?";
+        String sql = "select * from Supplier where idSupplier = ?";
         List<Supplier> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
@@ -75,7 +75,7 @@ public class SupplierDao extends ShopDAO<Supplier, Integer> {
     }
 
     public List<Supplier> selectByKeyWord(String key) {
-        String sql = "SELECT * FROM Supplier WHERE nameMaterial LIKE ?";
+        String sql = "Select * from Supplier where nameMaterial like ?";
         return selectBySql(sql, "%" + key + "%");
     }
 }

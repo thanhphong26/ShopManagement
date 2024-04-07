@@ -17,18 +17,13 @@ import java.util.List;
  */
 public class AccountDao extends ShopDAO<Account, Integer> {
 
-   private String INSERT_SQL_ACCOUNT = "INSERT INTO Account\n"
-            + "(idUser, Username, password)\n"
-            + "VALUES((SELECT idUser FROM [USER] ORDER BY idUser DESC LIMIT 1), ?, ?)";
-
-    private String UPDATE_SQL = ""; // Câu lệnh UPDATE không được định nghĩa.
-
-    private String DELETE_SQL = ""; // Câu lệnh DELETE không được định nghĩa.
-
-    private String SELECT_ALL_SQL = "SELECT * FROM Account";
-
-    private String SELECT_BY_ID = "SELECT * FROM Account WHERE idAccount = ?";
-
+    private String INSERT_SQL_ACCOUNT = "INSERT INTO dbo.Account\n"
+            + "(idUser,Username,password)\n"
+            + "VALUES((SELECT TOP 1 idUser FROM dbo.[USER] ORDER BY idUser DESC), ?, ?)";
+    private String UPDATE_SQL = "";
+    private String DELETE_SQL = "";
+    private String SELECT_ALL_SQL = "SELECT * FROM dbo.Account";
+    private String SELECT_BY_ID = "SELECT * FROM dbo.Account WHERE idAccount = ?";
 
     @Override
     public void insert(Account e) {
@@ -37,7 +32,7 @@ public class AccountDao extends ShopDAO<Account, Integer> {
 
     @Override
     public void update(Account e) {
-        String sql = "UPDATE Account SET password = ? WHERE idUser = ?";
+        String sql = "UPDATE dbo.Account SET password = ? WHERE idUser = ?";
         jdbcHelper.update(sql, e.getPassWord(), e.getIdUser());
     }
 
@@ -90,7 +85,7 @@ public class AccountDao extends ShopDAO<Account, Integer> {
     }
 
     public Account selectById(String k) {
-        String sql = "SELECT * FROM Account WHERE username = ?";
+        String sql = "SELECT dbo.Account.* FROM dbo.Account JOIN dbo.[User] ON [User].idUser = Account.idUser WHERE username = ? AND status = 1";
         List<Account> list = this.selectBySql(sql, k);
         return list.size()>0?list.get(0):null;
     }

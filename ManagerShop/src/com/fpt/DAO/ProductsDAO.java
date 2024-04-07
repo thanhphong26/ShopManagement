@@ -19,40 +19,40 @@ public class ProductsDAO extends ShopDAO<Products, Integer> {
 
     @Override
     public void insert(Products e) {
-        String sql = "INSERT INTO Products (idList, nameProduct, description, status) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO dbo.Products(idList,nameProduct,description,status)values(?,?,?,?)";
         jdbcHelper.update(sql, e.getIdList(), e.getNameProduct(), e.getDescription(), e.isStatus());
     }
 
     @Override
     public void update(Products e) {
-        String sql = "UPDATE Products SET idList = ?, nameProduct = ?, description = ?, status = ? WHERE idProduct = ?";
+        String sql = "UPDATE dbo.Products SET idList = ?, nameProduct = ?, description =?, status = ? WHERE idProduct = ?";
         jdbcHelper.update(sql, e.getIdList(), e.getNameProduct(), e.getDescription(), e.isStatus(), e.getIdProduct());
     }
 
     @Override
     public void delete(Integer k) {
-        String sql = "UPDATE Products SET statusDelete = 0 WHERE idProduct = ?";
+        String sql = "update products set statusDelete = 0 where idProduct = ?";
         jdbcHelper.update(sql, k);
     }
 
     @Override
     public List<Products> selectAll() {
-        String sql = "SELECT * FROM Products JOIN List ON List.idList = Products.idList WHERE statusDelete = 1 AND List.status = 1 ORDER BY idProduct DESC";
+        String sql = "SELECT * FROM dbo.Products JOIN dbo.List ON List.idList = Products.idList WHERE statusDelete = 1 AND List.status = 1 ORDER BY IdProduct Desc";
         return selectBySql(sql);
     }
 
     @Override
     public Products selectById(Integer k) {
-        String sql = "SELECT * FROM Products JOIN List ON List.idList = Products.idList WHERE idProduct = ?";
+        String sql = "SELECT * FROM dbo.Products JOIN dbo.List ON List.idList = Products.idList WHERE idProduct = ?";
         List<Products> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
         }
         return list.get(0);
     }
-
+    
     public Products selectByName(String name) {
-        String sql = "SELECT * FROM Products JOIN List ON List.idList = Products.idList WHERE nameProduct = ?";
+        String sql = "select * from Products JOIN dbo.List ON List.idList = Products.idList where nameProduct= ?";
         List<Products> list = selectBySql(sql, name);
         if (list.isEmpty()) {
             return null;
@@ -67,7 +67,7 @@ public class ProductsDAO extends ShopDAO<Products, Integer> {
             ResultSet rs = jdbcHelper.query(sql, args);
             while (rs.next()) {
                 Products p = new Products();
-                p.setIdProduct(rs.getInt("idProduct"));
+                p.setIdProduct(rs.getInt("IdProduct"));
                 p.setNameProduct(rs.getString("nameProduct"));
                 p.setDescription(rs.getString("description"));
                 p.setIdList(rs.getInt("idList"));
@@ -82,8 +82,7 @@ public class ProductsDAO extends ShopDAO<Products, Integer> {
     }
 
     public List<Products> selectByKeyWord(String keyword) {
-        String sql = "SELECT * FROM Products JOIN List ON List.idList = Products.idList WHERE nameProduct LIKE ? AND List.status = 1 AND statusDelete = 1";
+        String sql = "SELECT * from Products JOIN dbo.List ON List.idList = Products.idList where nameProduct like ? and List.status = 1 and statusDelete = 1";
         return selectBySql(sql, "%" + keyword + "%");
     }
-
 }

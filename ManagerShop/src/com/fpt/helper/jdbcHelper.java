@@ -18,14 +18,22 @@ import java.sql.ResultSet;
  */
 public class jdbcHelper {
 
-    static String user = "root"; // Thay đổi thành tên người dùng của bạn
-    static String pass = "15242635"; // Thay đổi thành mật khẩu của bạn
-    static String url = "jdbc:mysql://localhost:3306/dbManagerShop"; // Thay đổi thành thông tin kết nối của bạn
-    static String driver = "com.mysql.cj.jdbc.Driver";
+//<<<<<<< HEAD
+    static String user = "sa";
+    static String pass = "123456";
+    static String url = "jdbc:sqlserver://localhost:1433;databaseName=dbManagerShop";
+//=======
+//     static String user = EnvUtil.get("DB_USER");
+//    static String pass = EnvUtil.get("DB_PASSWORD");
+//>>>>>>> origin/Minhvn
+    static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    static String url2 = "jdbc:sqlserver://dbshop.database.windows.net:1433;database=DBSHOP;user=dbshop@dbshop;password={it_shop123};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+//    static String url = "jdbc:sqlserver://" + EnvUtil.get("DB_HOST") + ";databaseName=" + EnvUtil.get("DB_NAME");
 
     static {
         try {
             Class.forName(driver);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -33,7 +41,13 @@ public class jdbcHelper {
 
     public static PreparedStatement getStmt(String sql, Object... args) throws Exception {
         Connection con = DriverManager.getConnection(url, user, pass);
-        PreparedStatement stmt = con.prepareStatement(sql);
+        PreparedStatement stmt;
+        if (sql.trim().startsWith("{")) {
+            stmt = con.prepareCall(sql);
+        } else {
+            stmt = con.prepareStatement(sql);
+        }
+
         for (int i = 0; i < args.length; i++) {
             stmt.setObject(i + 1, args[i]);
         }
@@ -49,7 +63,7 @@ public class jdbcHelper {
         try {
             ResultSet rs = jdbcHelper.query(sql, args);
             if (rs.next()) {
-                return rs.getObject(1); // Sửa từ 0 thành 1 vì cột đầu tiên có chỉ số 1 trong ResultSet
+                return rs.getObject(0);
             }
             rs.getStatement().getConnection().close();
             return null;

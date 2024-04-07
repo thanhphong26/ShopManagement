@@ -19,29 +19,30 @@ public class ProductItemImageDAO extends ShopDAO<ProductItemImage, Integer> {
 
     @Override
     public void insert(ProductItemImage e) {
-        String sql = "INSERT INTO ImageProducts (idPrDeltails, valueImage) "
-                + "VALUES((SELECT idPrDeltails FROM detailsProduct ORDER BY idPrDeltails DESC LIMIT 1), ?)";
+      
+        String sql = "INSERT INTO dbo.ImageProducts (idPrDeltails,valueImage) "
+                + "VALUES((SELECT TOP 1 idPrDeltails FROM dbo.detailsProduct ORDER BY idPrDeltails DESC), ?)";
         jdbcHelper.update(sql, e.getValue());
     }
 
     @Override
     public void update(ProductItemImage e) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void delete(Integer k) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<ProductItemImage> selectAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public ProductItemImage selectById(Integer k) {
-        String sql = "SELECT * FROM Products JOIN List ON List.idList = Products.idList WHERE idProduct = ?";
+        String sql = "SELECT * FROM dbo.Products JOIN dbo.List ON List.idList = Products.idList WHERE idProduct = ?";
         List<ProductItemImage> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;

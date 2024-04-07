@@ -20,36 +20,36 @@ public class VoucherDAO extends ShopDAO<Voucher, Integer> {
 
     @Override
     public void insert(Voucher e) {
-        String sql = "INSERT INTO Voucher (valueVoucher, value, dateStart, dateEnd, quatity) VALUES (?,?,?,?,?)";
+        String sql = "insert into Voucher values(?,?,?,?,?)";
         jdbcHelper.update(sql, e.getNameVoucher(), e.getValue(), e.getDateStart(), e.getDateEnd(), e.getQuatity());
     }
 
     @Override
     public void update(Voucher e) {
-        String sql = "UPDATE Voucher SET valueVoucher = ?, value = ?, dateStart = ?, dateEnd = ?, quatity = ? WHERE idVoucher = ?";
+        String sql = "	UPDATE dbo.Voucher SET valueVoucher = ?, value = ?, dateStart = ?, dateEnd = ?, quatity = ? WHERE idVoucher = ?";
         jdbcHelper.update(sql, e.getNameVoucher(), e.getValue(), e.getDateStart(), e.getDateEnd(), e.getQuatity(), e.getIdVoucher());
     }
 
     @Override
     public void delete(Integer k) {
-        String sql = "DELETE FROM Voucher WHERE idVoucher = ?";
+        String sql = "delete Voucher where idVoucher = ?";
         jdbcHelper.update(sql, k);
     }
 
     @Override
     public List<Voucher> selectAll() {
-        String sql = "SELECT * FROM Voucher WHERE quatity > 0 ORDER BY idVoucher DESC";
+        String sql = "select * from Voucher where quatity > 0 order by idVoucher desc";
         return selectBySql(sql);
     }
 
     public List<Voucher> selectAllDate() {
-        String sql = "SELECT * FROM Voucher WHERE quatity > 0 AND ? BETWEEN dateStart AND dateEnd";
+        String sql = "select * from Voucher where quatity > 0 AND ? BETWEEN dateStart AND dateEnd";
         return selectBySql(sql, XDate.toString(new java.util.Date(), "yyyy-MM-dd"));
     }
 
     @Override
     public Voucher selectById(Integer k) {
-        String sql = "SELECT * FROM Voucher WHERE idVoucher = ?";
+        String sql = "select * from Voucher where idVoucher = ?";
         List<Voucher> list = selectBySql(sql, k);
         if (list.isEmpty()) {
             return null;
@@ -79,13 +79,12 @@ public class VoucherDAO extends ShopDAO<Voucher, Integer> {
     }
 
     public List<Voucher> selectByKeyWord(String keyword) {
-        String sql = "SELECT * FROM Voucher WHERE valueVoucher LIKE ? AND quatity > 0";
+        String sql = "SELECT * from Voucher where valueVoucher LIKE ? and quatity > 0";
         return selectBySql(sql, "%" + keyword + "%");
     }
 
     public void updateVoucher(Integer id) {
-        String sql = "UPDATE Voucher SET quatity = quatity - 1 WHERE idVoucher = ?";
+        String sql = "update Voucher set quatity = quatity - 1 where idVoucher = ?";
         jdbcHelper.update(sql, id);
     }
-
 }
