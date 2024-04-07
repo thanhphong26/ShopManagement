@@ -97,23 +97,33 @@ public class Validate {
         }
         return true;
     }
+    
 
     public static boolean checkNumber(JLabel lbl, JTextField field, String mess) {
-        boolean check = true;
+        if (field.getText().contains(".") ||field.getText().contains("-")) {
+            MsgBox.labelAlert(lbl, field, mess);
+            return false;
+        }
+        
+
         if (!checkEmpty(lbl, field, "Chưa nhập!!!")) {
             return false;
         }
+
         try {
-            int intNumber = Integer.parseInt(field.getText());
-            double doubleNumber = Double.parseDouble(field.getText());
-            if (intNumber <= 0 || doubleNumber <= 0) {
+            // Kiểm tra nếu là số
+            double number = Double.parseDouble(field.getText());
+
+            if (number <= 0) {
                 MsgBox.labelAlert(lbl, field, mess);
+                return false; 
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             MsgBox.labelAlert(lbl, field, "Không được nhập chữ!!!");
-            check = false;
+            return false; 
         }
-        return check;
+
+        return true;
     }
     
     public static boolean checkNumber(JComponent component, JTextField field, String mess) {
