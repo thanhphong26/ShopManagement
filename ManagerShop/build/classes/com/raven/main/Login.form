@@ -24,7 +24,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnFogot" pref="447" max="32767" attributes="0"/>
+                  <Component id="btnForgot" pref="447" max="32767" attributes="0"/>
                   <Component id="btnLogin" alignment="1" max="32767" attributes="0"/>
                   <Component id="lbAlertPassword" alignment="1" max="32767" attributes="0"/>
                   <Component id="txtPassWord" alignment="1" max="32767" attributes="0"/>
@@ -55,7 +55,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnLogin" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnFogot" min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="btnForgot" min="-2" pref="41" max="-2" attributes="0"/>
               <EmptySpace pref="59" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -64,7 +64,6 @@
   <SubComponents>
     <Component class="com.raven.suportSwing.TextField" name="txtUser">
       <Properties>
-        <Property name="text" type="java.lang.String" value="admin"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Saira ExtraCondensed Medium" size="20" style="0"/>
         </Property>
@@ -77,7 +76,7 @@
     </Component>
     <Component class="com.raven.suportSwing.MyButton" name="btnLogin">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Login"/>
+        <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng nh&#x1ead;p"/>
         <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="33" type="rgb"/>
         </Property>
@@ -97,7 +96,6 @@
     </Component>
     <Component class="com.raven.suportSwing.PasswordField" name="txtPassWord">
       <Properties>
-        <Property name="text" type="java.lang.String" value="123456"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Saira ExtraCondensed Medium" size="20" style="0"/>
         </Property>
@@ -108,9 +106,8 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPassWordActionPerformed"/>
       </Events>
     </Component>
-    <Component class="com.raven.suportSwing.MyButton" name="btnFogot">
+    <Component class="com.raven.suportSwing.MyButton" name="btnForgot">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Fogot Password"/>
         <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="33" type="rgb"/>
         </Property>
@@ -122,11 +119,12 @@
         </Property>
         <Property name="contentAreaFilled" type="boolean" value="true"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Saira ExtraCondensed SemiBold" size="20" style="1"/>
+          <Font name="Saira ExtraCondensed SemiBold" size="20" style="0"/>
         </Property>
+        <Property name="label" type="java.lang.String" value="Qu&#xea;n m&#x1ead;t kh&#x1ea9;u"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFogotActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnForgotActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbAlertUsername">

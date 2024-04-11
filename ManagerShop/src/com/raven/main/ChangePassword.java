@@ -4,9 +4,11 @@
  */
 package com.raven.main;
 
+import com.fpt.DAO.EmpolyeeDao;
 import com.fpt.Validate.labelValidate;
 import com.fpt.entity.Empolyee;
 import com.fpt.utils.MsgBox;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -17,6 +19,7 @@ public class ChangePassword extends javax.swing.JPanel {
     /**
      * Creates new form ChangePassword
      */
+    String username;
     public ChangePassword() {
         initComponents();
     }
@@ -35,7 +38,11 @@ public class ChangePassword extends javax.swing.JPanel {
         btnReset = new com.raven.suportSwing.MyButton();
         lblPass = new javax.swing.JLabel();
         lblVerifyPass = new javax.swing.JLabel();
+        lblUserName = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        txtPassword.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 0, 18)); // NOI18N
         txtPassword.setLabelText("Password");
         txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -48,6 +55,7 @@ public class ChangePassword extends javax.swing.JPanel {
             }
         });
 
+        txtVerifyPassword.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 0, 18)); // NOI18N
         txtVerifyPassword.setLabelText("Verify Password");
         txtVerifyPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -60,10 +68,11 @@ public class ChangePassword extends javax.swing.JPanel {
             }
         });
 
-        btnReset.setText("Reset");
+        btnReset.setText("Đặt lại");
         btnReset.setBorderColor(new java.awt.Color(51, 153, 255));
         btnReset.setColorClick(new java.awt.Color(255, 102, 204));
         btnReset.setColorOver(new java.awt.Color(51, 153, 255));
+        btnReset.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 0, 20)); // NOI18N
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -76,6 +85,11 @@ public class ChangePassword extends javax.swing.JPanel {
         lblVerifyPass.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
         lblVerifyPass.setForeground(new java.awt.Color(255, 0, 51));
 
+        lblUserName.setFont(new java.awt.Font("Saira ExtraCondensed ExtraBold", 0, 20)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(25, 116, 211));
+        lblUserName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblUserName.setText("Đặt lại mật khẩu");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,30 +97,42 @@ public class ChangePassword extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                    .addComponent(txtVerifyPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblVerifyPass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(53, 53, 53))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(lblPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblVerifyPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(lblUserName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtVerifyPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
+                .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
-                .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtVerifyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblVerifyPass, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVerifyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblVerifyPass, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -123,19 +149,37 @@ public class ChangePassword extends javax.swing.JPanel {
     private void txtVerifyPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVerifyPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtVerifyPasswordActionPerformed
-
+    public void setUsername(String username){
+        this.username = username;
+    }
+    
+    Empolyee getForm() {
+        Empolyee em = new Empolyee();
+        em.setPassword(new String(txtVerifyPassword.getPassword()));
+        em.setUsername(username);
+        return em;
+    }
+    EmpolyeeDao emDao = new EmpolyeeDao();
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
-        if (labelValidate.checkEmpty(lblPass, txtPassword, "Không bỏ trông mật khẩu") == false) {
+        if (labelValidate.checkEmptyLogin(txtPassword, "Không bỏ trông mật khẩu") == false) {
             return;
         } else if (new String(txtPassword.getPassword()).equals(new String(txtVerifyPassword.getPassword()))) {
-           
+            Empolyee em = getForm();
+            emDao.updatePassword(em);
+            MsgBox.alert(this, "Lấy lại mật khẩu thành công");
+//                this.dispose();
+//                new Login().setVisible(true);
 
         } else {
             MsgBox.labelAlert(lblVerifyPass, txtVerifyPassword, "Mật khẩu không khớp");
         }
     }//GEN-LAST:event_btnResetActionPerformed
 
+    public void addEventBacktoLogin(ActionListener event) {
+        btnReset.addActionListener(event);
+    }
+    
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordActionPerformed
@@ -144,6 +188,7 @@ public class ChangePassword extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.suportSwing.MyButton btnReset;
     private javax.swing.JLabel lblPass;
+    private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel lblVerifyPass;
     private com.raven.suportSwing.PasswordField txtPassword;
     private com.raven.suportSwing.PasswordField txtVerifyPassword;

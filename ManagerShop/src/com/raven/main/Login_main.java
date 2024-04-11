@@ -33,40 +33,65 @@ public class Login_main extends javax.swing.JFrame {
         this.setIconImage(icon);
 //        setIconImage(XImage.getAppImage());
         Login login = new Login();
-        ForgotPassword fogotPassword = new ForgotPassword();
+        ForgotPassword forgotPassword = new ForgotPassword();
         VerifyEmail verifyEmail = new VerifyEmail();
         ChangePassword changePass = new ChangePassword();
         slide.setAnimate(15);
-        slide.init(login, fogotPassword, verifyEmail, changePass);
+        slide.init(login, forgotPassword, verifyEmail, changePass);
+        
         login.addEventRegister(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                //  Show register form
-                slide.show(1);
-                fogotPassword.register();
+                if(!login.checkUsername()){
+                    return;
+                }else{
+                    String username = login.getUserName();
+                    System.out.println("---    " + username);
+                    forgotPassword.setUsername(username);
+                    slide.show(1);
+                }
             }
         });
         
-        fogotPassword.addEventVerify(new ActionListener(){
+        forgotPassword.addEventVerify(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
                 //  Show register form
-                if(!fogotPassword.checkEmail()) {
+                if(!forgotPassword.checkEmail()) {
                     return;
                 } else {
+                    forgotPassword.sendCode();
+                    int randomCode = forgotPassword.getCode();
+                    String username = forgotPassword.getUsername();
+                    System.out.println("---    " + username);
+                    verifyEmail.setUsername(username);
+                    verifyEmail.setVerifyCode(randomCode);
                     slide.show(2);
                 }
             }
         });
         
+        verifyEmail.addEventChangePass(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //  Show register form
+                if(!verifyEmail.verifyEmail()) {
+                    return;
+                } else {
+                    String username = verifyEmail.getUsername();
+                    System.out.println("---    " + username);
+                    changePass.setUsername(username);
+                    slide.show(3);
+                }
+            }
+        });
         
         
-        login.addEventLogin(new ActionListener() {
+        
+        changePass.addEventBacktoLogin(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (login.login() == true) {
-                    dispose();
-                }
+                slide.show(0);
             }
         });
         

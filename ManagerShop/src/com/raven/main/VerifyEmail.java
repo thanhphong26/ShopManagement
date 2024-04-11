@@ -4,6 +4,12 @@
  */
 package com.raven.main;
 
+import java.awt.Image;
+import java.awt.event.ActionListener;
+import java.time.Clock;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Admins
@@ -13,8 +19,56 @@ public class VerifyEmail extends javax.swing.JPanel {
     /**
      * Creates new form VerifyEmail
      */
+    int randomCode;
+    String username;
+    
     public VerifyEmail() {
         initComponents();
+        countDown();
+    }
+    
+    Thread time;
+
+    public void countDown() {
+        time = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 60; i >= 0; i--) {
+                    lblTime.setText("" + i);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                //txtVerify.setEnabled(false);
+                //btnSend.setEnabled(true);
+            }
+        });
+        time.start();
+    }
+    
+    public boolean verifyEmail(){
+        if (Integer.valueOf(txtVerify.getText()) == randomCode){
+            return true;
+        }
+        return false;
+    }
+    
+    public void addEventChangePass(ActionListener event) {
+        btnVerify.addActionListener(event);
+    }
+    
+    public void setVerifyCode(int randomCode){
+        this.randomCode = randomCode;
+    }
+    
+    public void setUsername(String username){
+        this.username = username;
+    }
+    
+    public String getUsername(){
+        return username;
     }
 
     /**
@@ -30,60 +84,79 @@ public class VerifyEmail extends javax.swing.JPanel {
         lblBell = new javax.swing.JLabel();
         lblTime = new javax.swing.JLabel();
         btnVerify = new com.raven.suportSwing.MyButton();
+        lblUserName = new javax.swing.JLabel();
 
-        txtVerify.setLabelText("Verify");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(499, 385));
+
+        txtVerify.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 0, 18)); // NOI18N
+        txtVerify.setLabelText("Nhập mã xác minh");
         txtVerify.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtVerifyFocusGained(evt);
             }
         });
 
-        lblBell.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/Bell.png"))); // NOI18N
+        lblBell.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/notification_1.png"))); // NOI18N
 
+        lblTime.setFont(new java.awt.Font("Saira ExtraCondensed ExtraBold", 1, 24)); // NOI18N
+        lblTime.setForeground(new java.awt.Color(255, 0, 0));
         lblTime.setText("jLabel1");
 
-        btnVerify.setText("Verify");
+        btnVerify.setText("Xác minh");
         btnVerify.setBorderColor(new java.awt.Color(51, 153, 255));
         btnVerify.setColorClick(new java.awt.Color(255, 102, 204));
         btnVerify.setColorOver(new java.awt.Color(51, 153, 255));
+        btnVerify.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 0, 20)); // NOI18N
+        btnVerify.setMaximumSize(new java.awt.Dimension(95, 39));
+        btnVerify.setMinimumSize(new java.awt.Dimension(95, 39));
+        btnVerify.setPreferredSize(new java.awt.Dimension(95, 39));
         btnVerify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerifyActionPerformed(evt);
             }
         });
 
+        lblUserName.setFont(new java.awt.Font("Saira ExtraCondensed ExtraBold", 0, 20)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(25, 116, 211));
+        lblUserName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblUserName.setText("Mã xác minh đã được gửi tới email của bạn!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblBell, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTime)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtVerify, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                        .addGap(106, 106, 106))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVerify, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 23, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtVerify, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVerify, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(lblUserName)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addComponent(lblBell, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTime)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblBell, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTime))
-                .addGap(42, 42, 42)
+                .addGap(16, 16, 16)
+                .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblTime)
+                    .addComponent(lblBell, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(txtVerify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addComponent(btnVerify, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(btnVerify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(125, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -100,6 +173,7 @@ public class VerifyEmail extends javax.swing.JPanel {
     private com.raven.suportSwing.MyButton btnVerify;
     private javax.swing.JLabel lblBell;
     private javax.swing.JLabel lblTime;
+    private javax.swing.JLabel lblUserName;
     private com.raven.suportSwing.TextField txtVerify;
     // End of variables declaration//GEN-END:variables
 }
