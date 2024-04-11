@@ -31,6 +31,7 @@ public class Login extends javax.swing.JPanel {
     /**
      * Creates new form Login
      */
+    String username;
     public Login() {
         initComponents();
         lbAlertPassword.setText("");
@@ -47,15 +48,20 @@ public class Login extends javax.swing.JPanel {
     public void clickLogin() {
         txtUser.setBackground(Color.white);
         txtPassWord.setBackground(Color.white);
-        if (Validate.checkEmpty(lbAlertUsername, txtUser, "Không được để trống Username!") == false && Validate.checkEmpty(lbAlertPassword, txtPassWord, "Không được để trống password!") == false) {
+        if (Validate.checkEmptyLogin(txtUser, "Không được để trống Username!") == false && Validate.checkEmptyLogin( txtPassWord, "Không được để trống password!") == false) {
             return;
-        } else if (Validate.checkEmpty(lbAlertUsername, txtUser, "Không được để trống password!") == false) {
-            return;
-        } else if (Validate.checkEmpty(lbAlertPassword, txtPassWord, "Không được để trống password!") == false) {
+        } else if (Validate.checkEmptyLogin(txtPassWord, "Không được để trống password!") == false) {
             return;
         } else {
             login();
         }
+    }
+    
+    public boolean checkUsername(){
+        if(txtUser.getText().isEmpty()){
+            return false;
+        }
+        return true;
     }
 
     public boolean login() {
@@ -65,7 +71,9 @@ public class Login extends javax.swing.JPanel {
 
         try {
             Account account = dao.selectById(userName);
-            if (account == null) {    //nếu user sai
+            if(Validate.checkEmptyLogin(txtUser, "Không được để trống Username!") == false){
+                return false;
+            }else if (account == null && userName.isEmpty() == false ) {    //nếu user sai
                 lbAlertUsername.setText("Sai tên đăng nhập!");
                 return false;
             } else {
@@ -89,13 +97,17 @@ public class Login extends javax.swing.JPanel {
         return true;
 
     }
- public void addEventRegister(ActionListener event) {
-        btnFogot.addActionListener(event);
+    public void addEventRegister(ActionListener event) {
+        btnForgot.addActionListener(event);
     }
-   
 
     public void addEventLogin(ActionListener event) {
         btnLogin.addActionListener(event);
+    }
+    
+    public String getUserName(){
+        username = txtUser.getText();
+        return username;
     }
 
     /**
@@ -110,7 +122,7 @@ public class Login extends javax.swing.JPanel {
         txtUser = new com.raven.suportSwing.TextField();
         btnLogin = new com.raven.suportSwing.MyButton();
         txtPassWord = new com.raven.suportSwing.PasswordField();
-        btnFogot = new com.raven.suportSwing.MyButton();
+        btnForgot = new com.raven.suportSwing.MyButton();
         lbAlertUsername = new javax.swing.JLabel();
         lbAlertPassword = new javax.swing.JLabel();
         lblUserName = new javax.swing.JLabel();
@@ -118,7 +130,6 @@ public class Login extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        txtUser.setText("admin");
         txtUser.setFont(new java.awt.Font("Saira ExtraCondensed Medium", 0, 20)); // NOI18N
         txtUser.setLabelText("\n");
         txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -132,7 +143,7 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
-        btnLogin.setText("Login");
+        btnLogin.setText("Đăng nhập");
         btnLogin.setBorderColor(new java.awt.Color(51, 153, 255));
         btnLogin.setColorClick(new java.awt.Color(255, 102, 204));
         btnLogin.setColorOver(new java.awt.Color(51, 153, 255));
@@ -143,7 +154,6 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
-        txtPassWord.setText("123456");
         txtPassWord.setFont(new java.awt.Font("Saira ExtraCondensed Medium", 0, 20)); // NOI18N
         txtPassWord.setLabelText("");
         txtPassWord.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -157,15 +167,15 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
-        btnFogot.setText("Fogot Password");
-        btnFogot.setBorderColor(new java.awt.Color(51, 153, 255));
-        btnFogot.setColorClick(new java.awt.Color(255, 102, 204));
-        btnFogot.setColorOver(new java.awt.Color(51, 153, 255));
-        btnFogot.setContentAreaFilled(true);
-        btnFogot.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 1, 20)); // NOI18N
-        btnFogot.addActionListener(new java.awt.event.ActionListener() {
+        btnForgot.setBorderColor(new java.awt.Color(51, 153, 255));
+        btnForgot.setColorClick(new java.awt.Color(255, 102, 204));
+        btnForgot.setColorOver(new java.awt.Color(51, 153, 255));
+        btnForgot.setContentAreaFilled(true);
+        btnForgot.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 0, 20)); // NOI18N
+        btnForgot.setLabel("Quên mật khẩu");
+        btnForgot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFogotActionPerformed(evt);
+                btnForgotActionPerformed(evt);
             }
         });
 
@@ -193,7 +203,7 @@ public class Login extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnFogot, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                    .addComponent(btnForgot, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
                     .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbAlertPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPassWord, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -221,13 +231,14 @@ public class Login extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnFogot, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnForgot, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        clickLogin();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusGained
@@ -246,13 +257,14 @@ public class Login extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassWordActionPerformed
 
-    private void btnFogotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFogotActionPerformed
+    private void btnForgotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForgotActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnFogotActionPerformed
+        username = txtUser.getText();
+    }//GEN-LAST:event_btnForgotActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.raven.suportSwing.MyButton btnFogot;
+    private com.raven.suportSwing.MyButton btnForgot;
     private com.raven.suportSwing.MyButton btnLogin;
     private javax.swing.JLabel lbAlertPassword;
     private javax.swing.JLabel lbAlertUsername;

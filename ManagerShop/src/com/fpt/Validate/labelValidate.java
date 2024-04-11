@@ -6,6 +6,7 @@
 package com.fpt.Validate;
 
 import com.fpt.utils.MsgBox;
+import com.raven.suportSwing.PasswordField;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JLabel;
@@ -86,5 +87,9 @@ public class labelValidate {
             flag = true;
         }
         return flag;
+    }
+
+    public static boolean checkEmptyLogin(PasswordField txtPassword, String không_bỏ_trông_mật_khẩu) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

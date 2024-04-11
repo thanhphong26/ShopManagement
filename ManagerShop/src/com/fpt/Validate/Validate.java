@@ -44,6 +44,14 @@ public class Validate {
         }
         return true;
     }
+    
+    public static boolean checkEmptyLogin(JTextField txtString, String mess) {
+        if (txtString.getText().trim().isEmpty()) {
+            MsgBox.labelAlertLogin(txtString, mess);
+            return false;
+        }
+        return true;
+    }
 
     public static boolean checkLength(JLabel component, JTextField txtString, String mess, int numberLength) {
         if (txtString.getText().length() < numberLength || txtString.getText().length() > numberLength) {
