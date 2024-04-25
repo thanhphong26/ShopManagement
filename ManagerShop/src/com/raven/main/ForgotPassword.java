@@ -42,12 +42,14 @@ public class ForgotPassword extends javax.swing.JPanel {
         try {
             Random rand = new Random();
             randomCode = rand.nextInt(999999);
+            System.out.println(randomCode);
+            
             String host = "smtp.gmail.com";
             String user = "sportshopadidis@gmail.com";
             String pass = "wohfmpdkkvggjyqh";
             String to = txtEmail.getText();
-            String subject = "Reseting Code";
-            String message = "Your reset code is " + randomCode;
+            String subject = "Xác nhận Email Adidis";
+            String message = "Mã xác nhận của bạn là: " + randomCode;
             boolean sessionDebug = false;
             Properties pros = System.getProperties();
             pros.put("mail.smtp.starttls.enable", "true");
@@ -94,18 +96,16 @@ public class ForgotPassword extends javax.swing.JPanel {
         btnSend = new com.raven.suportSwing.MyButton();
         txtEmail = new com.raven.suportSwing.TextField();
         lblEmail = new javax.swing.JLabel();
-        lblPass = new javax.swing.JLabel();
-        lblVerify = new javax.swing.JLabel();
-        lblVerifyPass = new javax.swing.JLabel();
         lblUserName = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setOpaque(false);
 
         btnSend.setText("Gửi");
-        btnSend.setBorderColor(new java.awt.Color(51, 153, 255));
-        btnSend.setColorClick(new java.awt.Color(255, 102, 204));
-        btnSend.setColorOver(new java.awt.Color(51, 153, 255));
+        btnSend.setBorderColor(new java.awt.Color(61, 97, 133));
+        btnSend.setBorderPainted(false);
+        btnSend.setColorClick(new java.awt.Color(189, 231, 255));
+        btnSend.setColorOver(new java.awt.Color(61, 97, 133));
         btnSend.setFont(new java.awt.Font("Saira ExtraCondensed SemiBold", 0, 20)); // NOI18N
         btnSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,20 +126,11 @@ public class ForgotPassword extends javax.swing.JPanel {
             }
         });
 
-        lblEmail.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
+        lblEmail.setFont(new java.awt.Font("Saira ExtraCondensed Medium", 2, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 0, 51));
 
-        lblPass.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
-        lblPass.setForeground(new java.awt.Color(255, 0, 51));
-
-        lblVerify.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
-        lblVerify.setForeground(new java.awt.Color(255, 0, 51));
-
-        lblVerifyPass.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
-        lblVerifyPass.setForeground(new java.awt.Color(255, 0, 51));
-
         lblUserName.setFont(new java.awt.Font("Saira ExtraCondensed ExtraBold", 0, 20)); // NOI18N
-        lblUserName.setForeground(new java.awt.Color(25, 116, 211));
+        lblUserName.setForeground(new java.awt.Color(61, 97, 133));
         lblUserName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblUserName.setText("Nhập email khôi phục");
 
@@ -148,47 +139,26 @@ public class ForgotPassword extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(357, 357, 357)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblVerifyPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblVerify, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(25, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblUserName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnSend, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 14, Short.MAX_VALUE))))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblUserName)
+                    .addComponent(lblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSend, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(31, 31, 31)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSend, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblVerify, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblVerifyPass)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(btnSend, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -224,6 +194,7 @@ public class ForgotPassword extends javax.swing.JPanel {
                 }
             }
         }
+        lblEmail.setText("Email không đúng!!");
         return false;
     }
     private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
@@ -235,10 +206,7 @@ public class ForgotPassword extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.suportSwing.MyButton btnSend;
     private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblUserName;
-    private javax.swing.JLabel lblVerify;
-    private javax.swing.JLabel lblVerifyPass;
     private com.raven.suportSwing.TextField txtEmail;
     // End of variables declaration//GEN-END:variables
 }

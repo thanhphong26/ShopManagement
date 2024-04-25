@@ -42,8 +42,8 @@ public class MsgBox {
         lbl.setText(message);
     }
     
-    public static void labelAlertLogin(JTextField txtField, String message) {
-        txtField.setText(message);
+    public static void labelAlertLogin(JLabel lbl, String message) {
+        lbl.setText(message);
     }
 
     public static void labelAlertTextArea(JLabel lbl, JTextArea txtString, String mess) {

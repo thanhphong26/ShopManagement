@@ -45,9 +45,9 @@ public class Validate {
         return true;
     }
     
-    public static boolean checkEmptyLogin(JTextField txtString, String mess) {
+    public static boolean checkEmptyLogin(JTextField txtString, String mess, JLabel lblAlert) {
         if (txtString.getText().trim().isEmpty()) {
-            MsgBox.labelAlertLogin(txtString, mess);
+            MsgBox.labelAlertLogin(lblAlert, mess);
             return false;
         }
         return true;

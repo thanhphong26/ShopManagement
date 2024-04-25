@@ -24,25 +24,19 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="txtVerify" alignment="1" min="-2" pref="379" max="-2" attributes="0"/>
-                  <Component id="btnVerify" alignment="1" min="-2" pref="379" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               <Component id="lblUserName" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-              <Component id="lblBell" min="-2" pref="38" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lblTime" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="lblVerify" alignment="1" min="-2" pref="379" max="-2" attributes="0"/>
+                  <Component id="txtVerify" alignment="1" min="-2" pref="379" max="-2" attributes="0"/>
+                  <Component id="btnVerify" alignment="1" min="-2" pref="379" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,16 +45,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Component id="lblUserName" min="-2" pref="23" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="lblTime" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblBell" min="-2" pref="39" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Component id="txtVerify" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <Component id="lblVerify" min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="btnVerify" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="125" max="32767" attributes="0"/>
+              <EmptySpace pref="97" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -77,35 +68,17 @@
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtVerifyFocusGained"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblBell">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/raven/icon/notification_1.png"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblTime">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Saira ExtraCondensed ExtraBold" size="24" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
-    </Component>
     <Component class="com.raven.suportSwing.MyButton" name="btnVerify">
       <Properties>
         <Property name="text" type="java.lang.String" value="X&#xe1;c minh"/>
         <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="33" type="rgb"/>
+          <Color blue="85" green="61" red="3d" type="rgb"/>
         </Property>
         <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="66" red="ff" type="rgb"/>
+          <Color blue="ff" green="e7" red="bd" type="rgb"/>
         </Property>
         <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="33" type="rgb"/>
+          <Color blue="85" green="61" red="3d" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Saira ExtraCondensed SemiBold" size="20" style="0"/>
@@ -134,6 +107,16 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="M&#xe3; x&#xe1;c minh &#x111;&#xe3; &#x111;&#x1b0;&#x1ee3;c g&#x1eed;i t&#x1edb;i email c&#x1ee7;a b&#x1ea1;n!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblVerify">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Saira ExtraCondensed Medium" size="18" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="0" red="ff" type="rgb"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

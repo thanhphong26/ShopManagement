@@ -59,12 +59,12 @@
         <Component class="javax.swing.JLabel" name="JImage2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/raven/icon/SPORTSHOP.png"/>
+              <Image iconType="3" name="/com/raven/icon/SPORT SHOP (2).png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="790" y="130" width="350" height="100"/>
+              <AbsoluteConstraints x="660" y="40" width="540" height="280"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -76,7 +76,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="740" y="250" width="400" height="430"/>
+              <AbsoluteConstraints x="740" y="250" width="400" height="410"/>
             </Constraint>
           </Constraints>
 
@@ -88,7 +88,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="430" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="410" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -96,24 +96,24 @@
         <Component class="javax.swing.JLabel" name="JImage1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/raven/icon/nen.png"/>
+              <Image iconType="3" name="/com/raven/icon/Thi&#x1ebf;t k&#x1ebf; ch&#x1b0;a c&#xf3; t&#xea;n (3).png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="590" y="-30" width="600" height="850"/>
+              <AbsoluteConstraints x="360" y="30" width="1160" height="720"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="JImage">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/raven/icon/running.jpg"/>
+              <Image iconType="3" name="/com/raven/icon/batminton.jpg"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-40" y="0" width="890" height="770"/>
+              <AbsoluteConstraints x="-40" y="0" width="1230" height="770"/>
             </Constraint>
           </Constraints>
         </Component>

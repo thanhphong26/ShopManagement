@@ -149,9 +149,9 @@ public class Login_main extends javax.swing.JFrame {
         panelGradiente2.setColorPrimario(new java.awt.Color(146, 233, 251));
         panelGradiente2.setColorSecundario(new java.awt.Color(12, 137, 163));
 
-        JImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/SPORTSHOP.png"))); // NOI18N
+        JImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/SPORT SHOP (2).png"))); // NOI18N
         panelGradiente2.add(JImage2);
-        JImage2.setBounds(790, 130, 350, 100);
+        JImage2.setBounds(660, 40, 540, 280);
 
         slide.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -163,19 +163,19 @@ public class Login_main extends javax.swing.JFrame {
         );
         slideLayout.setVerticalGroup(
             slideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 410, Short.MAX_VALUE)
         );
 
         panelGradiente2.add(slide);
-        slide.setBounds(740, 250, 400, 430);
+        slide.setBounds(740, 250, 400, 410);
 
-        JImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/nen.png"))); // NOI18N
+        JImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/Thiết kế chưa có tên (3).png"))); // NOI18N
         panelGradiente2.add(JImage1);
-        JImage1.setBounds(590, -30, 600, 850);
+        JImage1.setBounds(360, 30, 1160, 720);
 
-        JImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/running.jpg"))); // NOI18N
+        JImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/batminton.jpg"))); // NOI18N
         panelGradiente2.add(JImage);
-        JImage.setBounds(-40, 0, 890, 770);
+        JImage.setBounds(-40, 0, 1230, 770);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

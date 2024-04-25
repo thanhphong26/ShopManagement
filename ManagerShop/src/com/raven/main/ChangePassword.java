@@ -5,6 +5,7 @@
 package com.raven.main;
 
 import com.fpt.DAO.EmpolyeeDao;
+import com.fpt.Validate.Validate;
 import com.fpt.Validate.labelValidate;
 import com.fpt.entity.Empolyee;
 import com.fpt.utils.MsgBox;
@@ -39,6 +40,7 @@ public class ChangePassword extends javax.swing.JPanel {
         lblPass = new javax.swing.JLabel();
         lblVerifyPass = new javax.swing.JLabel();
         lblUserName = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -90,20 +92,12 @@ public class ChangePassword extends javax.swing.JPanel {
         lblUserName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblUserName.setText("Đặt lại mật khẩu");
 
+        lblPassword.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(lblPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblVerifyPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -116,6 +110,19 @@ public class ChangePassword extends javax.swing.JPanel {
                             .addComponent(txtVerifyPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(lblPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblVerifyPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(84, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +139,9 @@ public class ChangePassword extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblVerifyPass, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lblPassword)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -162,7 +171,7 @@ public class ChangePassword extends javax.swing.JPanel {
     EmpolyeeDao emDao = new EmpolyeeDao();
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
-        if (labelValidate.checkEmptyLogin(txtPassword, "Không bỏ trông mật khẩu") == false) {
+        if (Validate.checkEmptyLogin(txtPassword, "Không bỏ trông mật khẩu", lblPassword) == false) {
             return;
         } else if (new String(txtPassword.getPassword()).equals(new String(txtVerifyPassword.getPassword()))) {
             Empolyee em = getForm();
@@ -188,6 +197,7 @@ public class ChangePassword extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.suportSwing.MyButton btnReset;
     private javax.swing.JLabel lblPass;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel lblVerifyPass;
     private com.raven.suportSwing.PasswordField txtPassword;
