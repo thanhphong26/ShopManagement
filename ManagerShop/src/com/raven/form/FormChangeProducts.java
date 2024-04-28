@@ -285,6 +285,11 @@ public class FormChangeProducts extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         txtShearchInvoice.setLabelText("Tìm kiếm hóa đơn");
+        txtShearchInvoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtShearchInvoiceActionPerformed(evt);
+            }
+        });
         txtShearchInvoice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtShearchInvoiceKeyReleased(evt);
@@ -461,7 +466,7 @@ public class FormChangeProducts extends javax.swing.JPanel {
                         .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55))
                     .addComponent(scrollBarCustom2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -659,6 +664,10 @@ public class FormChangeProducts extends javax.swing.JPanel {
             MsgBox.labelAlert(lblSearch, txtShearchInvoice, "Vui lòng nhập lại -.-");
         }
     }//GEN-LAST:event_txtShearchInvoiceKeyReleased
+
+    private void txtShearchInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtShearchInvoiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtShearchInvoiceActionPerformed
 
     public void delete() {
         DefaultTableModel model = (DefaultTableModel) tableListProduct.getModel();
