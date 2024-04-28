@@ -1,6 +1,6 @@
 package com.raven.component;
 
-import com.fpt.utils.Auth;
+import com.sportshop.utils.Auth;
 import java.awt.event.ActionListener;
 
 public class Header extends javax.swing.JPanel {

@@ -5,10 +5,10 @@
  */
 package com.raven.main;
 
-import com.fpt.DAO.EmpolyeeDao;
-import com.fpt.Validate.labelValidate;
-import com.fpt.entity.Empolyee;
-import com.fpt.utils.MsgBox;
+import com.sportshop.DAO.EmpolyeeDao;
+import com.sportshop.Validate.labelValidate;
+import com.sportshop.entity.Empolyee;
+import com.sportshop.utils.MsgBox;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Properties;

@@ -5,11 +5,11 @@
  */
 package com.raven.form;
 
-import com.fpt.DAO.AccountDao;
-import com.fpt.Validate.Validate;
-import com.fpt.entity.Account;
-import com.fpt.utils.Auth;
-import com.fpt.utils.MsgBox;
+import com.sportshop.DAO.AccountDao;
+import com.sportshop.Validate.Validate;
+import com.sportshop.entity.Account;
+import com.sportshop.utils.Auth;
+import com.sportshop.utils.MsgBox;
 
 /**
  *

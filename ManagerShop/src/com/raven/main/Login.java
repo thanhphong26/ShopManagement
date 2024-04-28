@@ -5,14 +5,14 @@
  */
 package com.raven.main;
 
-import com.fpt.DAO.AccountDao;
-import com.fpt.DAO.UserDAO;
-import com.fpt.Validate.Validate;
-import com.fpt.entity.Account;
-import com.fpt.entity.User;
-import com.fpt.utils.Auth;
-import com.fpt.utils.MsgBox;
-import com.fpt.utils.XImage;
+import com.sportshop.DAO.AccountDao;
+import com.sportshop.DAO.UserDAO;
+import com.sportshop.Validate.Validate;
+import com.sportshop.entity.Account;
+import com.sportshop.entity.User;
+import com.sportshop.utils.Auth;
+import com.sportshop.utils.MsgBox;
+import com.sportshop.utils.XImage;
 import com.raven.dialog.Message;
 import java.awt.Color;
 import java.awt.Image;

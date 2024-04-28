@@ -1,8 +1,8 @@
 package com.raven.form;
 
-import com.fpt.DAO.CustomerDAO;
-import com.fpt.DAO.StatisticalDAO;
-import com.fpt.utils.XImage;
+import com.sportshop.DAO.CustomerDAO;
+import com.sportshop.DAO.StatisticalDAO;
+import com.sportshop.utils.XImage;
 import com.raven.dialog.Message;
 import com.raven.main.Main;
 import com.raven.model.ModelCard;

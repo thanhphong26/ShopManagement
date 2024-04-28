@@ -1,6 +1,6 @@
 package com.raven.form;
 
-import com.fpt.utils.XImage;
+import com.sportshop.utils.XImage;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import javax.swing.border.EmptyBorder;

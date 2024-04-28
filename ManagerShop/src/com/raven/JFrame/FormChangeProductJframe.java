@@ -4,9 +4,9 @@
  */
 package com.raven.JFrame;
 
-import com.fpt.DAO.ProductItemDAO;
-import com.fpt.entity.ProductItem;
-import com.fpt.utils.MsgBox;
+import com.sportshop.DAO.ProductItemDAO;
+import com.sportshop.entity.ProductItem;
+import com.sportshop.utils.MsgBox;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
