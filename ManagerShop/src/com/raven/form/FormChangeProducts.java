@@ -362,12 +362,13 @@ public class FormChangeProducts extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setText("Sản phẩm trả");
 
-        btnAddEmployee.setBackground(new java.awt.Color(25, 116, 211));
-        btnAddEmployee.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddEmployee.setForeground(new java.awt.Color(0, 122, 255));
         btnAddEmployee.setText("Đổi Hàng");
-        btnAddEmployee.setBorderColor(new java.awt.Color(255, 255, 255));
-        btnAddEmployee.setColor(new java.awt.Color(25, 116, 211));
-        btnAddEmployee.setRadius(10);
+        btnAddEmployee.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnAddEmployee.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddEmployee.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddEmployee.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddEmployee.setRadius(15);
         btnAddEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddEmployeeActionPerformed(evt);
@@ -437,7 +438,7 @@ public class FormChangeProducts extends javax.swing.JPanel {
                         .addContainerGap(20, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -470,7 +471,7 @@ public class FormChangeProducts extends javax.swing.JPanel {
                         .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55))
                     .addComponent(scrollBarCustom2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
 
