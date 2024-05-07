@@ -223,9 +223,10 @@ public class FormSupplier extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Nhà cung cấp");
 
+        txtSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtSearch.setLabelText("Tìm theo tên or mã");
         txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -236,7 +237,12 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
+        myButton2.setForeground(new java.awt.Color(0, 122, 255));
         myButton2.setText("Tìm");
+        myButton2.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton2.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton2.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton2.setRadius(20);
         myButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,7 +253,12 @@ public class FormSupplier extends javax.swing.JPanel {
         lblSearch.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblSearch.setForeground(new java.awt.Color(255, 51, 0));
 
+        myButton4.setForeground(new java.awt.Color(0, 122, 255));
         myButton4.setText("Xuất");
+        myButton4.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton4.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton4.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton4.setRadius(20);
         myButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,7 +266,12 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
+        myButton5.setForeground(new java.awt.Color(0, 122, 255));
         myButton5.setText("Import");
+        myButton5.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton5.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton5.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton5.setRadius(20);
         myButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,14 +289,14 @@ public class FormSupplier extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
                         .addGap(31, 31, 31)
-                        .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93)
-                        .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(141, 141, 141))
+                        .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(167, 167, 167))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -326,6 +342,7 @@ public class FormSupplier extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tableShow.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tableShow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableShowMouseClicked(evt);
@@ -366,6 +383,11 @@ public class FormSupplier extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Chi tiết nhà cung cấp", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
+        myButton3.setForeground(new java.awt.Color(0, 122, 255));
+        myButton3.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton3.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton3.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton3.setLabel("Xóa form");
         myButton3.setRadius(20);
         myButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -374,7 +396,12 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
+        btnAdd.setForeground(new java.awt.Color(0, 122, 255));
         btnAdd.setText("Thêm");
+        btnAdd.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnAdd.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAdd.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAdd.setRadius(20);
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,7 +409,12 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setForeground(new java.awt.Color(0, 122, 255));
         btnUpdate.setText("Cập Nhật");
+        btnUpdate.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnUpdate.setColorClick(new java.awt.Color(189, 231, 255));
+        btnUpdate.setColorOver(new java.awt.Color(189, 231, 255));
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnUpdate.setRadius(20);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,6 +422,7 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
+        txtPhoneNumber.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtPhoneNumber.setLabelText("SĐT");
         txtPhoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -402,6 +435,7 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
+        txtnameSupplier.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtnameSupplier.setLabelText("Tên NCC");
         txtnameSupplier.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -414,6 +448,7 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
+        txtAddress.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtAddress.setLabelText("Địa chỉ ");
         txtAddress.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -426,10 +461,10 @@ public class FormSupplier extends javax.swing.JPanel {
             }
         });
 
-        lblnameSupplier.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        lblnameSupplier.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         lblnameSupplier.setForeground(new java.awt.Color(255, 51, 0));
 
-        lblAddress.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         lblAddress.setForeground(new java.awt.Color(255, 51, 0));
 
         lblPhoneNumber.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
@@ -446,13 +481,13 @@ public class FormSupplier extends javax.swing.JPanel {
                     .addComponent(lblPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
+                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtnameSupplier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -479,12 +514,11 @@ public class FormSupplier extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(459, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(432, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -492,7 +526,7 @@ public class FormSupplier extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(1207, Short.MAX_VALUE)
+                .addContainerGap(1183, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

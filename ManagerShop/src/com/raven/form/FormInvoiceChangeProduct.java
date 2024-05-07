@@ -216,6 +216,7 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Hoá đơn đổi hàng");
 
+        txtSearchId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtSearchId.setLabelText("Tìm theo hoá đơn đổi hàng");
         txtSearchId.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -223,26 +224,42 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
             }
         });
 
+        btnSearch.setForeground(new java.awt.Color(0, 122, 255));
         btnSearch.setText("Tìm kiếm");
-        btnSearch.setRadius(20);
+        btnSearch.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnSearch.setColorClick(new java.awt.Color(189, 231, 255));
+        btnSearch.setColorOver(new java.awt.Color(189, 231, 255));
+        btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSearch.setRadius(15);
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
 
+        btnSearch2.setForeground(new java.awt.Color(0, 122, 255));
         btnSearch2.setText("Xuất");
-        btnSearch2.setRadius(20);
+        btnSearch2.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnSearch2.setColorClick(new java.awt.Color(189, 231, 255));
+        btnSearch2.setColorOver(new java.awt.Color(189, 231, 255));
+        btnSearch2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSearch2.setRadius(15);
         btnSearch2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearch2ActionPerformed(evt);
             }
         });
 
+        txtDate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtDate.setLabelText("Thời gian");
 
+        btnFillDate.setForeground(new java.awt.Color(0, 122, 255));
         btnFillDate.setText("Lọc");
-        btnFillDate.setRadius(20);
+        btnFillDate.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnFillDate.setColorClick(new java.awt.Color(189, 231, 255));
+        btnFillDate.setColorOver(new java.awt.Color(189, 231, 255));
+        btnFillDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnFillDate.setRadius(15);
         btnFillDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFillDateActionPerformed(evt);
@@ -265,6 +282,7 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tableShow.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tableShow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableShowMouseClicked(evt);
@@ -272,14 +290,20 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableShow);
 
+        btnReset.setForeground(new java.awt.Color(0, 122, 255));
         btnReset.setText("Reset");
-        btnReset.setRadius(20);
+        btnReset.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnReset.setColorClick(new java.awt.Color(189, 231, 255));
+        btnReset.setColorOver(new java.awt.Color(189, 231, 255));
+        btnReset.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnReset.setRadius(15);
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
             }
         });
 
+        lblSearchId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblSearchId.setForeground(new java.awt.Color(225, 0, 0));
         lblSearchId.setText("jLabel1");
 
@@ -322,6 +346,7 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
             }
         });
 
+        lblCount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblCount.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -334,10 +359,6 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnFillDate, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnFirst)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnBack)
@@ -348,23 +369,29 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLast))
                             .addComponent(lblCount, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnFillDate, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(txtDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1154, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1008, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
-                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 990, Short.MAX_VALUE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                                .addComponent(btnSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
                 .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13))
         );
@@ -387,19 +414,20 @@ public class FormInvoiceChangeProduct extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
                                 .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnFillDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(92, 92, 92)
+                                .addGap(42, 42, 42)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnBack)
                                     .addComponent(cbbPagination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnNext)
                                     .addComponent(btnLast)
                                     .addComponent(btnFirst))
-                                .addGap(34, 34, 34)
+                                .addGap(18, 18, 18)
                                 .addComponent(lblCount))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

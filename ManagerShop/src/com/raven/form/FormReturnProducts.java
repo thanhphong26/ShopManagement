@@ -298,7 +298,7 @@ public class FormReturnProducts extends javax.swing.JPanel {
         jLabel1.setText("Trả Hàng");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách sản phẩm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách sản phẩm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
 
         jScrollPane2.setVerticalScrollBar(scrollBarCustom2);
 
@@ -318,35 +318,42 @@ public class FormReturnProducts extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tableListProduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jScrollPane2.setViewportView(tableListProduct);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Khách hàng");
 
         lblIDCustomer.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblIDCustomer.setForeground(new java.awt.Color(255, 51, 51));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setText("Mã Hoá đơn");
 
         lblIDInvoice.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblIDInvoice.setForeground(new java.awt.Color(255, 51, 51));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Ghi Chú");
 
         txtNote.setColumns(20);
+        txtNote.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtNote.setRows(5);
         jScrollPane3.setViewportView(txtNote);
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Tiền hoàn trả");
 
         lblMoneyRetun.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblMoneyRetun.setForeground(new java.awt.Color(255, 0, 0));
         lblMoneyRetun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        btnAddEmployee.setForeground(new java.awt.Color(0, 122, 255));
         btnAddEmployee.setText("Trả hàng");
+        btnAddEmployee.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnAddEmployee.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddEmployee.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddEmployee.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAddEmployee.setRadius(10);
         btnAddEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -354,7 +361,12 @@ public class FormReturnProducts extends javax.swing.JPanel {
             }
         });
 
+        btnAddEmployee1.setForeground(new java.awt.Color(0, 122, 255));
         btnAddEmployee1.setText("Xoá");
+        btnAddEmployee1.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnAddEmployee1.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddEmployee1.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddEmployee1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAddEmployee1.setRadius(10);
         btnAddEmployee1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,14 +379,14 @@ public class FormReturnProducts extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnAddEmployee1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)))
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(635, 635, 635)
+                        .addComponent(btnAddEmployee1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrollBarCustom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -383,9 +395,6 @@ public class FormReturnProducts extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(lblIDCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(96, 96, 96))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -401,7 +410,10 @@ public class FormReturnProducts extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(lblIDInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(lblMoneyRetun, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblMoneyRetun, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -438,7 +450,7 @@ public class FormReturnProducts extends javax.swing.JPanel {
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin hoá đơn", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin hoá đơn", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
 
         jScrollPane1.setVerticalScrollBar(scrollBarCustom1);
 
@@ -458,6 +470,7 @@ public class FormReturnProducts extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tableIn4Invoice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tableIn4Invoice.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableIn4InvoiceMouseClicked(evt);
@@ -490,7 +503,7 @@ public class FormReturnProducts extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(scrollBarCustom1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                .addComponent(scrollBarCustom1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -499,6 +512,7 @@ public class FormReturnProducts extends javax.swing.JPanel {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        txtShearchInvoice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtShearchInvoice.setLabelText("Tìm kiếm hoá đơn");
         txtShearchInvoice.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -514,7 +528,7 @@ public class FormReturnProducts extends javax.swing.JPanel {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Tìm kiếm:");
 
         lblSearch.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
