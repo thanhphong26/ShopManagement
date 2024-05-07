@@ -216,7 +216,9 @@ public class FormChangeProducts extends javax.swing.JPanel {
         for (int i = 0; i < listDetailsChangeProducts.size(); i++) {
             detailsChangeProductDAO.insert(listDetailsChangeProducts.get(i));
         }
-        MsgBox.alert(this, "Thêm thành công!!!");
+        MsgBox.alert(this, "Đổi hàng thành công!!!");
+        tableIn4Invoice.removeAll();
+        
     }
 
     public boolean checkChange() {
