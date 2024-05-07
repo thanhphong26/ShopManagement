@@ -55,11 +55,6 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnFillDate" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnReset" min="-2" pref="64" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="btnFirst" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnBack" min="-2" max="-2" attributes="0"/>
@@ -71,9 +66,16 @@
                                   <Component id="btnLast" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="lblCount" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="txtDate" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btnFillDate" min="-2" pref="114" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnReset" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtDate" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="28" max="32767" attributes="0"/>
+                          <EmptySpace pref="36" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="1154" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -81,20 +83,21 @@
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtSearchId" min="-2" pref="377" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                  <Component id="btnSearch" min="-2" pref="84" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnSearch2" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="lblSearchId" min="-2" pref="263" max="-2" attributes="0"/>
+                                  <EmptySpace pref="1008" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblSearchId" min="-2" pref="263" max="-2" attributes="0"/>
-                                  <EmptySpace pref="990" max="32767" attributes="0"/>
+                                  <Component id="txtSearchId" min="-2" pref="377" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="btnSearch" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnSearch2" min="-2" pref="131" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="5" max="32767" attributes="0"/>
+                  <EmptySpace pref="3" max="32767" attributes="0"/>
                   <Component id="scrollBarCustom1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               </Group>
@@ -121,13 +124,14 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="txtDate" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnFillDate" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cbbPagination" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -135,7 +139,7 @@
                                       <Component id="btnLast" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnFirst" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblCount" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane1" alignment="0" min="-2" pref="769" max="-2" attributes="0"/>
@@ -158,6 +162,9 @@
         </Component>
         <Component class="com.raven.suportSwing.TextField" name="txtSearchId">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
             <Property name="labelText" type="java.lang.String" value="T&#xec;m theo ho&#xe1; &#x111;&#x1a1;n &#x111;&#x1ed5;i h&#xe0;ng"/>
           </Properties>
           <Events>
@@ -166,8 +173,23 @@
         </Component>
         <Component class="com.raven.suportSwing.MyButton" name="btnSearch">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="7a" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
-            <Property name="radius" type="int" value="20"/>
+            <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="radius" type="int" value="15"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
@@ -175,8 +197,23 @@
         </Component>
         <Component class="com.raven.suportSwing.MyButton" name="btnSearch2">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="7a" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t"/>
-            <Property name="radius" type="int" value="20"/>
+            <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="radius" type="int" value="15"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearch2ActionPerformed"/>
@@ -184,13 +221,31 @@
         </Component>
         <Component class="com.raven.suportSwing.TextField" name="txtDate">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
             <Property name="labelText" type="java.lang.String" value="Th&#x1edd;i gian"/>
           </Properties>
         </Component>
         <Component class="com.raven.suportSwing.MyButton" name="btnFillDate">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="7a" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="L&#x1ecd;c"/>
-            <Property name="radius" type="int" value="20"/>
+            <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="radius" type="int" value="15"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFillDateActionPerformed"/>
@@ -255,6 +310,9 @@
                     </Column>
                   </TableColumnModel>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="0"/>
+                </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
@@ -267,8 +325,23 @@
         </Container>
         <Component class="com.raven.suportSwing.MyButton" name="btnReset">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="7a" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Reset"/>
-            <Property name="radius" type="int" value="20"/>
+            <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="e7" red="bd" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="radius" type="int" value="15"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
@@ -276,6 +349,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblSearchId">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="0"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="e1" type="rgb"/>
             </Property>
@@ -340,6 +416,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblCount">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
         </Component>

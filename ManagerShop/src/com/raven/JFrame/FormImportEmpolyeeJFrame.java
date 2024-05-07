@@ -474,6 +474,10 @@ public class FormImportEmpolyeeJFrame extends javax.swing.JFrame {
 
         btnClear1.setForeground(new java.awt.Color(0, 122, 255));
         btnClear1.setText("Huỷ");
+        btnClear1.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnClear1.setColorClick(new java.awt.Color(189, 231, 255));
+        btnClear1.setColorOver(new java.awt.Color(189, 231, 255));
+        btnClear1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnClear1.setRadius(10);
         btnClear1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

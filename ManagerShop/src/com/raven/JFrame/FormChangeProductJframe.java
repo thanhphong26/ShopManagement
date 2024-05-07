@@ -185,6 +185,7 @@ public class FormChangeProductJframe extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tableListProduct.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableListProduct.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tableListProduct.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -202,22 +203,32 @@ public class FormChangeProductJframe extends javax.swing.JFrame {
             tableListProduct.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Tổng tiền trả");
 
         lbllTotalMoney.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lbllTotalMoney.setForeground(new java.awt.Color(255, 51, 51));
 
+        btnAdd.setForeground(new java.awt.Color(0, 122, 255));
         btnAdd.setText("Hoàn thành");
-        btnAdd.setRadius(20);
+        btnAdd.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnAdd.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAdd.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAdd.setRadius(15);
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
+        btnDelete.setForeground(new java.awt.Color(0, 122, 255));
         btnDelete.setText("Xóa");
-        btnDelete.setRadius(20);
+        btnDelete.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnDelete.setColorClick(new java.awt.Color(189, 231, 255));
+        btnDelete.setColorOver(new java.awt.Color(189, 231, 255));
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDelete.setRadius(15);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -240,6 +251,7 @@ public class FormChangeProductJframe extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tableShow.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableShow.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tableShow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -295,9 +307,9 @@ public class FormChangeProductJframe extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(lbllTotalMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbllTotalMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
