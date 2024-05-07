@@ -310,16 +310,26 @@ public class FormImportEmployee extends javax.swing.JPanel {
             }
         });
 
+        myButton1.setForeground(new java.awt.Color(0, 122, 255));
         myButton1.setText("Thêm ");
-        myButton1.setRadius(10);
+        myButton1.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton1.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton1.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton1.setRadius(15);
         myButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton1ActionPerformed(evt);
             }
         });
 
+        myButton2.setForeground(new java.awt.Color(0, 122, 255));
         myButton2.setText("Làm mới");
-        myButton2.setRadius(10);
+        myButton2.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton2.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton2.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton2.setRadius(15);
         myButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton2ActionPerformed(evt);
@@ -383,12 +393,7 @@ public class FormImportEmployee extends javax.swing.JPanel {
                             .addGap(47, 47, 47)
                             .addComponent(rdoFeMale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel3)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(143, 143, 143)
-                            .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                            .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                         .addComponent(lblPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtPassWord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -396,8 +401,13 @@ public class FormImportEmployee extends javax.swing.JPanel {
                         .addComponent(rdoEmpolyee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47)
                         .addComponent(rdoManage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4))
-                .addContainerGap(59, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

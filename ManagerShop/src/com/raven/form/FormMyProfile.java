@@ -136,7 +136,7 @@ public class FormMyProfile extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("THÔNG TIN CÁ NHÂN");
 
         txtCode.setLabelText("Mã Nhân Viên");
@@ -165,8 +165,13 @@ public class FormMyProfile extends javax.swing.JPanel {
 
         jLabel3.setText("Địa chỉ");
 
+        btnAddEmployee.setForeground(new java.awt.Color(0, 122, 255));
         btnAddEmployee.setText("Sửa");
-        btnAddEmployee.setRadius(10);
+        btnAddEmployee.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnAddEmployee.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddEmployee.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddEmployee.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddEmployee.setRadius(15);
         btnAddEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddEmployeeActionPerformed(evt);
@@ -262,7 +267,7 @@ public class FormMyProfile extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

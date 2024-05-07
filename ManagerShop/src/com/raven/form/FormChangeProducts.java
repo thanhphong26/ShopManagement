@@ -362,7 +362,11 @@ public class FormChangeProducts extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setText("Sản phẩm trả");
 
+        btnAddEmployee.setBackground(new java.awt.Color(25, 116, 211));
+        btnAddEmployee.setForeground(new java.awt.Color(255, 255, 255));
         btnAddEmployee.setText("Đổi Hàng");
+        btnAddEmployee.setBorderColor(new java.awt.Color(255, 255, 255));
+        btnAddEmployee.setColor(new java.awt.Color(25, 116, 211));
         btnAddEmployee.setRadius(10);
         btnAddEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -531,23 +535,6 @@ public class FormChangeProducts extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tableListProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListProductMouseClicked
-        int row = tableListProduct.getSelectedRow();
-        int id = (int) tableListProduct.getValueAt(row, 0);
-
-    }//GEN-LAST:event_tableListProductMouseClicked
-
-    private void btnAddEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmployeeActionPerformed
-        insertInvoiceChange();
-        model.setRowCount(0);
-        modelList.setRowCount(0);
-        lblSearch.setText("");
-        lblIDCustomer.setText("");
-        lblIDInvoice.setText("");
-        txtNote.setText("");
-        txtShearchInvoice.setText("");
-    }//GEN-LAST:event_btnAddEmployeeActionPerformed
-
     private void tableIn4InvoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableIn4InvoiceMouseClicked
         // TODO add your handling code here:
 
@@ -668,6 +655,22 @@ public class FormChangeProducts extends javax.swing.JPanel {
     private void txtShearchInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtShearchInvoiceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtShearchInvoiceActionPerformed
+
+    private void tableListProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListProductMouseClicked
+        int row = tableListProduct.getSelectedRow();
+        int id = (int) tableListProduct.getValueAt(row, 0);
+    }//GEN-LAST:event_tableListProductMouseClicked
+
+    private void btnAddEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmployeeActionPerformed
+        insertInvoiceChange();
+        model.setRowCount(0);
+        modelList.setRowCount(0);
+        lblSearch.setText("");
+        lblIDCustomer.setText("");
+        lblIDInvoice.setText("");
+        txtNote.setText("");
+        txtShearchInvoice.setText("");
+    }//GEN-LAST:event_btnAddEmployeeActionPerformed
 
     public void delete() {
         DefaultTableModel model = (DefaultTableModel) tableListProduct.getModel();

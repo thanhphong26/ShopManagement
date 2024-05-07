@@ -123,6 +123,7 @@ public class Menu extends javax.swing.JPanel {
         sp.setBorder(null);
         sp.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
+        panel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         panel.setOpaque(false);
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
@@ -162,9 +163,9 @@ public class Menu extends javax.swing.JPanel {
         int width = getWidth();
         int height = getHeight();
 
-        Color startColor = new Color(102,168,234); 
+        Color startColor = new Color(23,55,128); 
 
-        Color endColor = new Color(69,111,153); 
+        Color endColor = new Color(23,55,128); 
 
         GradientPaint gradientPaint = new GradientPaint(
                 0, 0, endColor,

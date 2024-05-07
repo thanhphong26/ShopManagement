@@ -144,7 +144,6 @@ public class FormListEmpolyee extends javax.swing.JPanel {
         myButton8 = new com.raven.suportSwing.MyButton();
         txtSearch = new com.raven.suportSwing.TextField();
         lblSearch = new javax.swing.JLabel();
-        myButton7 = new com.raven.suportSwing.MyButton();
         cbbStatus = new com.raven.suportSwing.Combobox();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableShow = new com.raven.suportSwing.TableColumn();
@@ -154,10 +153,15 @@ public class FormListEmpolyee extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Nhân Viên");
 
+        myButton5.setForeground(new java.awt.Color(0, 122, 255));
         myButton5.setText("Tìm");
+        myButton5.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton5.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton5.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton5.setRadius(20);
         myButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,15 +169,25 @@ public class FormListEmpolyee extends javax.swing.JPanel {
             }
         });
 
+        myButton6.setForeground(new java.awt.Color(0, 122, 255));
         myButton6.setText("Thêm Nhân Viên");
-        myButton6.setRadius(20);
+        myButton6.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton6.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton6.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton6.setRadius(15);
         myButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton6ActionPerformed(evt);
             }
         });
 
+        myButton8.setForeground(new java.awt.Color(0, 122, 255));
         myButton8.setText("Xóa Nhân Viên");
+        myButton8.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton8.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton8.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton8.setRadius(20);
         myButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,14 +210,6 @@ public class FormListEmpolyee extends javax.swing.JPanel {
         lblSearch.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblSearch.setForeground(new java.awt.Color(255, 51, 0));
 
-        myButton7.setText("Xuất");
-        myButton7.setRadius(20);
-        myButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton7ActionPerformed(evt);
-            }
-        });
-
         cbbStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Đang làm việc", "Nghỉ làm" }));
         cbbStatus.setLabeText("Tình trạng");
         cbbStatus.addActionListener(new java.awt.event.ActionListener() {
@@ -224,19 +230,15 @@ public class FormListEmpolyee extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52)
-                        .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
+                        .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
                         .addComponent(cbbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                        .addComponent(myButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(myButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(myButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(myButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(myButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(125, 125, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,9 +250,8 @@ public class FormListEmpolyee extends javax.swing.JPanel {
                     .addComponent(myButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(myButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(myButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -306,12 +307,11 @@ public class FormListEmpolyee extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGap(139, 139, 139)
                         .addComponent(scrollBarCustom1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
@@ -385,14 +385,6 @@ public class FormListEmpolyee extends javax.swing.JPanel {
         Excel.outExcel((DefaultTableModel) tableShow.getModel());
         MsgBox.alert(this, "Xuất file thành công");
     }
-    private void myButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton7ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelEmpolyee();
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event_myButton7ActionPerformed
-
     private void cbbStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbStatusActionPerformed
         // TODO add your handling code here:
         if (cbbStatus.getSelectedIndex() == 0) {
@@ -411,7 +403,6 @@ public class FormListEmpolyee extends javax.swing.JPanel {
     private javax.swing.JLabel lblSearch;
     private com.raven.suportSwing.MyButton myButton5;
     private com.raven.suportSwing.MyButton myButton6;
-    private com.raven.suportSwing.MyButton myButton7;
     private com.raven.suportSwing.MyButton myButton8;
     private com.raven.suportSwing.ScrollBarCustom scrollBarCustom1;
     private com.raven.suportSwing.TableColumn tableShow;

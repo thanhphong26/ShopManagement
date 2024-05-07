@@ -108,8 +108,13 @@ public class FormChangePassword extends javax.swing.JPanel {
             }
         });
 
+        myButton1.setForeground(new java.awt.Color(0, 122, 255));
         myButton1.setText("Đổi mật khẩu");
-        myButton1.setRadius(10);
+        myButton1.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton1.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton1.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton1.setRadius(15);
         myButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton1ActionPerformed(evt);
@@ -163,7 +168,7 @@ public class FormChangePassword extends javax.swing.JPanel {
                     .addComponent(lblVerifyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(595, Short.MAX_VALUE))
+                .addContainerGap(586, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
