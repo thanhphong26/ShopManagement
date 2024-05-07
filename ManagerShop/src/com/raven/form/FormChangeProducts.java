@@ -5,23 +5,23 @@
  */
 package com.raven.form;
 
-import com.fpt.DAO.DetailInvoiceSellDAO;
-import com.fpt.DAO.DetailsChangeProductDAO;
-import com.fpt.DAO.DetailsInvoiceChangeDAO;
-import com.fpt.DAO.InvoiceChangeDAO;
-import com.fpt.DAO.InvoiceSellDAO;
-import com.fpt.DAO.ProductItemDAO;
-import com.fpt.DAO.ReturnProductDAO;
-import com.fpt.entity.DetailInvoiceSell;
-import com.fpt.entity.DetailsChangeProducts;
-import com.fpt.entity.DetailsInvoiceChange;
-import com.fpt.entity.InvoiceChange;
-import com.fpt.entity.InvoiceRetuns;
-import com.fpt.entity.InvoiceSell;
-import com.fpt.entity.ProductItem;
-import com.fpt.utils.Auth;
-import com.fpt.utils.MsgBox;
-import com.fpt.utils.XDate;
+import com.sportshop.DAO.DetailInvoiceSellDAO;
+import com.sportshop.DAO.DetailsChangeProductDAO;
+import com.sportshop.DAO.DetailsInvoiceChangeDAO;
+import com.sportshop.DAO.InvoiceChangeDAO;
+import com.sportshop.DAO.InvoiceSellDAO;
+import com.sportshop.DAO.ProductItemDAO;
+import com.sportshop.DAO.ReturnProductDAO;
+import com.sportshop.entity.DetailInvoiceSell;
+import com.sportshop.entity.DetailsChangeProducts;
+import com.sportshop.entity.DetailsInvoiceChange;
+import com.sportshop.entity.InvoiceChange;
+import com.sportshop.entity.InvoiceRetuns;
+import com.sportshop.entity.InvoiceSell;
+import com.sportshop.entity.ProductItem;
+import com.sportshop.utils.Auth;
+import com.sportshop.utils.MsgBox;
+import com.sportshop.utils.XDate;
 //<<<<<<< HEAD
 //=======
 import com.raven.JFrame.FormChangeProductJframe;
@@ -285,6 +285,11 @@ public class FormChangeProducts extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         txtShearchInvoice.setLabelText("Tìm kiếm hóa đơn");
+        txtShearchInvoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtShearchInvoiceActionPerformed(evt);
+            }
+        });
         txtShearchInvoice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtShearchInvoiceKeyReleased(evt);
@@ -461,7 +466,7 @@ public class FormChangeProducts extends javax.swing.JPanel {
                         .addComponent(btnAddEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55))
                     .addComponent(scrollBarCustom2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -659,6 +664,10 @@ public class FormChangeProducts extends javax.swing.JPanel {
             MsgBox.labelAlert(lblSearch, txtShearchInvoice, "Vui lòng nhập lại -.-");
         }
     }//GEN-LAST:event_txtShearchInvoiceKeyReleased
+
+    private void txtShearchInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtShearchInvoiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtShearchInvoiceActionPerformed
 
     public void delete() {
         DefaultTableModel model = (DefaultTableModel) tableListProduct.getModel();

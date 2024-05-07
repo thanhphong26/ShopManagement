@@ -5,7 +5,7 @@
  */
 package com.raven.main;
 
-import com.fpt.utils.XImage;
+import com.sportshop.utils.XImage;
 import com.raven.suportSwing.PanelBorder;
 import com.raven.suportSwing.PanelSlide;
 import java.awt.Image;

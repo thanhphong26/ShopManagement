@@ -5,11 +5,11 @@
  */
 package com.raven.form;
 
-import com.fpt.DAO.AccountDao;
-import com.fpt.Validate.Validate;
-import com.fpt.entity.Account;
-import com.fpt.utils.Auth;
-import com.fpt.utils.MsgBox;
+import com.sportshop.DAO.AccountDao;
+import com.sportshop.Validate.Validate;
+import com.sportshop.entity.Account;
+import com.sportshop.utils.Auth;
+import com.sportshop.utils.MsgBox;
 
 /**
  *
@@ -89,7 +89,7 @@ public class FormChangePassword extends javax.swing.JPanel {
 
         txtUsername.setLabelText("Username");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Montserrat Black", 1, 18)); // NOI18N
         jLabel1.setText("Đổi mật khẩu");
 
         txtPassword.setLabelText("Password");

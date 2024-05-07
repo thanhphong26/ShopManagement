@@ -1,6 +1,6 @@
 package com.raven.component;
 
-import com.fpt.utils.Auth;
+import com.sportshop.utils.Auth;
 import com.raven.event.EventMenu;
 import com.raven.event.EventMenuSelected;
 import com.raven.event.EventShowPopupMenu;
@@ -122,7 +122,6 @@ public class Menu extends javax.swing.JPanel {
 
         sp.setBorder(null);
         sp.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        sp.setViewportBorder(null);
 
         panel.setOpaque(false);
 
@@ -151,19 +150,33 @@ public class Menu extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(profile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sp, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
+                .addComponent(sp))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     @Override
     protected void paintComponent(Graphics grphcs) {
-        Graphics2D g2 = (Graphics2D) grphcs;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gra = new GradientPaint(0, 0, new Color(33, 105, 249), getWidth(), 0, new Color(93, 58, 196));
-        g2.setPaint(gra);
-        g2.fillRect(0, 0, getWidth(), getHeight());
         super.paintComponent(grphcs);
+        Graphics2D g2 = (Graphics2D) grphcs;
+
+        int width = getWidth();
+        int height = getHeight();
+
+        Color startColor = new Color(102,168,234); 
+
+        Color endColor = new Color(69,111,153); 
+
+        GradientPaint gradientPaint = new GradientPaint(
+                0, 0, endColor,
+                0, height, startColor 
+        );
+
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setPaint(gradientPaint);
+
+        g2.fillRect(0, 0, width, height);
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel panel;

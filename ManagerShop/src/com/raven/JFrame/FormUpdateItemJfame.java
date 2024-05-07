@@ -4,18 +4,18 @@
  */
 package com.raven.JFrame;
 
-import com.fpt.DAO.ColorDAO;
-import com.fpt.DAO.MaterialDAO;
-import com.fpt.DAO.ProductItemDAO;
-import com.fpt.DAO.ProductsDAO;
-import com.fpt.DAO.SizeDAO;
-import com.fpt.Validate.Validate;
-import com.fpt.entity.Color;
-import com.fpt.entity.Material;
-import com.fpt.entity.ProductItem;
-import com.fpt.entity.Products;
-import com.fpt.entity.Size;
-import com.fpt.utils.MsgBox;
+import com.sportshop.DAO.ColorDAO;
+import com.sportshop.DAO.MaterialDAO;
+import com.sportshop.DAO.ProductItemDAO;
+import com.sportshop.DAO.ProductsDAO;
+import com.sportshop.DAO.SizeDAO;
+import com.sportshop.Validate.Validate;
+import com.sportshop.entity.Color;
+import com.sportshop.entity.Material;
+import com.sportshop.entity.ProductItem;
+import com.sportshop.entity.Products;
+import com.sportshop.entity.Size;
+import com.sportshop.utils.MsgBox;
 import com.raven.form.FormItems;
 import com.raven.form.MainForm;
 import java.awt.event.ActionListener;

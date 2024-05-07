@@ -32,28 +32,32 @@ public class MenuButton extends JButton {
     private Point pressedPoint;
     private float alpha;
     private Color effectColor = new Color(255, 255, 255, 150);
+    
+    
 
     public MenuButton(Icon icon, String text) {
         super(text);
         setIcon(icon);
         init();
         setBorder(new EmptyBorder(1, 20, 1, 1));
+        setForeground(new Color(255,255,255));
     }
 
     public MenuButton(String text) {
         super(text);
         init();
         setBorder(new EmptyBorder(1, 50, 1, 1));
+        setForeground(new Color(61, 97, 133));
     }
 
     public MenuButton(String text, boolean subMenu) {
         super(text);
         init();
+        setForeground(new Color(61, 97, 133));
     }
 
     private void init() {
         setContentAreaFilled(false);
-        setForeground(new Color(255, 255, 255));
         setHorizontalAlignment(JButton.LEFT);
         addMouseListener(new MouseAdapter() {
             @Override
@@ -84,7 +88,7 @@ public class MenuButton extends JButton {
 
     @Override
     protected void paintComponent(Graphics grphcs) {
-        Graphics2D g2 = (Graphics2D) grphcs;
+         Graphics2D g2 = (Graphics2D) grphcs;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         if (pressedPoint != null) {
             g2.setColor(effectColor);
