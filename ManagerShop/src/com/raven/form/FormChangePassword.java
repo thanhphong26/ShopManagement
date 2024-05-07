@@ -89,7 +89,7 @@ public class FormChangePassword extends javax.swing.JPanel {
 
         txtUsername.setLabelText("Username");
 
-        jLabel1.setFont(new java.awt.Font("Montserrat Black", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Đổi mật khẩu");
 
         txtPassword.setLabelText("Password");

@@ -190,6 +190,7 @@ public class FormUpdateItemJfame extends javax.swing.JFrame {
 
         jPanel2.setBackground(java.awt.Color.white);
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sửa mặt hàng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jPanel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         txtId.setLabelText("Id");
         txtId.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -233,16 +234,26 @@ public class FormUpdateItemJfame extends javax.swing.JFrame {
             }
         });
 
+        btnUpdate.setForeground(new java.awt.Color(0, 122, 255));
         btnUpdate.setText("Hoàn Thành");
-        btnUpdate.setRadius(20);
+        btnUpdate.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnUpdate.setColorClick(new java.awt.Color(189, 231, 255));
+        btnUpdate.setColorOver(new java.awt.Color(189, 231, 255));
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnUpdate.setRadius(15);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
 
+        btnUpdate1.setForeground(new java.awt.Color(0, 122, 255));
         btnUpdate1.setText("Huỷ");
-        btnUpdate1.setRadius(20);
+        btnUpdate1.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnUpdate1.setColorClick(new java.awt.Color(189, 231, 255));
+        btnUpdate1.setColorOver(new java.awt.Color(189, 231, 255));
+        btnUpdate1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnUpdate1.setRadius(15);
         btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdate1ActionPerformed(evt);

@@ -527,31 +527,46 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnAddTemp.setForeground(new java.awt.Color(0, 122, 255));
         btnAddTemp.setText("Lưu tạm");
-        btnAddTemp.setRadius(20);
+        btnAddTemp.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddTemp.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddTemp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddTemp.setRadius(15);
         btnAddTemp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddTempActionPerformed(evt);
             }
         });
 
+        myButton3.setForeground(new java.awt.Color(0, 122, 255));
         myButton3.setText("Mới");
-        myButton3.setRadius(20);
+        myButton3.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton3.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton3.setRadius(15);
         myButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton3ActionPerformed(evt);
             }
         });
 
+        btnDelete.setForeground(new java.awt.Color(0, 122, 255));
         btnDelete.setText("Xoá");
-        btnDelete.setRadius(20);
+        btnDelete.setColorClick(new java.awt.Color(189, 231, 255));
+        btnDelete.setColorOver(new java.awt.Color(189, 231, 255));
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDelete.setRadius(15);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
+        btnAddProductItem.setForeground(new java.awt.Color(0, 122, 255));
         btnAddProductItem.setText("Hoàn Thành");
-        btnAddProductItem.setRadius(20);
+        btnAddProductItem.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddProductItem.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddProductItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddProductItem.setRadius(15);
         btnAddProductItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddProductItemActionPerformed(evt);
@@ -703,7 +718,10 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnClearImg.setForeground(new java.awt.Color(0, 122, 255));
         btnClearImg.setText("Tạo mới hình");
-        btnClearImg.setRadius(20);
+        btnClearImg.setColorClick(new java.awt.Color(189, 231, 255));
+        btnClearImg.setColorOver(new java.awt.Color(189, 231, 255));
+        btnClearImg.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnClearImg.setRadius(15);
         btnClearImg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearImgActionPerformed(evt);
@@ -732,10 +750,13 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnEditColor.setForeground(new java.awt.Color(0, 122, 255));
         btnEditColor.setText("Sửa");
+        btnEditColor.setColorClick(new java.awt.Color(189, 231, 255));
+        btnEditColor.setColorOver(new java.awt.Color(189, 231, 255));
+        btnEditColor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEditColor.setMaximumSize(new java.awt.Dimension(59, 23));
         btnEditColor.setMinimumSize(new java.awt.Dimension(59, 23));
         btnEditColor.setPreferredSize(new java.awt.Dimension(59, 23));
-        btnEditColor.setRadius(20);
+        btnEditColor.setRadius(15);
         btnEditColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditColorActionPerformed(evt);
@@ -752,7 +773,10 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnAddSize.setForeground(new java.awt.Color(0, 122, 255));
         btnAddSize.setText("Thêm");
-        btnAddSize.setRadius(20);
+        btnAddSize.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddSize.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddSize.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddSize.setRadius(15);
         btnAddSize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddSizeActionPerformed(evt);
@@ -794,10 +818,13 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnEditSize.setForeground(new java.awt.Color(0, 122, 255));
         btnEditSize.setText("Sửa");
+        btnEditSize.setColorClick(new java.awt.Color(189, 231, 255));
+        btnEditSize.setColorOver(new java.awt.Color(189, 231, 255));
+        btnEditSize.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEditSize.setMaximumSize(new java.awt.Dimension(59, 23));
         btnEditSize.setMinimumSize(new java.awt.Dimension(59, 23));
         btnEditSize.setPreferredSize(new java.awt.Dimension(59, 23));
-        btnEditSize.setRadius(20);
+        btnEditSize.setRadius(15);
         btnEditSize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditSizeActionPerformed(evt);
@@ -824,10 +851,13 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnEditMaterial.setForeground(new java.awt.Color(0, 122, 255));
         btnEditMaterial.setText("Sửa");
+        btnEditMaterial.setColorClick(new java.awt.Color(189, 231, 255));
+        btnEditMaterial.setColorOver(new java.awt.Color(189, 231, 255));
+        btnEditMaterial.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEditMaterial.setMaximumSize(new java.awt.Dimension(59, 23));
         btnEditMaterial.setMinimumSize(new java.awt.Dimension(59, 23));
         btnEditMaterial.setPreferredSize(new java.awt.Dimension(59, 23));
-        btnEditMaterial.setRadius(20);
+        btnEditMaterial.setRadius(15);
         btnEditMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditMaterialActionPerformed(evt);
@@ -847,7 +877,10 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnColorAdd.setForeground(new java.awt.Color(0, 122, 255));
         btnColorAdd.setText("Thêm");
-        btnColorAdd.setRadius(20);
+        btnColorAdd.setColorClick(new java.awt.Color(189, 231, 255));
+        btnColorAdd.setColorOver(new java.awt.Color(189, 231, 255));
+        btnColorAdd.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnColorAdd.setRadius(15);
         btnColorAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnColorAddActionPerformed(evt);
@@ -856,7 +889,10 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnAddMaterial.setForeground(new java.awt.Color(0, 122, 255));
         btnAddMaterial.setText("Thêm");
-        btnAddMaterial.setRadius(20);
+        btnAddMaterial.setColorClick(new java.awt.Color(189, 231, 255));
+        btnAddMaterial.setColorOver(new java.awt.Color(189, 231, 255));
+        btnAddMaterial.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddMaterial.setRadius(15);
         btnAddMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddMaterialActionPerformed(evt);
@@ -892,18 +928,18 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(btnAddMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnEditMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnEditMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(btnAddSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnEditSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnEditSize, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(lblSizeAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtSizeAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(btnColorAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnEditColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnEditColor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(cbbSize, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1008,7 +1044,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1078, Short.MAX_VALUE)
+            .addGap(0, 1104, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(5, 5, 5)
