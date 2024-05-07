@@ -11,6 +11,7 @@
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/showChartRevenue.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/component/Profile.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/swing/MenuAnimation.java</file>
+            <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormListEmpolyee.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/swing/MenuButton.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/Form_Home.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/swing/ButtonBadges.java</file>
@@ -25,6 +26,7 @@
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/JFrame/FormUpdateItemJfame.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/component/Header.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/model/ModelCard.java</file>
+            <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormProducts.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormChangePassword.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormImportEmployee.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/component/Menu.java</file>
@@ -36,11 +38,13 @@
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormInvoiceSell.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormMyProfile.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/JFrame/FormImportEmpolyeeJFrame.java</file>
+            <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormInvoiceReturnProduct.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormInvoiceChangeProduct.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormCustomer.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/swing/ImageAvatar.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/JFrame/FormImportItemJFrame.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/JFrame/FormDetailInvoice.java</file>
+            <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/sportshop/helper/jdbcHelper.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/form/FormInvoiceImportProducts.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/component/Card.java</file>
             <file>file:/D:/2024/Ky6/LTNNTienTien/Final_Project/ShopManagement/ManagerShop/src/com/raven/model/ModelMenu.java</file>

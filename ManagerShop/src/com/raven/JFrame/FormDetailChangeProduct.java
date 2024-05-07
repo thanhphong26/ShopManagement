@@ -69,7 +69,7 @@ public class FormDetailChangeProduct extends javax.swing.JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         fillTableOld(id);
-        Image icon = Toolkit.getDefaultToolkit().getImage("src\\com\\raven\\icon\\shop (6).png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("src\\com\\raven\\icon\\logosport.png");
         this.setIconImage(icon);
         fillTableNew((int) tableShowOld.getValueAt(tableShowOld.getRowCount() - 1, 0));
 
@@ -280,7 +280,7 @@ public class FormDetailChangeProduct extends javax.swing.JFrame {
         float columnWidth[] = {col, col};
         com.itextpdf.layout.element.Table table = new com.itextpdf.layout.element.Table(columnWidth);
         table.setBackgroundColor(new DeviceRgb(63, 169, 219)).setFontColor(Color.WHITE);
-        String file = "src\\com\\raven\\icon\\shop (2).png";
+        String file = "src\\com\\raven\\icon\\logosport.png";
         ImageData date = ImageDataFactory.create(file);
         com.itextpdf.layout.element.Image image = new com.itextpdf.layout.element.Image(date);
 //        doc.add(image);
@@ -288,7 +288,7 @@ public class FormDetailChangeProduct extends javax.swing.JFrame {
         table.addCell(new Cell().add("").setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add("IT SHOP").setFontSize(30f).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add("68 Nguyen Trai \n SĐT: 0332429178 - 03324287654")
+        table.addCell(new Cell().add("So 1 VVN, Thu Duc \n SDT: 0326012035 - 0987415260")
                 .setTextAlignment(TextAlignment.RIGHT).setMarginTop(30f).setMarginBottom(30f).setBorder(Border.NO_BORDER).setMarginRight(10f)
         );
 
