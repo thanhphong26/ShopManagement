@@ -47,13 +47,13 @@ public class MenuButton extends JButton {
         super(text);
         init();
         setBorder(new EmptyBorder(1, 50, 1, 1));
-        setForeground(new Color(61, 97, 133));
+        setForeground(new Color(255,255,255));
     }
 
     public MenuButton(String text, boolean subMenu) {
         super(text);
         init();
-        setForeground(new Color(61, 97, 133));
+        setForeground(new Color(255,255,255));
     }
 
     private void init() {

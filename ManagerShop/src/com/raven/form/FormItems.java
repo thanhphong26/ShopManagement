@@ -204,6 +204,7 @@ public class FormItems extends javax.swing.JPanel {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Tồn Kho"));
+        jPanel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         buttonGroup1.add(rdioSelectAll);
         rdioSelectAll.setText("Tất cả");
@@ -293,6 +294,7 @@ public class FormItems extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Trạng thái"));
+        jPanel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         buttonGroup1.add(rdioStatusFalse);
         rdioStatusFalse.setText("Ngừng kinh doanh");
@@ -332,6 +334,7 @@ public class FormItems extends javax.swing.JPanel {
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Giá bán"));
+        jPanel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         buttonGroup1.add(rdioPriceAsc);
         rdioPriceAsc.setText("Từ thấp đến cao");
@@ -405,12 +408,12 @@ public class FormItems extends javax.swing.JPanel {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(301, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Mặt Hàng");
 
         txtSearch.setLabelText("Tìm theo tên or mã");
@@ -425,15 +428,25 @@ public class FormItems extends javax.swing.JPanel {
             }
         });
 
+        myButton2.setForeground(new java.awt.Color(0, 122, 255));
         myButton2.setText("Tìm");
-        myButton2.setRadius(20);
+        myButton2.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton2.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton2.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton2.setRadius(15);
         myButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton2ActionPerformed(evt);
             }
         });
 
+        myButton3.setForeground(new java.awt.Color(0, 122, 255));
         myButton3.setText("Thêm Mới");
+        myButton3.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton3.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton3.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton3.setRadius(20);
         myButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -441,16 +454,26 @@ public class FormItems extends javax.swing.JPanel {
             }
         });
 
+        myButton4.setForeground(new java.awt.Color(0, 122, 255));
         myButton4.setText("Xuất");
-        myButton4.setRadius(20);
+        myButton4.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton4.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton4.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton4.setRadius(15);
         myButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton4ActionPerformed(evt);
             }
         });
 
+        btnDelete.setForeground(new java.awt.Color(0, 122, 255));
         btnDelete.setText("Xoá");
-        btnDelete.setRadius(20);
+        btnDelete.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnDelete.setColorClick(new java.awt.Color(189, 231, 255));
+        btnDelete.setColorOver(new java.awt.Color(189, 231, 255));
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDelete.setRadius(15);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -471,18 +494,18 @@ public class FormItems extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(43, 43, 43))
+                        .addGap(43, 43, 43)
+                        .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 429, Short.MAX_VALUE)))
-                .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(185, 185, 185)
-                .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 649, Short.MAX_VALUE)))
+                .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -522,6 +545,7 @@ public class FormItems extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tableShow.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableShow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableShowMouseClicked(evt);
@@ -541,7 +565,7 @@ public class FormItems extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 733, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(scrollBarCustom1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

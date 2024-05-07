@@ -43,7 +43,7 @@
           <Color blue="e0" green="e0" red="e0" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/raven/icon/shop (2).png"/>
+          <Image iconType="3" name="/com/raven/icon/logosport.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sport Shop"/>
       </Properties>

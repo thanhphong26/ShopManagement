@@ -86,6 +86,8 @@ public class MenuItem extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,7 +108,7 @@ public class MenuItem extends javax.swing.JPanel {
         
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        g2.setColor(new Color(189,231,255)); 
+        g2.setColor(new Color(23,55,128)); 
 
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
 
@@ -116,7 +118,7 @@ public class MenuItem extends javax.swing.JPanel {
 
         g2.fillRect(0, 40, width, height - 40); // Vẽ phần còn lại của menu
 
-        g2.setColor(new Color(61,97,133));
+        g2.setColor(new Color(255,255,255));
         g2.drawLine(30, 40, 30, height - 17);
 
         for (int i = 0; i < menu.getSubMenu().length; i++) {
@@ -136,7 +138,7 @@ public class MenuItem extends javax.swing.JPanel {
         int size = 4;
         int y = 19;
         int x = 205;
-        g2.setColor(new Color(230, 230, 230));
+        g2.setColor(new Color(255,255,255));
         float ay = alpha * size;
         float ay1 = (1f - alpha) * size;
         g2.drawLine(x, (int) (y + ay), x + 4, (int) (y + ay1));

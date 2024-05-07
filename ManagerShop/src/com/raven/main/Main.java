@@ -56,7 +56,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         init();
 //        setIconImage(XImage.getAppImage());
-        Image icon = Toolkit.getDefaultToolkit().getImage("src\\com\\raven\\icon\\shop (6).png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("src\\com\\raven\\icon\\logosport.png");
         this.setIconImage(icon);
     }
 
@@ -244,7 +244,7 @@ public class Main extends javax.swing.JFrame {
         bg = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("IT Shop APP");
+        setTitle("Sport Shop");
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setOpaque(true);

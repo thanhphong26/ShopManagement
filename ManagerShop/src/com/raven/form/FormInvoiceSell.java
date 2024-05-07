@@ -297,7 +297,6 @@ public class FormInvoiceSell extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtSearchId = new com.raven.suportSwing.TextField();
         myButton5 = new com.raven.suportSwing.MyButton();
-        myButton6 = new com.raven.suportSwing.MyButton();
         jPanel3 = new javax.swing.JPanel();
         txtDate = new com.raven.suportSwing.TextField();
         btnFillDate = new com.raven.suportSwing.MyButton();
@@ -330,19 +329,16 @@ public class FormInvoiceSell extends javax.swing.JPanel {
             }
         });
 
+        myButton5.setForeground(new java.awt.Color(0, 122, 255));
         myButton5.setText("Tìm");
-        myButton5.setRadius(20);
+        myButton5.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton5.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton5.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        myButton5.setRadius(15);
         myButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myButton5ActionPerformed(evt);
-            }
-        });
-
-        myButton6.setText("Xuất");
-        myButton6.setRadius(20);
-        myButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton6ActionPerformed(evt);
             }
         });
 
@@ -356,10 +352,8 @@ public class FormInvoiceSell extends javax.swing.JPanel {
                 .addGap(29, 29, 29)
                 .addComponent(txtSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 463, Short.MAX_VALUE)
-                .addComponent(myButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(436, 436, 436))
+                .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(955, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,17 +364,19 @@ public class FormInvoiceSell extends javax.swing.JPanel {
                     .addComponent(txtSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(myButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         txtDate.setLabelText("Thời gian");
 
+        btnFillDate.setForeground(new java.awt.Color(0, 122, 255));
         btnFillDate.setText("Lọc");
-        btnFillDate.setRadius(20);
+        btnFillDate.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnFillDate.setColorClick(new java.awt.Color(189, 231, 255));
+        btnFillDate.setColorOver(new java.awt.Color(189, 231, 255));
+        btnFillDate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnFillDate.setRadius(15);
         btnFillDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFillDateActionPerformed(evt);
@@ -423,8 +419,13 @@ public class FormInvoiceSell extends javax.swing.JPanel {
             tableShow.getColumnModel().getColumn(7).setHeaderValue("Trạng thái");
         }
 
+        btnReset.setForeground(new java.awt.Color(0, 122, 255));
         btnReset.setText("Reset");
-        btnReset.setRadius(20);
+        btnReset.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnReset.setColorClick(new java.awt.Color(189, 231, 255));
+        btnReset.setColorOver(new java.awt.Color(189, 231, 255));
+        btnReset.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReset.setRadius(15);
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -487,7 +488,7 @@ public class FormInvoiceSell extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnFillDate, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblCount, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -501,7 +502,7 @@ public class FormInvoiceSell extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLast)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1310, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
@@ -541,18 +542,18 @@ public class FormInvoiceSell extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addComponent(lblSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 59, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(lblSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -592,61 +593,6 @@ public class FormInvoiceSell extends javax.swing.JPanel {
         Excel.outExcel((DefaultTableModel) tableShow.getModel());
         MsgBox.alert(this, "Xuất file thành công");
     }
-    private void myButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton6ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelSell();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-//        FileOutputStream excelFOU = null;
-//        BufferedOutputStream excelBOU = null;
-//        XSSFWorkbook excelJTableExporter = null;
-////        DefaultTableModel model = (DefaultTableModel) tableShow.getModel();
-//        JFileChooser excelFileChooser = new JFileChooser("D:\\Excel");
-//        excelFileChooser.setDialogTitle("Save As");
-//        FileNameExtensionFilter fnef = new FileNameExtensionFilter("Excel Files", "xls", "xlsx", "xlsm");
-//        excelFileChooser.setFileFilter(fnef);
-//        int excelChooser = excelFileChooser.showSaveDialog(null);
-//        if (excelChooser == JFileChooser.APPROVE_OPTION) {
-//            try {
-//                excelJTableExporter = new XSSFWorkbook();
-//                XSSFSheet excelSheet = excelJTableExporter.createSheet("JTABLE sheet");
-//                for (int i = 0; i < model.getRowCount(); i++) {
-//                    XSSFRow excelRow = excelSheet.createRow(i);
-//                    for (int j = 0; j < model.getColumnCount(); j++) {
-//                        XSSFCell exceCell = excelRow.createCell(j);
-//                        exceCell.setCellValue(model.getValueAt(i, j).toString());
-//                    }
-//                }
-//                excelFOU = new FileOutputStream(excelFileChooser.getSelectedFile() + ".xlsx");
-//                excelBOU = new BufferedOutputStream(excelFOU);
-//                excelJTableExporter.write(excelBOU);
-//                MsgBox.alert(this, "OK");
-//            } catch (FileNotFoundException ex) {
-//                Logger.getLogger(FormInvoiceSell.class.getName()).log(Level.SEVERE, null, ex);
-//            } catch (IOException ex) {
-//                Logger.getLogger(FormInvoiceSell.class.getName()).log(Level.SEVERE, null, ex);
-//            } finally {
-//                try {
-//                    if (excelBOU != null) {
-//                        excelBOU.close();
-//                    }
-//                    if (excelFOU != null) {
-//                        excelFOU.close();
-//                    }
-//
-//                    if (excelJTableExporter != null) {
-//                        excelJTableExporter.close();
-//                    }
-//                } catch (IOException ex) {
-//                    Logger.getLogger(FormInvoiceSell.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            }
-//        }
-
-    }//GEN-LAST:event_myButton6ActionPerformed
-
     private void btnFillDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFillDateActionPerformed
         // TODO add your handling code here:
         searchDateFillTable();
@@ -738,7 +684,6 @@ public class FormInvoiceSell extends javax.swing.JPanel {
     private javax.swing.JLabel lblCount;
     private javax.swing.JLabel lblSearchId;
     private com.raven.suportSwing.MyButton myButton5;
-    private com.raven.suportSwing.MyButton myButton6;
     private com.raven.suportSwing.ScrollBarCustom scrollBarCustom1;
     private com.raven.suportSwing.TableColumn tableShow;
     private com.raven.suportSwing.TextField txtDate;

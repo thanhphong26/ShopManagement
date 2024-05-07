@@ -29,7 +29,7 @@ public class Login_main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         
-         Image icon = Toolkit.getDefaultToolkit().getImage("src\\com\\raven\\icon\\shop (6).png");
+         Image icon = Toolkit.getDefaultToolkit().getImage("src\\com\\raven\\icon\\logosport.png");
         this.setIconImage(icon);
 //        setIconImage(XImage.getAppImage());
         Login login = new Login();
@@ -144,7 +144,7 @@ public class Login_main extends javax.swing.JFrame {
         JImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("IT Shop APP");
+        setTitle("Sport Shop");
 
         panelGradiente2.setColorPrimario(new java.awt.Color(146, 233, 251));
         panelGradiente2.setColorSecundario(new java.awt.Color(12, 137, 163));

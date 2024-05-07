@@ -79,7 +79,7 @@ public class Login extends javax.swing.JPanel {
             } else {
                 String passwordSystem = account.getPassWord();
                 if (passWord.equals(passwordSystem)) {
-                    MsgBox.alert(this, "Đăng nhập thành công!");
+                    //MsgBox.alert(this, "Đăng nhập thành công!");
                     User user = uDao.selectById(account.getIdUser());
                     Auth.user = user;
                     new Main().setVisible(true);

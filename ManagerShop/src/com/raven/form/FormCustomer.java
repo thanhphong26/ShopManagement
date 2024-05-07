@@ -232,8 +232,13 @@ public class FormCustomer extends javax.swing.JPanel {
             }
         });
 
+        btnTim.setForeground(new java.awt.Color(0, 122, 255));
         btnTim.setText("Tìm");
-        btnTim.setRadius(20);
+        btnTim.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnTim.setColorClick(new java.awt.Color(189, 231, 255));
+        btnTim.setColorOver(new java.awt.Color(189, 231, 255));
+        btnTim.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTim.setRadius(15);
         btnTim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTimActionPerformed(evt);
@@ -242,16 +247,26 @@ public class FormCustomer extends javax.swing.JPanel {
 
         lblTimKiem.setForeground(new java.awt.Color(225, 0, 0));
 
+        btnTim1.setForeground(new java.awt.Color(0, 122, 255));
         btnTim1.setText("Xuất");
-        btnTim1.setRadius(20);
+        btnTim1.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnTim1.setColorClick(new java.awt.Color(189, 231, 255));
+        btnTim1.setColorOver(new java.awt.Color(189, 231, 255));
+        btnTim1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTim1.setRadius(15);
         btnTim1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTim1ActionPerformed(evt);
             }
         });
 
+        btnTim2.setForeground(new java.awt.Color(0, 122, 255));
         btnTim2.setText("Import");
-        btnTim2.setRadius(20);
+        btnTim2.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnTim2.setColorClick(new java.awt.Color(189, 231, 255));
+        btnTim2.setColorOver(new java.awt.Color(189, 231, 255));
+        btnTim2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTim2.setRadius(15);
         btnTim2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTim2ActionPerformed(evt);
@@ -274,8 +289,8 @@ public class FormCustomer extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(btnTim1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnTim2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(270, 270, 270))
+                .addComponent(btnTim2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(258, 258, 258))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,6 +370,11 @@ public class FormCustomer extends javax.swing.JPanel {
             }
         });
 
+        btnClear.setForeground(new java.awt.Color(0, 122, 255));
+        btnClear.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnClear.setColorClick(new java.awt.Color(189, 231, 255));
+        btnClear.setColorOver(new java.awt.Color(189, 231, 255));
+        btnClear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnClear.setLabel("Xóa form");
         btnClear.setRadius(20);
         btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -363,7 +383,12 @@ public class FormCustomer extends javax.swing.JPanel {
             }
         });
 
+        btnThem.setForeground(new java.awt.Color(0, 122, 255));
         btnThem.setText("Thêm");
+        btnThem.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnThem.setColorClick(new java.awt.Color(189, 231, 255));
+        btnThem.setColorOver(new java.awt.Color(189, 231, 255));
+        btnThem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnThem.setRadius(20);
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -371,7 +396,12 @@ public class FormCustomer extends javax.swing.JPanel {
             }
         });
 
+        btnCapNhap.setForeground(new java.awt.Color(0, 122, 255));
         btnCapNhap.setText("Cập Nhật");
+        btnCapNhap.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnCapNhap.setColorClick(new java.awt.Color(189, 231, 255));
+        btnCapNhap.setColorOver(new java.awt.Color(189, 231, 255));
+        btnCapNhap.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCapNhap.setRadius(20);
         btnCapNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,7 +423,12 @@ public class FormCustomer extends javax.swing.JPanel {
             }
         });
 
+        btnXoa.setForeground(new java.awt.Color(0, 122, 255));
         btnXoa.setText("Xóa");
+        btnXoa.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnXoa.setColorClick(new java.awt.Color(189, 231, 255));
+        btnXoa.setColorOver(new java.awt.Color(189, 231, 255));
+        btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnXoa.setRadius(20);
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
