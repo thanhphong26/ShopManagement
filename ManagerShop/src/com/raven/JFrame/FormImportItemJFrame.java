@@ -573,7 +573,12 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
             }
         });
 
+        myButton7.setForeground(new java.awt.Color(0, 122, 255));
         myButton7.setText("Huỷ");
+        myButton7.setBorderColor(new java.awt.Color(204, 204, 204));
+        myButton7.setColorClick(new java.awt.Color(189, 231, 255));
+        myButton7.setColorOver(new java.awt.Color(189, 231, 255));
+        myButton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         myButton7.setRadius(20);
         myButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
