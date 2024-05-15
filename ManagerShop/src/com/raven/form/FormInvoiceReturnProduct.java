@@ -170,7 +170,6 @@ public class FormInvoiceReturnProduct extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txtSearchId = new com.raven.suportSwing.TextField();
         btnSearch = new com.raven.suportSwing.MyButton();
-        btnSearch2 = new com.raven.suportSwing.MyButton();
         txtDate = new com.raven.suportSwing.TextField();
         btnFillDate = new com.raven.suportSwing.MyButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -211,19 +210,6 @@ public class FormInvoiceReturnProduct extends javax.swing.JPanel {
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
-            }
-        });
-
-        btnSearch2.setForeground(new java.awt.Color(0, 122, 255));
-        btnSearch2.setText("Xuất");
-        btnSearch2.setBorderColor(new java.awt.Color(204, 204, 204));
-        btnSearch2.setColorClick(new java.awt.Color(189, 231, 255));
-        btnSearch2.setColorOver(new java.awt.Color(189, 231, 255));
-        btnSearch2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnSearch2.setRadius(15);
-        btnSearch2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearch2ActionPerformed(evt);
             }
         });
 
@@ -379,8 +365,7 @@ public class FormInvoiceReturnProduct extends javax.swing.JPanel {
                                 .addComponent(txtSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
                                 .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1183, Short.MAX_VALUE)))))
@@ -400,8 +385,7 @@ public class FormInvoiceReturnProduct extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblSearchId)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -461,15 +445,6 @@ public class FormInvoiceReturnProduct extends javax.swing.JPanel {
         Excel.outExcel((DefaultTableModel) tableShow.getModel());
         MsgBox.alert(this, "Xuất file thành công");
     }
-    private void btnSearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch2ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelReturn();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_btnSearch2ActionPerformed
-
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
         fillPagination();
@@ -537,7 +512,6 @@ public class FormInvoiceReturnProduct extends javax.swing.JPanel {
     private javax.swing.JButton btnNext;
     private com.raven.suportSwing.MyButton btnReset;
     private com.raven.suportSwing.MyButton btnSearch;
-    private com.raven.suportSwing.MyButton btnSearch2;
     private javax.swing.JComboBox<String> cbbPagination;
     private com.raven.datechooser.DateChooser dateChooser2;
     private javax.swing.JLabel jLabel2;

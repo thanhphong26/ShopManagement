@@ -62,9 +62,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="btnSearch" min="-2" pref="116" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnSearch1" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -125,7 +123,6 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnSearch1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           <Component id="lblSearch" min="-2" pref="16" max="-2" attributes="0"/>
@@ -482,30 +479,6 @@
               <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
           </Properties>
-        </Component>
-        <Component class="com.raven.suportSwing.MyButton" name="btnSearch1">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="7a" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t"/>
-            <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="e7" red="bd" type="rgb"/>
-            </Property>
-            <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="e7" red="bd" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="radius" type="int" value="15"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearch1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="com.raven.suportSwing.ScrollBarCustom" name="scrollBarCustom1">
         </Component>

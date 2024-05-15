@@ -187,8 +187,6 @@ public class FormCustomer extends javax.swing.JPanel {
         txtTimkiem = new com.raven.suportSwing.TextField();
         btnTim = new com.raven.suportSwing.MyButton();
         lblTimKiem = new javax.swing.JLabel();
-        btnTim1 = new com.raven.suportSwing.MyButton();
-        btnTim2 = new com.raven.suportSwing.MyButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableCustomer = new com.raven.suportSwing.TableColumn();
@@ -247,32 +245,6 @@ public class FormCustomer extends javax.swing.JPanel {
 
         lblTimKiem.setForeground(new java.awt.Color(225, 0, 0));
 
-        btnTim1.setForeground(new java.awt.Color(0, 122, 255));
-        btnTim1.setText("Xuất");
-        btnTim1.setBorderColor(new java.awt.Color(204, 204, 204));
-        btnTim1.setColorClick(new java.awt.Color(189, 231, 255));
-        btnTim1.setColorOver(new java.awt.Color(189, 231, 255));
-        btnTim1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnTim1.setRadius(15);
-        btnTim1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTim1ActionPerformed(evt);
-            }
-        });
-
-        btnTim2.setForeground(new java.awt.Color(0, 122, 255));
-        btnTim2.setText("Import");
-        btnTim2.setBorderColor(new java.awt.Color(204, 204, 204));
-        btnTim2.setColorClick(new java.awt.Color(189, 231, 255));
-        btnTim2.setColorOver(new java.awt.Color(189, 231, 255));
-        btnTim2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnTim2.setRadius(15);
-        btnTim2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTim2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -286,11 +258,7 @@ public class FormCustomer extends javax.swing.JPanel {
                     .addComponent(lblTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(71, 71, 71)
                 .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnTim1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnTim2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(258, 258, 258))
+                .addGap(454, 454, 454))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,10 +270,7 @@ public class FormCustomer extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTim1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTim2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtTimkiem, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTimKiem))
@@ -626,15 +591,6 @@ public class FormCustomer extends javax.swing.JPanel {
         Excel.outExcel((DefaultTableModel) tableCustomer.getModel());
         MsgBox.alert(this, "Xuất file thành công");
     }
-    private void btnTim1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTim1ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelCustomer();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_btnTim1ActionPerformed
-
     public boolean checkNameProduct(String acc) {
         for (int i = 0; i < cDao.selectAll().size(); i++) {
             if (cDao.selectAll().get(i).getPhoneNumber().equals(acc.trim())) {
@@ -643,86 +599,12 @@ public class FormCustomer extends javax.swing.JPanel {
         }
         return false;
     }
-    private void btnTim2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTim2ActionPerformed
-        // TODO add your handling code here:
-
-        File excelFile;
-        FileInputStream excelFIS = null;
-        BufferedInputStream excelBIS = null;
-        XSSFWorkbook excelJTableImport = null;
-        String path = "D:\\Excel";
-        JFileChooser excelFileChooser = new JFileChooser(path);
-        int excelChooser = excelFileChooser.showOpenDialog(null);
-        if (excelChooser == JFileChooser.APPROVE_OPTION) {
-            try {
-                excelFile = excelFileChooser.getSelectedFile();
-                excelFIS = new FileInputStream(excelFile);
-                excelBIS = new BufferedInputStream(excelFIS);
-                excelJTableImport = new XSSFWorkbook(excelBIS);
-                XSSFSheet excelSFSheet = excelJTableImport.getSheetAt(0);
-                String phone = "";
-
-                int flag = 0;
-                for (int row = 1; row <= excelSFSheet.getLastRowNum(); row++) {
-                    XSSFRow excelRow = excelSFSheet.getRow(row);
-                    XSSFCell nameCustomer = excelRow.getCell(0);
-                    XSSFCell address = excelRow.getCell(1);
-                    XSSFCell phoneNummber = excelRow.getCell(2);
-                    XSSFCell gender = excelRow.getCell(3);
-                    if (checkNameProduct(phoneNummber.toString()) == true) {
-                        phone += phoneNummber + ", ";
-                    } else {
-                        Customer c = new Customer();
-                        c.setName(nameCustomer.toString());
-                        c.setGender(gender.toString().equalsIgnoreCase("Nam") ? true : false);
-                        c.setPhoneNumber(phoneNummber.toString());
-                        c.setAddress(address.toString());
-                        cDao.insert(c);
-                        fillTable();
-                        flag += 1;
-
-                    }
-                }
-                System.out.println(flag);
-
-                if (!phone.isEmpty()) {
-                    MsgBox.alert(this, "Trùng số điện thoại " + phone);
-                }
-                if (flag > 0) {
-                    MsgBox.alert(this, "Import thành công");
-                }
-
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(FormProducts.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(FormProducts.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    if (excelFIS != null) {
-                        excelFIS.close();
-                    }
-                    if (excelBIS != null) {
-                        excelBIS.close();
-                    }
-                    if (excelJTableImport != null) {
-                        excelJTableImport.close();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }
-    }//GEN-LAST:event_btnTim2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.suportSwing.MyButton btnCapNhap;
     private com.raven.suportSwing.MyButton btnClear;
     private com.raven.suportSwing.MyButton btnThem;
     private com.raven.suportSwing.MyButton btnTim;
-    private com.raven.suportSwing.MyButton btnTim1;
-    private com.raven.suportSwing.MyButton btnTim2;
     private com.raven.suportSwing.MyButton btnXoa;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel2;
