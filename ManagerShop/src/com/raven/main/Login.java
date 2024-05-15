@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
 import javax.swing.border.LineBorder;
 
 /**
@@ -83,7 +84,8 @@ public class Login extends javax.swing.JPanel {
                     User user = uDao.selectById(account.getIdUser());
                     Auth.user = user;
                     new Main().setVisible(true);
-                    this.setVisible(false);
+                    //this.getParent().setVisible(false);
+                    ((Login_main) SwingUtilities.getWindowAncestor(this)).dispose();
                     return true;
                 } else {
                     lblAlertPassword.setText("Sai mật khẩu!");
@@ -97,6 +99,7 @@ public class Login extends javax.swing.JPanel {
         return true;
 
     }
+    
     public void addEventRegister(ActionListener event) {
         btnForgot.addActionListener(event);
     }

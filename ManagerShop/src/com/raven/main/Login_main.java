@@ -33,6 +33,7 @@ public class Login_main extends javax.swing.JFrame {
         this.setIconImage(icon);
 //        setIconImage(XImage.getAppImage());
         Login login = new Login();
+        
         ForgotPassword forgotPassword = new ForgotPassword();
         VerifyEmail verifyEmail = new VerifyEmail();
         ChangePassword changePass = new ChangePassword();
@@ -46,7 +47,6 @@ public class Login_main extends javax.swing.JFrame {
                     return;
                 }else{
                     String username = login.getUserName();
-                    System.out.println("---    " + username);
                     forgotPassword.setUsername(username);
                     slide.show(1);
                 }
@@ -63,7 +63,6 @@ public class Login_main extends javax.swing.JFrame {
                     forgotPassword.sendCode();
                     int randomCode = forgotPassword.getCode();
                     String username = forgotPassword.getUsername();
-                    System.out.println("---    " + username);
                     verifyEmail.setUsername(username);
                     verifyEmail.setVerifyCode(randomCode);
                     slide.show(2);
@@ -79,7 +78,6 @@ public class Login_main extends javax.swing.JFrame {
                     return;
                 } else {
                     String username = verifyEmail.getUsername();
-                    System.out.println("---    " + username);
                     changePass.setUsername(username);
                     slide.show(3);
                 }
@@ -124,8 +122,10 @@ public class Login_main extends javax.swing.JFrame {
         }
     }
 
+    @Override
     public void dispose() {
         this.setVisible(false);
+        super.dispose();
     }
 
     /**
