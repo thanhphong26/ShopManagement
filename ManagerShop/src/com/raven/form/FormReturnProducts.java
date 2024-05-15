@@ -193,7 +193,7 @@ public class FormReturnProducts extends javax.swing.JPanel {
     public void insertInvoiceReturn() {
         InvoiceRetuns ir = getInvoiceReturn();
         reDao.insert(ir);
-        MsgBox.alert(this, "Thêm thành công!!!");
+        MsgBox.alert(this, "Trả thành công!!!");
         int row = tableListProduct.getRowCount();
         for (int i = 0; i < list.size(); i++) {
             DetailInvoiceReturn de = list.get(i);
