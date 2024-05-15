@@ -241,7 +241,6 @@ public class FormVoucher extends javax.swing.JPanel {
         txtSearch = new com.raven.suportSwing.TextField();
         btnSearch = new com.raven.suportSwing.MyButton();
         lblSearch = new javax.swing.JLabel();
-        btnSearch1 = new com.raven.suportSwing.MyButton();
         scrollBarCustom1 = new com.raven.suportSwing.ScrollBarCustom();
 
         dateStart.setTextRefernce(txtDateStart);
@@ -415,19 +414,6 @@ public class FormVoucher extends javax.swing.JPanel {
         lblSearch.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblSearch.setForeground(new java.awt.Color(255, 0, 0));
 
-        btnSearch1.setForeground(new java.awt.Color(0, 122, 255));
-        btnSearch1.setText("Xuất");
-        btnSearch1.setBorderColor(new java.awt.Color(204, 204, 204));
-        btnSearch1.setColorClick(new java.awt.Color(189, 231, 255));
-        btnSearch1.setColorOver(new java.awt.Color(189, 231, 255));
-        btnSearch1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnSearch1.setRadius(15);
-        btnSearch1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearch1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -441,9 +427,7 @@ public class FormVoucher extends javax.swing.JPanel {
                             .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
                         .addGap(50, 50, 50)
                         .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(246, 246, 246))
+                        .addGap(352, 352, 352))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -490,8 +474,7 @@ public class FormVoucher extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(2, 2, 2)
                         .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -601,22 +584,12 @@ public class FormVoucher extends javax.swing.JPanel {
         Excel.outExcel((DefaultTableModel) tableShow.getModel());
         MsgBox.alert(this, "Xuất file thành công");
     }
-    private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelVoucher();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_btnSearch1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.suportSwing.MyButton btnAdd;
     private com.raven.suportSwing.MyButton btnDelete;
     private com.raven.suportSwing.MyButton btnNew;
     private com.raven.suportSwing.MyButton btnSearch;
-    private com.raven.suportSwing.MyButton btnSearch1;
     private com.raven.suportSwing.MyButton btnUpdate;
     private com.raven.datechooser.DateChooser dateEnd;
     private com.raven.datechooser.DateChooser dateStart;

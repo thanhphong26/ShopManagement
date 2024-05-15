@@ -47,14 +47,14 @@ public class Form_Home extends javax.swing.JPanel {
     }
 
     private void initCardData() {
-        Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card1.setData(new ModelCard("Tổng khách hàng", sDao.getSumCustomer(), 20, icon1));
-        Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card2.setData(new ModelCard("Doanh thu/Ngày", sDao.getRevenueDate(), 60, icon2));
-        Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card3.setData(new ModelCard("Sản phẩm / Ngày", sDao.getQuantityDate(), 80, icon3));
-        Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card4.setData(new ModelCard("Tồn kho", sDao.getInventory(), 95, icon4));
+        Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 100));
+        card1.setData(new ModelCard("Tổng khách hàng", sDao.getSumCustomer(), 0, icon1));
+        Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 100));
+        card2.setData(new ModelCard("Doanh thu/Ngày", sDao.getRevenueDate(), 0, icon2));
+        Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 100));
+        card3.setData(new ModelCard("Sản phẩm / Ngày", sDao.getQuantityDate(), 0, icon3));
+        Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 100));
+        card4.setData(new ModelCard("Tồn kho", sDao.getInventory(), 0, icon4));
     }
 
     private void initNoticeBoard() {
@@ -97,19 +97,22 @@ public class Form_Home extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new com.raven.swing.table.Table();
 
-        card1.setColorGradient(new java.awt.Color(211, 28, 215));
+        card1.setBackground(new java.awt.Color(24, 161, 133));
+        card1.setForeground(new java.awt.Color(255, 255, 255));
+        card1.setColorGradient(new java.awt.Color(24, 161, 133));
+        card1.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(4, 72, 210));
 
-        card2.setBackground(new java.awt.Color(10, 30, 214));
-        card2.setColorGradient(new java.awt.Color(72, 111, 252));
+        card2.setBackground(new java.awt.Color(72, 65, 246));
+        card2.setColorGradient(new java.awt.Color(72, 65, 246));
 
-        card3.setBackground(new java.awt.Color(194, 85, 1));
-        card3.setColorGradient(new java.awt.Color(255, 212, 99));
+        card3.setBackground(new java.awt.Color(223, 82, 73));
+        card3.setColorGradient(new java.awt.Color(223, 82, 73));
 
-        card4.setBackground(new java.awt.Color(60, 195, 0));
-        card4.setColorGradient(new java.awt.Color(208, 255, 90));
+        card4.setBackground(new java.awt.Color(242, 183, 65));
+        card4.setColorGradient(new java.awt.Color(242, 183, 65));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
