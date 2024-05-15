@@ -527,6 +527,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnAddTemp.setForeground(new java.awt.Color(0, 122, 255));
         btnAddTemp.setText("Lưu tạm");
+        btnAddTemp.setBorderColor(new java.awt.Color(204, 204, 204));
         btnAddTemp.setColorClick(new java.awt.Color(189, 231, 255));
         btnAddTemp.setColorOver(new java.awt.Color(189, 231, 255));
         btnAddTemp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -539,6 +540,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         myButton3.setForeground(new java.awt.Color(0, 122, 255));
         myButton3.setText("Mới");
+        myButton3.setBorderColor(new java.awt.Color(204, 204, 204));
         myButton3.setColorClick(new java.awt.Color(189, 231, 255));
         myButton3.setColorOver(new java.awt.Color(189, 231, 255));
         myButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -551,6 +553,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnDelete.setForeground(new java.awt.Color(0, 122, 255));
         btnDelete.setText("Xoá");
+        btnDelete.setBorderColor(new java.awt.Color(204, 204, 204));
         btnDelete.setColorClick(new java.awt.Color(189, 231, 255));
         btnDelete.setColorOver(new java.awt.Color(189, 231, 255));
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -563,6 +566,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnAddProductItem.setForeground(new java.awt.Color(0, 122, 255));
         btnAddProductItem.setText("Hoàn Thành");
+        btnAddProductItem.setBorderColor(new java.awt.Color(204, 204, 204));
         btnAddProductItem.setColorClick(new java.awt.Color(189, 231, 255));
         btnAddProductItem.setColorOver(new java.awt.Color(189, 231, 255));
         btnAddProductItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -608,11 +612,11 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
                 .addComponent(btnAddTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 406, Short.MAX_VALUE)
                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAddProductItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(208, 208, 208)
+                .addGap(178, 178, 178)
                 .addComponent(myButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -723,6 +727,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnClearImg.setForeground(new java.awt.Color(0, 122, 255));
         btnClearImg.setText("Tạo mới hình");
+        btnClearImg.setBorderColor(new java.awt.Color(204, 204, 204));
         btnClearImg.setColorClick(new java.awt.Color(189, 231, 255));
         btnClearImg.setColorOver(new java.awt.Color(189, 231, 255));
         btnClearImg.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -755,6 +760,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnEditColor.setForeground(new java.awt.Color(0, 122, 255));
         btnEditColor.setText("Sửa");
+        btnEditColor.setBorderColor(new java.awt.Color(204, 204, 204));
         btnEditColor.setColorClick(new java.awt.Color(189, 231, 255));
         btnEditColor.setColorOver(new java.awt.Color(189, 231, 255));
         btnEditColor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -778,6 +784,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnAddSize.setForeground(new java.awt.Color(0, 122, 255));
         btnAddSize.setText("Thêm");
+        btnAddSize.setBorderColor(new java.awt.Color(204, 204, 204));
         btnAddSize.setColorClick(new java.awt.Color(189, 231, 255));
         btnAddSize.setColorOver(new java.awt.Color(189, 231, 255));
         btnAddSize.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -823,6 +830,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnEditSize.setForeground(new java.awt.Color(0, 122, 255));
         btnEditSize.setText("Sửa");
+        btnEditSize.setBorderColor(new java.awt.Color(204, 204, 204));
         btnEditSize.setColorClick(new java.awt.Color(189, 231, 255));
         btnEditSize.setColorOver(new java.awt.Color(189, 231, 255));
         btnEditSize.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -856,6 +864,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnEditMaterial.setForeground(new java.awt.Color(0, 122, 255));
         btnEditMaterial.setText("Sửa");
+        btnEditMaterial.setBorderColor(new java.awt.Color(204, 204, 204));
         btnEditMaterial.setColorClick(new java.awt.Color(189, 231, 255));
         btnEditMaterial.setColorOver(new java.awt.Color(189, 231, 255));
         btnEditMaterial.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -882,6 +891,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnColorAdd.setForeground(new java.awt.Color(0, 122, 255));
         btnColorAdd.setText("Thêm");
+        btnColorAdd.setBorderColor(new java.awt.Color(204, 204, 204));
         btnColorAdd.setColorClick(new java.awt.Color(189, 231, 255));
         btnColorAdd.setColorOver(new java.awt.Color(189, 231, 255));
         btnColorAdd.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -894,6 +904,7 @@ public class FormImportItemJFrame extends javax.swing.JFrame {
 
         btnAddMaterial.setForeground(new java.awt.Color(0, 122, 255));
         btnAddMaterial.setText("Thêm");
+        btnAddMaterial.setBorderColor(new java.awt.Color(204, 204, 204));
         btnAddMaterial.setColorClick(new java.awt.Color(189, 231, 255));
         btnAddMaterial.setColorOver(new java.awt.Color(189, 231, 255));
         btnAddMaterial.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
