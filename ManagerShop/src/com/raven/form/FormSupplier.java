@@ -202,8 +202,6 @@ public class FormSupplier extends javax.swing.JPanel {
         txtSearch = new com.raven.suportSwing.TextField();
         myButton2 = new com.raven.suportSwing.MyButton();
         lblSearch = new javax.swing.JLabel();
-        myButton4 = new com.raven.suportSwing.MyButton();
-        myButton5 = new com.raven.suportSwing.MyButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableShow = new com.raven.suportSwing.TableColumn();
@@ -253,32 +251,6 @@ public class FormSupplier extends javax.swing.JPanel {
         lblSearch.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblSearch.setForeground(new java.awt.Color(255, 51, 0));
 
-        myButton4.setForeground(new java.awt.Color(0, 122, 255));
-        myButton4.setText("Xuất");
-        myButton4.setBorderColor(new java.awt.Color(204, 204, 204));
-        myButton4.setColorClick(new java.awt.Color(189, 231, 255));
-        myButton4.setColorOver(new java.awt.Color(189, 231, 255));
-        myButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        myButton4.setRadius(20);
-        myButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton4ActionPerformed(evt);
-            }
-        });
-
-        myButton5.setForeground(new java.awt.Color(0, 122, 255));
-        myButton5.setText("Import");
-        myButton5.setBorderColor(new java.awt.Color(204, 204, 204));
-        myButton5.setColorClick(new java.awt.Color(189, 231, 255));
-        myButton5.setColorOver(new java.awt.Color(189, 231, 255));
-        myButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        myButton5.setRadius(20);
-        myButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton5ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -292,11 +264,7 @@ public class FormSupplier extends javax.swing.JPanel {
                         .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
                         .addGap(31, 31, 31)
                         .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(167, 167, 167))
+                        .addGap(426, 426, 426))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -312,10 +280,7 @@ public class FormSupplier extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -614,15 +579,6 @@ public class FormSupplier extends javax.swing.JPanel {
         edit();
     }//GEN-LAST:event_tableShowMouseClicked
 
-    private void myButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton4ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelSupplier();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_myButton4ActionPerformed
-
     private void myButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_myButton2ActionPerformed
@@ -648,79 +604,6 @@ public class FormSupplier extends javax.swing.JPanel {
         }
         return false;
     }
-    private void myButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton5ActionPerformed
-        // TODO add your handling code here:
-        File excelFile;
-        FileInputStream excelFIS = null;
-        BufferedInputStream excelBIS = null;
-        XSSFWorkbook excelJTableImport = null;
-        String path = "D:\\Excel";
-        JFileChooser excelFileChooser = new JFileChooser(path);
-        int excelChooser = excelFileChooser.showOpenDialog(null);
-        if (excelChooser == JFileChooser.APPROVE_OPTION) {
-            try {
-                excelFile = excelFileChooser.getSelectedFile();
-                excelFIS = new FileInputStream(excelFile);
-                excelBIS = new BufferedInputStream(excelFIS);
-                excelJTableImport = new XSSFWorkbook(excelBIS);
-                XSSFSheet excelSFSheet = excelJTableImport.getSheetAt(0);
-                String note = "";
-                String phone = "";
-
-                int flag = 0;
-                for (int row = 1; row <= excelSFSheet.getLastRowNum(); row++) {
-                    XSSFRow excelRow = excelSFSheet.getRow(row);
-                    XSSFCell nameSupplier = excelRow.getCell(0);
-                    XSSFCell address = excelRow.getCell(1);
-                    XSSFCell phoneNummber = excelRow.getCell(2);
-                    if (checkNameProduct(nameSupplier.toString(), phone.toString()) == true) {
-                        note += nameSupplier + " ,";
-                        phone += phoneNummber + ", ";
-                    } else {
-                        Supplier s = new Supplier();
-                        s.setNameMaterial(nameSupplier.toString());
-                        s.setAddress(address.toString());
-                        s.setPhoneNumber(phoneNummber.toString());
-                        sDao.insert(s);
-                        fillTable();
-                        flag += 1;
-
-                    }
-                }
-                System.out.println(flag);
-                if (!note.isEmpty()) {
-                    MsgBox.alert(this, "Trùng Nhà cung cấp " + note);
-                }
-                if (!phone.isEmpty()) {
-                    MsgBox.alert(this, "Trùng số điện thoại " + phone);
-                }
-                if (flag > 0) {
-                    MsgBox.alert(this, "Import thành công");
-                }
-
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(FormProducts.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(FormProducts.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    if (excelFIS != null) {
-                        excelFIS.close();
-                    }
-                    if (excelBIS != null) {
-                        excelBIS.close();
-                    }
-                    if (excelJTableImport != null) {
-                        excelJTableImport.close();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }
-    }//GEN-LAST:event_myButton5ActionPerformed
-
     public void excelSupplier() throws IOException {
         Excel.outExcel((DefaultTableModel) tableShow.getModel());
         MsgBox.alert(this, "Xuất file thành công");
@@ -741,8 +624,6 @@ public class FormSupplier extends javax.swing.JPanel {
     private javax.swing.JLabel lblnameSupplier;
     private com.raven.suportSwing.MyButton myButton2;
     private com.raven.suportSwing.MyButton myButton3;
-    private com.raven.suportSwing.MyButton myButton4;
-    private com.raven.suportSwing.MyButton myButton5;
     private com.raven.suportSwing.ScrollBarCustom scrollBarCustom1;
     private com.raven.suportSwing.TableColumn tableShow;
     private com.raven.suportSwing.TextField txtAddress;

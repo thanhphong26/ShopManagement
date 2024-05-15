@@ -11,6 +11,9 @@ import com.sportshop.entity.MyProfile;
 import com.sportshop.utils.Auth;
 import com.sportshop.utils.MsgBox;
 import com.sportshop.utils.XDate;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -80,13 +83,33 @@ public class FormMyProfile extends javax.swing.JPanel {
         MyProfile m = mDao.selectById(idUser);
         setForm(m);
     }
+    public boolean checkDate() {
+        LocalDate today = LocalDate.now();
+        LocalDate date = LocalDate.parse(txtDoB.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        int years = Period.between(date, today).getYears();
+        if (years < 18) {
+            MsgBox.labelAlert(lblDoB, txtDoB, "Chưa đủ 18 tuổi");
+            System.out.println(years);
+            return false;
+        }
+        System.out.println(years);
+        return true;
+    }
 
     public void update() {
-
+        lblName.setText("");
+        lblDoB.setText("");
+        String NAME_PATTERN = "^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
         try {
             if (!Validate.checkEmpty(lblName, txtName, "Không bỏ trống họ tên")) {
                 return;
-            } else if (!Validate.checkEmpty(lblDoB, txtDoB, "Không bỏ trống ngày sinh")) {
+            } 
+            else if(!(txtName.getText().matches(NAME_PATTERN))){
+                lblName.setText("Tên chứa ký tự đặc biệt");
+                return;
+            }
+            else if (checkDate()==false) return;            
+            else if (!Validate.checkEmpty(lblDoB, txtDoB, "Không bỏ trống ngày sinh")) {
                 return;
             } else {
                 MyProfile m = getForm();

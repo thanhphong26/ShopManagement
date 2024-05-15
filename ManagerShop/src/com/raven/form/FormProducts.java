@@ -315,8 +315,6 @@ public class FormProducts extends javax.swing.JPanel {
         tableShowProducts = new com.raven.suportSwing.TableColumn();
         scrollBarCustom1 = new com.raven.suportSwing.ScrollBarCustom();
         lblSearch = new javax.swing.JLabel();
-        myButton4 = new com.raven.suportSwing.MyButton();
-        myButton5 = new com.raven.suportSwing.MyButton();
         jPanel3 = new javax.swing.JPanel();
         txtNameProducts = new com.raven.suportSwing.TextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -379,11 +377,9 @@ public class FormProducts extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 962, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -427,32 +423,6 @@ public class FormProducts extends javax.swing.JPanel {
         lblSearch.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         lblSearch.setForeground(new java.awt.Color(255, 0, 0));
 
-        myButton4.setForeground(new java.awt.Color(0, 122, 255));
-        myButton4.setText("Xuất");
-        myButton4.setBorderColor(new java.awt.Color(204, 204, 204));
-        myButton4.setColorClick(new java.awt.Color(189, 231, 255));
-        myButton4.setColorOver(new java.awt.Color(189, 231, 255));
-        myButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        myButton4.setRadius(15);
-        myButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton4ActionPerformed(evt);
-            }
-        });
-
-        myButton5.setForeground(new java.awt.Color(0, 122, 255));
-        myButton5.setText("Import");
-        myButton5.setBorderColor(new java.awt.Color(204, 204, 204));
-        myButton5.setColorClick(new java.awt.Color(189, 231, 255));
-        myButton5.setColorOver(new java.awt.Color(189, 231, 255));
-        myButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        myButton5.setRadius(15);
-        myButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton5ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -462,12 +432,7 @@ public class FormProducts extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 1180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
@@ -483,11 +448,7 @@ public class FormProducts extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                .addGap(68, 68, 68))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -885,15 +846,6 @@ public class FormProducts extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchKeyPressed
 
-    private void myButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton4ActionPerformed
-        try {
-            excelProducts();
-        } catch (IOException ex) {
-            Logger.getLogger(FormProducts.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_myButton4ActionPerformed
-
     private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
         // TODO add your handling code here:
         try {
@@ -912,93 +864,6 @@ public class FormProducts extends javax.swing.JPanel {
         }
         return false;
     }
-
-    private void myButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton5ActionPerformed
-        // TODO add your handling code here:
-        File excelFile;
-        FileInputStream excelFIS = null;
-        BufferedInputStream excelBIS = null;
-        XSSFWorkbook excelJTableImport = null;
-        String path = "D:\\Excel";
-        JFileChooser excelFileChooser = new JFileChooser(path);
-        int excelChooser = excelFileChooser.showOpenDialog(null);
-        if (excelChooser == JFileChooser.APPROVE_OPTION) {
-            try {
-                excelFile = excelFileChooser.getSelectedFile();
-                excelFIS = new FileInputStream(excelFile);
-                excelBIS = new BufferedInputStream(excelFIS);
-                excelJTableImport = new XSSFWorkbook(excelBIS);
-                XSSFSheet excelSFSheet = excelJTableImport.getSheetAt(0);
-                CategoryDAO cDao = new CategoryDAO();
-                List<Category> list = cDao.selectAll();
-
-                String note = "";
-                int flag = 0;
-                for (int row = 1; row <= excelSFSheet.getLastRowNum(); row++) {
-                    XSSFRow excelRow = excelSFSheet.getRow(row);
-                    XSSFCell nameProduct = excelRow.getCell(0);
-                    XSSFCell nameList = excelRow.getCell(1);
-                    XSSFCell description = excelRow.getCell(2);
-                    XSSFCell status = excelRow.getCell(3);
-                    if (checkNameProduct(nameProduct.toString()) == true) {
-                        note += nameProduct + " ,";
-//                        return;
-                    } else {
-                        Products p = new Products();
-                        p.setNameProduct(nameProduct.toString());
-                        p.setDescription(description.toString());
-                        p.setStatus(status.toString().equals("Đang kinh doanh") ? true : false);
-                        boolean temp = false;
-                        for (Category c : list) {
-                            if (c.getName().equalsIgnoreCase(nameList.toString())) {
-                                p.setIdList(c.getId());
-                                temp = true;
-                            }
-                        }
-                        if (temp == false) {
-                            Category ct = new Category();
-                            ct.setName(nameList.toString());
-                            cDao.insert(ct);
-                            List<Category> listCT = cDao.insertImport();
-                            p.setIdList(listCT.get(0).getId());
-                        }
-
-                        pDao.insert(p);
-                        fillTableProducts();
-                        flag += 1;
-
-                    }
-                }
-                System.out.println(flag);
-                if (note != null) {
-                    MsgBox.alert(this, "Trùng sản phẩm " + note);
-                }
-                if (flag > 0) {
-                    MsgBox.alert(this, "Import thành công");
-                }
-
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(FormProducts.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(FormProducts.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    if (excelFIS != null) {
-                        excelFIS.close();
-                    }
-                    if (excelBIS != null) {
-                        excelBIS.close();
-                    }
-                    if (excelJTableImport != null) {
-                        excelJTableImport.close();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }
-    }//GEN-LAST:event_myButton5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1023,8 +888,6 @@ public class FormProducts extends javax.swing.JPanel {
     private javax.swing.JLabel lblSearch;
     private com.raven.suportSwing.MyButton myButton2;
     private com.raven.suportSwing.MyButton myButton3;
-    private com.raven.suportSwing.MyButton myButton4;
-    private com.raven.suportSwing.MyButton myButton5;
     private com.raven.suportSwing.MyButton myButton6;
     private com.raven.suportSwing.RadioButtonCustom radiNowSell;
     private com.raven.suportSwing.RadioButtonCustom radiOffSell;

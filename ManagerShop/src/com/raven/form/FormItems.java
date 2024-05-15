@@ -190,7 +190,6 @@ public class FormItems extends javax.swing.JPanel {
         txtSearch = new com.raven.suportSwing.TextField();
         myButton2 = new com.raven.suportSwing.MyButton();
         myButton3 = new com.raven.suportSwing.MyButton();
-        myButton4 = new com.raven.suportSwing.MyButton();
         btnDelete = new com.raven.suportSwing.MyButton();
         lblSearch = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -454,19 +453,6 @@ public class FormItems extends javax.swing.JPanel {
             }
         });
 
-        myButton4.setForeground(new java.awt.Color(0, 122, 255));
-        myButton4.setText("Xuất");
-        myButton4.setBorderColor(new java.awt.Color(204, 204, 204));
-        myButton4.setColorClick(new java.awt.Color(189, 231, 255));
-        myButton4.setColorOver(new java.awt.Color(189, 231, 255));
-        myButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        myButton4.setRadius(15);
-        myButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton4ActionPerformed(evt);
-            }
-        });
-
         btnDelete.setForeground(new java.awt.Color(0, 122, 255));
         btnDelete.setText("Xoá");
         btnDelete.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -503,9 +489,7 @@ public class FormItems extends javax.swing.JPanel {
                 .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+                .addGap(168, 168, 168))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -518,7 +502,6 @@ public class FormItems extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(myButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(myButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(myButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -617,14 +600,6 @@ public class FormItems extends javax.swing.JPanel {
         Excel.outExcel((DefaultTableModel) tableShow.getModel());
         MsgBox.alert(this, "Xuất file thành công");
     }
-    private void myButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton4ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelItems();
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event_myButton4ActionPerformed
-
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         deletePr();
@@ -740,7 +715,6 @@ public class FormItems extends javax.swing.JPanel {
     private javax.swing.JLabel lblSearch;
     private com.raven.suportSwing.MyButton myButton2;
     private com.raven.suportSwing.MyButton myButton3;
-    private com.raven.suportSwing.MyButton myButton4;
     private com.raven.suportSwing.RadioButtonCustom rdioAbove;
     private com.raven.suportSwing.RadioButtonCustom rdioBelow;
     private com.raven.suportSwing.RadioButtonCustom rdioOutOfProductItem;

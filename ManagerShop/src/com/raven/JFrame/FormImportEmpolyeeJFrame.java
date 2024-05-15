@@ -122,7 +122,7 @@ public class FormImportEmpolyeeJFrame extends javax.swing.JFrame {
         LocalDate date = LocalDate.parse(txtBirth.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         int years = Period.between(date, today).getYears();
         if (years < 18) {
-            MsgBox.labelAlert(lblBirth, txtBirth, "Trên 18 tuổi");
+            MsgBox.labelAlert(lblBirth, txtBirth, "Chưa đủ 18 tuổi");
             System.out.println(years);
             return false;
         }

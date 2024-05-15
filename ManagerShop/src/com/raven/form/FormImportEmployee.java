@@ -34,6 +34,7 @@ public class FormImportEmployee extends javax.swing.JPanel {
         setOpaque(false);
 
     }
+    String NAME_PATTERN = "^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
 
     UserDAO daoE = new UserDAO();
     AccountDao daoA = new AccountDao();
@@ -43,7 +44,7 @@ public class FormImportEmployee extends javax.swing.JPanel {
         LocalDate date = LocalDate.parse(txtBirth.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         int years = Period.between(date, today).getYears();
         if (years < 18) {
-            MsgBox.labelAlert(lblBirth, txtBirth, "Trên 18 tuổi");
+            MsgBox.labelAlert(lblBirth, txtBirth, "Chưa đủ 18 tuổi");
             System.out.println(years);
             return false;
         }
@@ -81,10 +82,16 @@ public class FormImportEmployee extends javax.swing.JPanel {
     }
 
     public void insert() {
+        lblName.setText("");
         try {
             if (labelValidate.checkEmpty(lblName, txtName, "Tên chưa nhập!!!") == false) {
                 return;
-            } else if (labelValidate.checkPhoneNumber(lblPhone, txtPhone, "") == false) {
+            } 
+            else if(!(txtName.getText().matches(NAME_PATTERN))){
+                lblName.setText("Tên chứa ký tự đặc biệt");
+                return;
+            }
+            else if (labelValidate.checkPhoneNumber(lblPhone, txtPhone, "") == false) {
                 return;
             } else if (checkPhoneNumber(txtPhone.getText()) == true) {
                 MsgBox.labelAlert(lblPhone, txtPhone, "Trùng số điện thoại");
