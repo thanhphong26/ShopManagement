@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 public class jdbcHelper {
 
     static String user = "sa";
-    static String pass = "minhduong123";
+    static String pass = "123456";
     static String url = "jdbc:sqlserver://localhost:1433;databaseName=dbManagerShop";
     static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     static String url2 = "jdbc:sqlserver://dbshop.database.windows.net:1433;database=DBSHOP;user=dbshop@dbshop;password={it_shop123};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";

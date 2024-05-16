@@ -104,7 +104,6 @@ public class FormRevenueStatistics extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableShow = new com.raven.suportSwing.TableColumn();
-        myButton5 = new com.raven.suportSwing.MyButton();
         myButton6 = new com.raven.suportSwing.MyButton();
         radiStreet = new com.raven.suportSwing.RadioButtonCustom();
         radiColumn = new com.raven.suportSwing.RadioButtonCustom();
@@ -144,19 +143,6 @@ public class FormRevenueStatistics extends javax.swing.JPanel {
         });
         tableShow.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(tableShow);
-
-        myButton5.setForeground(new java.awt.Color(0, 122, 255));
-        myButton5.setText("Xuất");
-        myButton5.setBorderColor(new java.awt.Color(204, 204, 204));
-        myButton5.setColorClick(new java.awt.Color(189, 231, 255));
-        myButton5.setColorOver(new java.awt.Color(189, 231, 255));
-        myButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        myButton5.setRadius(20);
-        myButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton5ActionPerformed(evt);
-            }
-        });
 
         myButton6.setForeground(new java.awt.Color(0, 122, 255));
         myButton6.setText("Biểu đồ");
@@ -201,11 +187,7 @@ public class FormRevenueStatistics extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1457, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(scrollBarCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))))
+                        .addGap(0, 12, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,9 +196,7 @@ public class FormRevenueStatistics extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(myButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
+                        .addGap(49, 49, 49)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cbbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,15 +228,6 @@ public class FormRevenueStatistics extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cbbYearActionPerformed
 
-    private void myButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton5ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excel();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_myButton5ActionPerformed
-
     private void myButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton6ActionPerformed
         // TODO add your handling code here:
 
@@ -275,7 +246,6 @@ public class FormRevenueStatistics extends javax.swing.JPanel {
     private com.raven.suportSwing.Combobox cbbYear;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private com.raven.suportSwing.MyButton myButton5;
     private com.raven.suportSwing.MyButton myButton6;
     private com.raven.suportSwing.RadioButtonCustom radiColumn;
     private com.raven.suportSwing.RadioButtonCustom radiStreet;

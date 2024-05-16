@@ -59,7 +59,7 @@ public class Menu extends javax.swing.JPanel {
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\1.png"), "Trang chủ"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\12.png"), "Hàng hoá", "Sản phẩm", "Mặt Hàng", "Nhà cung cấp"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\4.png"), "Giao dịch", "Nhập Hàng", "Bán Hàng", "Trả Hàng", "Đổi hàng", "Hoá Đơn Bán hàng", "Hoá đơn Nhập hàng", "Hoá đơn trả hàng", "Hóa đơn đổi hàng"));
-            addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\3.png"), "Thống kê", "Thông kê doanh thu", "Thống kê doanh số"));
+            addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\3.png"), "Thống kê",  "Thống kê doanh số"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\5.png"), "Nhân viên", "Danh sách nhân viên"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\10.png"), "Khách hàng"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\user.png"), "Cá Nhân", "Thông tin cá nhân", "Đổi mật khẩu"));
@@ -68,7 +68,7 @@ public class Menu extends javax.swing.JPanel {
         } else {
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\1.png"), "Trang chủ"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\4.png"), "Giao dịch", "Bán Hàng", "Trả Hàng", "Đổi hàng", "Hoá Đơn Bán hàng", "Hoá đơn trả hàng", "Hoá đơn đổi hàng"));
-            addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\3.png"), "Thống kê", "Thông kê doanh thu", "Thống kê doanh số"));
+            addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\3.png"), "Thống kê",  "Thống kê doanh số"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\10.png"), "Khách hàng"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\user.png"), "Cá Nhân", "Thông tin cá nhân", "Đổi mật khẩu"));
             addMenu(new ModelMenu(new ImageIcon("src\\com\\raven\\icon\\ExitAccount.png"), "Đăng xuất"));

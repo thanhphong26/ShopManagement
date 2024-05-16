@@ -197,7 +197,6 @@ public class FormInvoiceImportProducts extends javax.swing.JPanel {
         lblCount = new javax.swing.JLabel();
         scrollBarCustom1 = new com.raven.suportSwing.ScrollBarCustom();
         lblSearchId = new javax.swing.JLabel();
-        myButton6 = new com.raven.suportSwing.MyButton();
 
         dateChooser1.setDateFormat("yyyy-MM-dd");
         dateChooser1.setTextRefernce(txtDate);
@@ -427,19 +426,6 @@ public class FormInvoiceImportProducts extends javax.swing.JPanel {
         lblSearchId.setForeground(new java.awt.Color(225, 0, 0));
         lblSearchId.setText("jLabel2");
 
-        myButton6.setForeground(new java.awt.Color(0, 122, 255));
-        myButton6.setText("Xuất");
-        myButton6.setBorderColor(new java.awt.Color(204, 204, 204));
-        myButton6.setColorClick(new java.awt.Color(189, 231, 255));
-        myButton6.setColorOver(new java.awt.Color(189, 231, 255));
-        myButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        myButton6.setRadius(15);
-        myButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton6ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -448,12 +434,10 @@ public class FormInvoiceImportProducts extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(myButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(214, 214, 214)
@@ -464,9 +448,7 @@ public class FormInvoiceImportProducts extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(myButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(lblSearchId)
                 .addGap(22, 22, 22)
@@ -494,16 +476,6 @@ public class FormInvoiceImportProducts extends javax.swing.JPanel {
         Excel.outExcel((DefaultTableModel) tableInvoice.getModel());
         MsgBox.alert(this, "Xuất file thành công");
     }
-    private void myButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton6ActionPerformed
-        // TODO add your handling code here:
-        try {
-            excelInvoice();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }//GEN-LAST:event_myButton6ActionPerformed
-
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         searchDateFillTable();
         flag = true;
@@ -589,7 +561,6 @@ public class FormInvoiceImportProducts extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCount;
     private javax.swing.JLabel lblSearchId;
-    private com.raven.suportSwing.MyButton myButton6;
     private com.raven.suportSwing.ScrollBarCustom scrollBarCustom1;
     private com.raven.suportSwing.TableColumn tableInvoice;
     private com.raven.suportSwing.TextField txtDate;

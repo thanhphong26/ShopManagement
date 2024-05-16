@@ -539,7 +539,10 @@ public class FormCustomer extends javax.swing.JPanel {
             return;
         } else if (!labelValidate.checkEmpty(lblPhoneNumber, txtPhoneNumber, "Không được để trống SDT")) {
             return;
-        } else {
+        } 
+        else if(!labelValidate.checkPhoneNumber(lblPhoneNumber, txtPhoneNumber, "Số điện thoại không hợp lệ"))
+                {return;}
+        else{
             insert();
         }
 
