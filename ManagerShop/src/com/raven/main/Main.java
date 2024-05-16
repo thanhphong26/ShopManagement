@@ -153,7 +153,7 @@ public class Main extends javax.swing.JFrame {
                         }
                     } else if (menuIndex == 2) {
                         if (subMenuIndex == 0) {
-                            main.showForm(new FormRevenueStatistics());
+                            main.showForm(new FormSalesStatistics());
                         } else if (subMenuIndex == 1) {
                             main.showForm(new FormSalesStatistics());
                         }
